@@ -120,11 +120,11 @@ namespace app
         m_View = math::LookAt(math::Vec3(-4.f, 3.f, 4.f),
                                        math::Vec3(0.f, 0.f, 0.f),
                                        math::Vec3(0.f, 1.f, 0.f));
-        math::Mat4 model = math::Translation(math::Vec3(-1.1, 0, -1.1));
+        math::Mat4 model = math::Translation(math::Vec3(-1.1f, 0.f, -1.1f));
         math::Mat4 mvp = proj * m_View * model;
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp[0]);
 
-        math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1, 0, 1.1));
+        math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
 
 
@@ -146,10 +146,10 @@ namespace app
     {
         using namespace se;
         math::Mat4 proj = math::Perspective(math::Radians(45.f), (float)GetPrimaryWindow()->GetWidth() / (float)GetPrimaryWindow()->GetHeight(),.1f, 100.f);
-        math::Mat4 mvp = proj * m_View * math::Translation(math::Vec3(-1.1, 0, -1.1));
+        math::Mat4 mvp = proj * m_View * math::Translation(math::Vec3(-1.1f, 0.f, -1.1f));
         m_Material1->SetUniform("MVP", shader::ast::Type::Mat4, &mvp[0]);
 
-        math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1, 0, 1.1));
+        math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
     }
 
