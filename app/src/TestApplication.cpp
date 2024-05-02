@@ -98,10 +98,6 @@ namespace app
     {
         using namespace se;
 
-        // would be nice if the engine could handle this.
-        io::VFS::Get().Mount("../../TestProject/assets", "/source_assets");
-        io::VFS::Get().Mount("../../TestProject/built", "/assets");
-
         Application::Init();
 
         m_Material1 = render::Material::CreateMaterial(

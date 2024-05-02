@@ -3,7 +3,7 @@ project(Spark)
 set(CMAKE_CXX_STANDARD 23)
 
 set(ROOT_DIR ../Spark)
-include(${ROOT_DIR}/CMake/SparkApp.cmake)
+include(${ROOT_DIR}/CMake/Spark.cmake)
 
 ###### Includes ######
 include_directories(src)
