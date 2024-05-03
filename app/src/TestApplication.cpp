@@ -1,5 +1,7 @@
 #include "TestApplication.h"
 
+#include "engine/asset/binary/Array.h"
+#include "engine/asset/binary/Database.h"
 #include "engine/math/Mat4.h"
 #include "engine/render/Material.h"
 #include "engine/render/Renderer.h"
