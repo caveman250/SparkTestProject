@@ -2,7 +2,7 @@
 #include "TestApplication.h"
 #include "engine/Application.h"
 
-int main(int argc, char* argv[])
+int main(int, char*[])
 {
     se::Application::CreateInstance<app::TestApplication>();
 
