@@ -29,22 +29,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="make image format easier to use.">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TextureSampleNode.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TextureSampleNode.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Shader compiler can now handle textures. severely lacking in validation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader3.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/red.frag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Types.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Editor/src/startup/ImportAssets.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Editor/src/startup/ImportAssets.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/Blueprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/Blueprint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/meta/MetaData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/meta/MetaData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/meta/MetaData.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/meta/MetaData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate.meta" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/textures/uvtemplate.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/built/textures/uvtemplate.sass" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +58,7 @@
         <entry key="$PROJECT_DIR$/Spark" value="bd0a6d4b7a82e723661ebd503dc83331353b6304" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -211,7 +208,7 @@
       <updated>1714643255847</updated>
       <workItem from="1714643256925" duration="2671000" />
       <workItem from="1714703655197" duration="5283000" />
-      <workItem from="1714992557305" duration="5435000" />
+      <workItem from="1714992557305" duration="6528000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -253,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714995052250</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Shader compiler can now handle textures. severely lacking in validation.">
+      <option name="closed" value="true" />
+      <created>1714998101913</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714998101913</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +276,8 @@
     <MESSAGE value="make sure warnings are enabled for first party code. fix all existing warnings." />
     <MESSAGE value="bump engine" />
     <MESSAGE value="make image format easier to use." />
-    <option name="LAST_COMMIT_MESSAGE" value="make image format easier to use." />
+    <MESSAGE value="Shader compiler can now handle textures. severely lacking in validation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shader compiler can now handle textures. severely lacking in validation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -280,11 +286,6 @@
           <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
           <line>337</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>547</line>
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
@@ -297,9 +298,14 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>919</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/Spark/Editor/src/startup/ImportAssets.cpp</url>
+          <line>24</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/meta/MetaData.cpp</url>
+          <line>53</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
