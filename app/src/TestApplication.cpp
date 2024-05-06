@@ -1,7 +1,5 @@
 #include "TestApplication.h"
 
-#include "engine/asset/binary/Array.h"
-#include "engine/asset/binary/Database.h"
 #include "engine/math/Mat4.h"
 #include "engine/render/Material.h"
 #include "engine/render/Renderer.h"
@@ -128,7 +126,6 @@ namespace app
 
         math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
-
 
         render::VertexStream posStream;
         posStream.type = render::VertexStreamType::Position;
