@@ -110,7 +110,7 @@ namespace app
 
         m_Material2 = render::Material::CreateMaterial(
     { "/builtin_assets/shader.vert" },
-    { "/builtin_assets/shader3.frag" });
+    { "/builtin_assets/red.frag" });
         m_Material2->SetRenderState(rs);
         m_Material2->CreatePlatformResources();
 
