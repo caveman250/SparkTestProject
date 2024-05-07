@@ -29,11 +29,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +196,7 @@
       <workItem from="1714643256925" duration="2671000" />
       <workItem from="1714703655197" duration="5283000" />
       <workItem from="1714992557305" duration="6528000" />
-      <workItem from="1715073736748" duration="7341000" />
+      <workItem from="1715073736748" duration="7704000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -266,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715082024238</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="now objects can even have different textures. (oops)">
+      <option name="closed" value="true" />
+      <created>1715082417786</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715082417786</updated>
+    </task>
+    <task id="LOCAL-00010" summary="bump engine">
+      <option name="closed" value="true" />
+      <created>1715082436054</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715082436054</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +297,7 @@
     <MESSAGE value="make image format easier to use." />
     <MESSAGE value="Shader compiler can now handle textures. severely lacking in validation." />
     <MESSAGE value="texture loaded from a .sass file that was auto generated and set as a uniform via a material. milestone baby!" />
+    <MESSAGE value="now objects can even have different textures. (oops)" />
     <MESSAGE value="bump engine" />
     <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
   </component>
