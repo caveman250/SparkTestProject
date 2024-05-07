@@ -29,26 +29,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Shader compiler can now handle textures. severely lacking in validation.">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetBase.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetBase.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="version asset formats and auto re-import assets when version is bumped.">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/TextureResource.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Struct.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Struct.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Struct.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Struct.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/importer/DDS.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/importer/DDS.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate.meta" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/textures/uvtemplate.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,11 +138,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.TestProject">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AssetBuilder" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="AssetBuilder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Spark" RUN_TARGET_NAME="AssetBuilder">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -164,6 +154,11 @@
       </method>
     </configuration>
     <configuration name="TestProject" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="TestProject" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Spark" RUN_TARGET_NAME="TestProject">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -216,6 +211,7 @@
       <workItem from="1714643256925" duration="2671000" />
       <workItem from="1714703655197" duration="5283000" />
       <workItem from="1714992557305" duration="6528000" />
+      <workItem from="1715073736748" duration="6851000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />

@@ -1,3 +1,5 @@
+#include <engine/asset/binary/Database.h>
+#include <engine/asset/texture/Texture.h>
 #include "TestApplication.h"
 
 #include "engine/math/Mat4.h"
@@ -89,6 +91,45 @@ namespace app
         0.982f,  0.099f,  0.879f
     };
 
+    static const std::vector<float> s_CubeUvs = {
+            0.000059f, 1.0f-0.000004f,
+            0.000103f, 1.0f-0.336048f,
+            0.335973f, 1.0f-0.335903f,
+            1.000023f, 1.0f-0.000013f,
+            0.667979f, 1.0f-0.335851f,
+            0.999958f, 1.0f-0.336064f,
+            0.667979f, 1.0f-0.335851f,
+            0.336024f, 1.0f-0.671877f,
+            0.667969f, 1.0f-0.671889f,
+            1.000023f, 1.0f-0.000013f,
+            0.668104f, 1.0f-0.000013f,
+            0.667979f, 1.0f-0.335851f,
+            0.000059f, 1.0f-0.000004f,
+            0.335973f, 1.0f-0.335903f,
+            0.336098f, 1.0f-0.000071f,
+            0.667979f, 1.0f-0.335851f,
+            0.335973f, 1.0f-0.335903f,
+            0.336024f, 1.0f-0.671877f,
+            1.000004f, 1.0f-0.671847f,
+            0.999958f, 1.0f-0.336064f,
+            0.667979f, 1.0f-0.335851f,
+            0.668104f, 1.0f-0.000013f,
+            0.335973f, 1.0f-0.335903f,
+            0.667979f, 1.0f-0.335851f,
+            0.335973f, 1.0f-0.335903f,
+            0.668104f, 1.0f-0.000013f,
+            0.336098f, 1.0f-0.000071f,
+            0.000103f, 1.0f-0.336048f,
+            0.000004f, 1.0f-0.671870f,
+            0.336024f, 1.0f-0.671877f,
+            0.000103f, 1.0f-0.336048f,
+            0.336024f, 1.0f-0.671877f,
+            0.335973f, 1.0f-0.335903f,
+            0.667969f, 1.0f-0.671889f,
+            1.000004f, 1.0f-0.671847f,
+            0.667979f, 1.0f-0.335851f
+    };
+
     TestApplication* TestApplication::GetTestApplication()
     {
         return static_cast<TestApplication*>(Get());
@@ -107,6 +148,12 @@ namespace app
         rs.depthComp = render::DepthCompare::Less;
         m_Material1->SetRenderState(rs);
         m_Material1->CreatePlatformResources();
+
+        auto db = asset::binary::Database::Load("/assets/textures/uvtemplate.sass", true);
+        asset::Texture texture;
+        texture.Deserialise(db);
+        texture.CreatePlatformResource();
+        m_Material1->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture);
 
         m_Material2 = render::Material::CreateMaterial(
     { "/builtin_assets/shader.vert" },
@@ -137,7 +184,12 @@ namespace app
         colourStream.stride = 3;
         colourStream.data = s_CubeColours;
 
-        m_VertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, colourStream });
+        render::VertexStream uvStream;
+        uvStream.type = render::VertexStreamType::UV;
+        uvStream.stride = 2;
+        uvStream.data = s_CubeUvs;
+
+        m_VertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, colourStream, uvStream });
         m_VertBuffer->CreatePlatformResource();
     }
 
