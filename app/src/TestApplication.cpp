@@ -156,10 +156,16 @@ namespace app
         m_Material1->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture);
 
         m_Material2 = render::Material::CreateMaterial(
-    { "/builtin_assets/shader.vert" },
-    { "/builtin_assets/red.frag" });
+                { "/builtin_assets/shader.vert" },
+                { "/builtin_assets/shader.frag",  "/builtin_assets/shader2.frag" });
         m_Material2->SetRenderState(rs);
         m_Material2->CreatePlatformResources();
+
+        auto db2 = asset::binary::Database::Load("/assets/textures/uvtemplate2.sass", true);
+        asset::Texture texture2;
+        texture2.Deserialise(db2);
+        texture2.CreatePlatformResource();
+        m_Material2->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture2);
 
         // Camera
         math::Mat4 proj = math::Perspective(math::Radians(45.f), (float)GetPrimaryWindow()->GetWidth() / (float)GetPrimaryWindow()->GetHeight(),

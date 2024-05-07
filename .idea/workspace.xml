@@ -29,20 +29,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="version asset formats and auto re-import assets when version is bumped.">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/TextureResource.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/TextureBlueprint.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -211,7 +200,7 @@
       <workItem from="1714643256925" duration="2671000" />
       <workItem from="1714703655197" duration="5283000" />
       <workItem from="1714992557305" duration="6528000" />
-      <workItem from="1715073736748" duration="6851000" />
+      <workItem from="1715073736748" duration="7341000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -261,7 +250,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714998101913</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="texture loaded from a .sass file that was auto generated and set as a uniform via a material. milestone baby!">
+      <option name="closed" value="true" />
+      <created>1715081985593</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715081985593</updated>
+    </task>
+    <task id="LOCAL-00008" summary="bump engine">
+      <option name="closed" value="true" />
+      <created>1715082024238</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715082024238</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,10 +282,11 @@
     <MESSAGE value="delete TestProject again (?)" />
     <MESSAGE value="clion generated gumph" />
     <MESSAGE value="make sure warnings are enabled for first party code. fix all existing warnings." />
-    <MESSAGE value="bump engine" />
     <MESSAGE value="make image format easier to use." />
     <MESSAGE value="Shader compiler can now handle textures. severely lacking in validation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Shader compiler can now handle textures. severely lacking in validation." />
+    <MESSAGE value="texture loaded from a .sass file that was auto generated and set as a uniform via a material. milestone baby!" />
+    <MESSAGE value="bump engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
