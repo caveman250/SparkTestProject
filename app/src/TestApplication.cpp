@@ -10,6 +10,8 @@
 #include "platform/IWindow.h"
 #include "engine/io/VFS.h"
 
+#include "engine/reflect/Reflect.h"
+
 namespace app
 {
     static const std::vector<float> s_CubePositions =
@@ -135,6 +137,20 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
+    struct Node
+    {
+        DECLARE_SPARK_CLASS()
+
+        std::string key;
+        float value;
+    };
+
+    DECLARE_SPARK_ENUM_BEGIN(TestEnum, int)
+        ValueOne,
+        ValueTwo,
+        ValueThree,
+    DECLARE_SPARK_ENUM_END()
+
     void TestApplication::Init()
     {
         using namespace se;
@@ -197,6 +213,26 @@ namespace app
 
         m_VertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, colourStream, uvStream });
         m_VertBuffer->CreatePlatformResource();
+
+        //reflection stuff
+        reflect::Type* floatlol = reflect::TypeResolver<float>::get();
+        reflect::Class* typeDesc = reflect::ClassResolver<Node>::get();
+        auto lol = typeDesc->GetMemberType("key")->GetTypeName();
+        auto lol2 = typeDesc->GetMemberType("value")->GetTypeName();
+        auto lol3 = typeDesc->GetMemberType("key")->GetTypeSize();
+        auto lol4 = typeDesc->GetMemberType("value")->GetTypeSize();
+
+        TestEnum::Type test = TestEnum::ValueOne;
+        std::string test1 = TestEnum::ToString(test);
+        test = TestEnum::ValueTwo;
+        std::string test2 = TestEnum::ToString(test);
+        test = TestEnum::ValueThree;
+        std::string test3 = TestEnum::ToString(test);
+
+        test = TestEnum::FromString("ValueTwo");
+
+
+        int lol5 =1;
     }
 
     void TestApplication::Update()
@@ -225,4 +261,15 @@ namespace app
             se::render::RenderCommand::SubmitGeo(m_Material2, m_VertBuffer, 12 * 3);
         }));
     }
+
+    DEFINE_SPARK_CLASS_BEGIN(Node)
+        DEFINE_MEMBER(key)
+        DEFINE_MEMBER(value)
+    DEFINE_SPARK_CLASS_END()
+
+    DEFINE_SPARK_ENUM_BEGIN(TestEnum)
+        DEFINE_ENUM_VALUE(TestEnum, ValueOne)
+        DEFINE_ENUM_VALUE(TestEnum, ValueTwo)
+        DEFINE_ENUM_VALUE(TestEnum, ValueThree)
+    DEFINE_SPARK_ENUM_END()
 }
