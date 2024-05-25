@@ -15,3 +15,5 @@ file(GLOB_RECURSE SRC src/*.cpp src/*.h)
 add_executable(TestProject ${SRC})
 
 setup_spark_target(TestProject ${USE_EDITOR})
+
+target_link_options(TestProject PUBLIC -ltbb) #enable parallel std::for_each

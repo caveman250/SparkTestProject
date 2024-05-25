@@ -1,5 +1,6 @@
 #include <engine/asset/binary/Database.h>
 #include <engine/asset/texture/Texture.h>
+#include <engine/ecs/System.h>
 #include "TestApplication.h"
 
 #include "engine/math/Mat4.h"
@@ -11,6 +12,9 @@
 #include "engine/io/VFS.h"
 
 #include "engine/reflect/Reflect.h"
+#include "TestComponent1.h"
+#include "TestComponent2.h"
+#include "TestSystem.h"
 
 namespace app
 {
@@ -137,14 +141,6 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
-    struct Node
-    {
-        DECLARE_SPARK_CLASS()
-
-        std::string key;
-        float value;
-    };
-
     DECLARE_SPARK_ENUM_BEGIN(TestEnum, int)
         ValueOne,
         ValueTwo,
@@ -214,25 +210,21 @@ namespace app
         m_VertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, colourStream, uvStream });
         m_VertBuffer->CreatePlatformResource();
 
-        //reflection stuff
-        reflect::Type* floatlol = reflect::TypeResolver<float>::get();
-        reflect::Class* typeDesc = reflect::ClassResolver<Node>::get();
-        auto lol = typeDesc->GetMemberType("key")->GetTypeName();
-        auto lol2 = typeDesc->GetMemberType("value")->GetTypeName();
-        auto lol3 = typeDesc->GetMemberType("key")->GetTypeSize();
-        auto lol4 = typeDesc->GetMemberType("value")->GetTypeSize();
+        // ecs stuff
+        ecs::EntityId entity = m_World.CreateEntity();
+        m_World.AddComponent<TestComponent1>(entity);
+        m_World.AddComponent<TestComponent2>(entity);
+        TestComponent1* ecsNode = m_World.GetComponent<TestComponent1>(entity);
+        ecsNode->key = "lol";
+        ecsNode->value = 5;
 
-        TestEnum::Type test = TestEnum::ValueOne;
-        std::string test1 = TestEnum::ToString(test);
-        test = TestEnum::ValueTwo;
-        std::string test2 = TestEnum::ToString(test);
-        test = TestEnum::ValueThree;
-        std::string test3 = TestEnum::ToString(test);
+        ecs::EntityId entity2 = m_World.CreateEntity();
+        m_World.AddComponent<TestComponent1>(entity2);
+        m_World.AddComponent<TestComponent2>(entity2);
+        m_World.GetComponent<TestComponent2>(entity2)->lol = 1;
 
-        test = TestEnum::FromString("ValueTwo");
-
-
-        int lol5 =1;
+        m_World.CreateSystem<TestSystem>();
+        m_World.RegisterSystemUpdateGroup<TestSystem>();
     }
 
     void TestApplication::Update()
@@ -244,6 +236,8 @@ namespace app
 
         math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
+
+        m_World.Update(0.f);
     }
 
     void TestApplication::Render()
@@ -261,11 +255,6 @@ namespace app
             se::render::RenderCommand::SubmitGeo(m_Material2, m_VertBuffer, 12 * 3);
         }));
     }
-
-    DEFINE_SPARK_CLASS_BEGIN(Node)
-        DEFINE_MEMBER(key)
-        DEFINE_MEMBER(value)
-    DEFINE_SPARK_CLASS_END()
 
     DEFINE_SPARK_ENUM_BEGIN(TestEnum)
         DEFINE_ENUM_VALUE(TestEnum, ValueOne)
