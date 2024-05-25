@@ -213,8 +213,9 @@ namespace app
         m_World.AddComponent<TestComponent1>(entity2);
         m_World.AddComponent<TestComponent2>(entity2);
 
-        m_World.CreateSystem<TestSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
+
+        m_World.CreateSystem<TestSystem>();
     }
 
     void TestApplication::Update()
