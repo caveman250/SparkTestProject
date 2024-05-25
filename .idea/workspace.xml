@@ -29,31 +29,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Action.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Archetype.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Component.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/ComponentList.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/ComponentList.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestComponent1.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestComponent1.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestComponent2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestComponent2.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="ecs initial commit">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/MaybeLockGuard.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/UpdateMode.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/UpdateMode.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Enum.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Enum.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/TypeResolver.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/TypeResolver.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/spark.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/spark.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Type.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Type.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent1.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestComponent1.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent2.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestComponent2.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +62,7 @@
         <entry key="$PROJECT_DIR$/Spark" value="bd0a6d4b7a82e723661ebd503dc83331353b6304" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -152,6 +143,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ouchqt\CLionProjects\TestProject" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ouchqt\CLionProjects\TestProject\Spark\Engine\src\engine\ecs" />
+    </key>
   </component>
   <component name="RunManager" selected="CMake Application.TestProject">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
@@ -230,7 +224,7 @@
       <workItem from="1715073736748" duration="7704000" />
       <workItem from="1715938491762" duration="8053000" />
       <workItem from="1716106254304" duration="2789000" />
-      <workItem from="1716110073645" duration="31481000" />
+      <workItem from="1716110073645" duration="37164000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -312,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715082436054</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ecs initial commit">
+      <option name="closed" value="true" />
+      <created>1716640263242</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716640263242</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -333,7 +335,8 @@
     <MESSAGE value="texture loaded from a .sass file that was auto generated and set as a uniform via a material. milestone baby!" />
     <MESSAGE value="now objects can even have different textures. (oops)" />
     <MESSAGE value="bump engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
+    <MESSAGE value="ecs initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="ecs initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

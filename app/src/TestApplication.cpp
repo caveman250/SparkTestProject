@@ -141,12 +141,6 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
-    DECLARE_SPARK_ENUM_BEGIN(TestEnum, int)
-        ValueOne,
-        ValueTwo,
-        ValueThree,
-    DECLARE_SPARK_ENUM_END()
-
     void TestApplication::Init()
     {
         using namespace se;
@@ -214,14 +208,10 @@ namespace app
         ecs::EntityId entity = m_World.CreateEntity();
         m_World.AddComponent<TestComponent1>(entity);
         m_World.AddComponent<TestComponent2>(entity);
-        TestComponent1* ecsNode = m_World.GetComponent<TestComponent1>(entity);
-        ecsNode->key = "lol";
-        ecsNode->value = 5;
 
         ecs::EntityId entity2 = m_World.CreateEntity();
         m_World.AddComponent<TestComponent1>(entity2);
         m_World.AddComponent<TestComponent2>(entity2);
-        m_World.GetComponent<TestComponent2>(entity2)->lol = 1;
 
         m_World.CreateSystem<TestSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
@@ -255,10 +245,4 @@ namespace app
             se::render::RenderCommand::SubmitGeo(m_Material2, m_VertBuffer, 12 * 3);
         }));
     }
-
-    DEFINE_SPARK_ENUM_BEGIN(TestEnum)
-        DEFINE_ENUM_VALUE(TestEnum, ValueOne)
-        DEFINE_ENUM_VALUE(TestEnum, ValueTwo)
-        DEFINE_ENUM_VALUE(TestEnum, ValueThree)
-    DEFINE_SPARK_ENUM_END()
 }
