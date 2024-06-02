@@ -29,41 +29,16 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/singleton_components/ActiveCameraComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/singleton_components/ActiveCameraComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Containers.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="ported existing test code to ecs.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Action.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Action.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec2.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec2.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/memory/Arena.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/memory/Arena.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Containers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Containers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/TypeResolver.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/TypeResolver.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/spark.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/spark.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent1.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestComponent2.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSingletonComponent.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSingletonComponent.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +162,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="crn" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="crn" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -240,7 +220,8 @@
       <workItem from="1716106254304" duration="2789000" />
       <workItem from="1716110073645" duration="38704000" />
       <workItem from="1717305859459" duration="19177000" />
-      <workItem from="1717332436499" duration="1918000" />
+      <workItem from="1717332436499" duration="2336000" />
+      <workItem from="1717334800699" duration="198000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -402,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717322257703</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ported existing test code to ecs.">
+      <option name="closed" value="true" />
+      <created>1717334406615</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1717334406615</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +419,8 @@
     <MESSAGE value="Add singleton components" />
     <MESSAGE value="system updates are now passed a list of entities they are operating on." />
     <MESSAGE value="bump engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
+    <MESSAGE value="ported existing test code to ecs." />
+    <option name="LAST_COMMIT_MESSAGE" value="ported existing test code to ecs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

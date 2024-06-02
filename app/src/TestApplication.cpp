@@ -11,10 +11,7 @@
 #include "platform/IWindow.h"
 #include "engine/io/VFS.h"
 
-#include "TestComponent1.h"
-#include "TestComponent2.h"
 #include "TestSystem.h"
-#include "TestSingletonComponent.h"
 
 namespace app
 {

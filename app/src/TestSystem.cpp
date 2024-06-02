@@ -79,7 +79,6 @@ namespace app
         camera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
         for (int i = 0; i < entities.size(); ++i)
         {
-
             math::Mat4 mvp = camera->proj * camera->view * math::Translation(transform[i].pos);
             mesh[i].material->SetUniform("MVP", shader::ast::Type::Mat4, &mvp[0]);
         }
