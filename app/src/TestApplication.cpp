@@ -218,7 +218,7 @@ namespace app
         m_World.CreateSystem<TestSystem>();
     }
 
-    void TestApplication::Update()
+    void TestApplication::Update(float dt)
     {
         using namespace se;
         math::Mat4 proj = math::Perspective(math::Radians(45.f), (float)GetPrimaryWindow()->GetWidth() / (float)GetPrimaryWindow()->GetHeight(),.1f, 100.f);
@@ -228,7 +228,7 @@ namespace app
         math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
 
-        m_World.Update(0.f);
+        m_World.Update(dt);
     }
 
     void TestApplication::Render()
