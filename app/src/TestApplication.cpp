@@ -15,6 +15,7 @@
 #include "TestComponent1.h"
 #include "TestComponent2.h"
 #include "TestSystem.h"
+#include "TestSingletonComponent.h"
 
 namespace app
 {
@@ -206,12 +207,15 @@ namespace app
 
         // ecs stuff
         ecs::EntityId entity = m_World.CreateEntity();
-        TestComponent1* testComp = m_World.AddComponent<TestComponent1>(entity);
+        m_World.AddComponent<TestComponent1>(entity);
         m_World.AddComponent<TestComponent2>(entity);
 
         ecs::EntityId entity2 = m_World.CreateEntity();
         m_World.AddComponent<TestComponent1>(entity2);
         m_World.AddComponent<TestComponent2>(entity2);
+
+        TestSingletonComponent* testSingletonComp = m_World.AddSingletonComponent<TestSingletonComponent>();
+        testSingletonComp->value = 20;
 
         m_World.RegisterSystemUpdateGroup<TestSystem>();
 

@@ -5,9 +5,8 @@ namespace app
 {
 DEFINE_SPARK_SYSTEM(TestSystem)
 
-    void TestSystem::OnUpdate(float dt, size_t count, const app::TestComponent1* nodes, const app::TestComponent2* otherComps)
+    void TestSystem::OnUpdate(float, size_t count, const app::TestComponent1* nodes, const app::TestComponent2* otherComps, const TestSingletonComponent* )
     {
-        se::debug::Log::Info("dt: {}", dt);
         for (size_t i = 0; i < count; ++i)
         {
             const TestComponent1& node = nodes[i];
