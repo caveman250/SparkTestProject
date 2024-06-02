@@ -21,7 +21,7 @@ namespace app
         static TestApplication* GetTestApplication();
 
         void Init() override;
-        void Update(float dt) override;
+        void Update() override;
         void Render() override;
     private:
 
@@ -29,6 +29,5 @@ namespace app
         std::shared_ptr<se::render::Material> m_Material2;
         se::math::Mat4 m_View;
         std::shared_ptr<se::render::VertexBuffer> m_VertBuffer;
-        se::ecs::World m_World;
     };
 }

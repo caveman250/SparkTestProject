@@ -11,7 +11,6 @@
 #include "platform/IWindow.h"
 #include "engine/io/VFS.h"
 
-#include "engine/reflect/Reflect.h"
 #include "TestComponent1.h"
 #include "TestComponent2.h"
 #include "TestSystem.h"
@@ -222,7 +221,7 @@ namespace app
         m_World.CreateSystem<TestSystem>();
     }
 
-    void TestApplication::Update(float dt)
+    void TestApplication::Update()
     {
         using namespace se;
         math::Mat4 proj = math::Perspective(math::Radians(45.f), (float)GetPrimaryWindow()->GetWidth() / (float)GetPrimaryWindow()->GetHeight(),.1f, 100.f);
@@ -232,7 +231,7 @@ namespace app
         math::Mat4 mvp2 = proj * m_View * math::Translation(math::Vec3(1.1f, 0.f, 1.1f));
         m_Material2->SetUniform("MVP", shader::ast::Type::Mat4, &mvp2[0]);
 
-        m_World.Update(dt);
+        m_World.Update();
     }
 
     void TestApplication::Render()

@@ -1,19 +1,21 @@
 #include "TestSystem.h"
 #include "engine/debug/Log.h"
+#include "engine/Application.h"
 
 namespace app
 {
 DEFINE_SPARK_SYSTEM(TestSystem)
 
-    void TestSystem::OnUpdate(float, size_t count, const app::TestComponent1* nodes, const app::TestComponent2* otherComps, const TestSingletonComponent* )
+    void TestSystem::OnUpdate(const std::vector<se::ecs::EntityId>& entities, const app::TestComponent1* , const app::TestComponent2* , const TestSingletonComponent* )
     {
-        for (size_t i = 0; i < count; ++i)
-        {
-            const TestComponent1& node = nodes[i];
-            const TestComponent2& otherComp = otherComps[i];
+        auto app = se::Application::Get();
+        auto world = app->GetWorld();
 
-            se::debug::Log::Info("node {} {}", node.key, node.value);
-            se::debug::Log::Info("otherComp {}", otherComp.lol);
+        float dt = app->GetDeltaTime();
+
+        for (int i = 0; i < entities.size(); ++i)
+        {
+            se::debug::Log::Info("TestSystem - Entity {}", entities[i]);
         }
     }
 }
