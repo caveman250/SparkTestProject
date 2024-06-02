@@ -8,7 +8,7 @@ namespace app
     {
         DECLARE_SPARK_COMPONENT(TestComponent1)
     public:
-        std::string key;
-        float value;
+        std::string key = {};
+        float value = {};
     };
 }
