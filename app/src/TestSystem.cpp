@@ -9,7 +9,6 @@
 #include <engine/render/RenderState.h>
 #include <engine/render/Renderer.h>
 #include "TestSystem.h"
-#include "engine/debug/Log.h"
 #include "engine/Application.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "platform/IWindow.h"
@@ -21,20 +20,17 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(TestSystem)
 
-    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, ActiveCameraComponent*)
+    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
 
-        auto* activeCameraComp = world->AddSingletonComponent<ActiveCameraComponent>();
-        activeCameraComp->view = math::LookAt(math::Vec3(-4.f, 3.f, 4.f),
-                                              math::Vec3(0.f, 0.f, 0.f),
-                                              math::Vec3(0.f, 1.f, 0.f));
+        world->AddSingletonComponent<camera::ActiveCameraComponent>();
 
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
         auto* transform = world->AddComponent<TransformComponent>(entity);
-        transform->pos = math::Vec3(-1.1f, 0.f, -1.1f);
+        transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
         auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
         mesh->material = render::Material::CreateMaterial(
@@ -55,7 +51,7 @@ namespace app
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
-        transform2->pos = math::Vec3(1.1f, 0.f, 1.1f);
+        transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
         auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
         mesh2->material = render::Material::CreateMaterial(
@@ -73,7 +69,7 @@ namespace app
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
-                              const MeshComponent* mesh, ActiveCameraComponent* camera)
+                              const MeshComponent* mesh, camera::ActiveCameraComponent* camera)
     {
         auto app = Application::Get();
         auto dt = app->GetDeltaTime();
@@ -97,7 +93,7 @@ namespace app
         }
     }
 
-    void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, ActiveCameraComponent*)
+    void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, camera::ActiveCameraComponent*)
     {
         auto app = Application::Get();
 
@@ -119,7 +115,7 @@ namespace app
     }
 
     void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*,
-                                const MeshComponent*, ActiveCameraComponent*)
+                                const MeshComponent*, camera::ActiveCameraComponent*)
     {
 
     }

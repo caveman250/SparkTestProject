@@ -3,6 +3,7 @@
 #include <engine/ecs/System.h>
 #include "TestApplication.h"
 
+#include "CameraSystem.h"
 #include "engine/math/Mat4.h"
 #include "engine/render/Material.h"
 #include "engine/render/Renderer.h"
@@ -26,7 +27,10 @@ namespace app
 
         Application::Init();
 
+        m_World.RegisterSystemUpdateGroup<CameraSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
+
+        m_World.CreateSystem<CameraSystem>();
         m_World.CreateSystem<TestSystem>();
 
         m_World.Init();
