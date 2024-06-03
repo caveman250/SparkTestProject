@@ -29,16 +29,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="ported existing test code to ecs.">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="cleanup some debug code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestComponent1.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestComponent1.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestComponent2.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestComponent2.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSingletonComponent.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSingletonComponent.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +61,7 @@
         <entry key="$PROJECT_DIR$/Spark" value="bd0a6d4b7a82e723661ebd503dc83331353b6304" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -74,16 +79,16 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/format" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/memory" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/type_traits" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/utility" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/vector" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/xstring" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/asset/binary/Database.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/asset/texture/Texture.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/shader/ast/InputAttributeNode.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/shader/ast/InputAttributeNode.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/shader/ast/Types.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/app/src/TestApplication.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/ecs/World.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/ecs/World.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/ecs/components/MeshComponent.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/ecs/components/MeshComponent.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/reflect/TypeResolver.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/ouchqt/checkouts/SparkTestProject/Spark/Engine/src/engine/render/Material.h" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="0-Debug-Spark" />
@@ -449,6 +454,16 @@
           <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h</url>
           <line>17</line>
           <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp</url>
+          <line>166</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/app/src/TestSystem.cpp</url>
+          <line>86</line>
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -34,6 +34,7 @@ namespace app
 
     void TestApplication::Update()
     {
+        Application::Update();
         m_World.Update();
     }
 

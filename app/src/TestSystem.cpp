@@ -21,7 +21,7 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(TestSystem)
 
-    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, const TransformComponent*, const MeshComponent*, ActiveCameraComponent*)
+    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, ActiveCameraComponent*)
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
@@ -33,7 +33,7 @@ namespace app
 
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
-        auto* transform = world->AddComponent<ecs::components::TransformComponent>(entity);
+        auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(-1.1f, 0.f, -1.1f);
 
         auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
@@ -54,7 +54,7 @@ namespace app
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
-        auto* transform2 = world->AddComponent<ecs::components::TransformComponent>(entity2);
+        auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(1.1f, 0.f, 1.1f);
 
         auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
@@ -72,19 +72,32 @@ namespace app
         mesh2->material->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture2);
     }
 
-    void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, const TransformComponent* transform,
+    void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
                               const MeshComponent* mesh, ActiveCameraComponent* camera)
     {
         auto app = Application::Get();
+        auto dt = app->GetDeltaTime();
         camera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
         for (int i = 0; i < entities.size(); ++i)
         {
-            math::Mat4 mvp = camera->proj * camera->view * math::Translation(transform[i].pos);
+            auto& transformComp = transform[i];
+
+            transformComp.rot.y += 5.f * dt;
+
+            math::Mat4 model = math::Translation(transformComp.pos);
+            model = model * math::AxisAngle(math::Vec3(1.0f, 0.0f, 0.0f), transformComp.rot.x);
+            model = model * math::AxisAngle(math::Vec3(0.0f, 1.0f, 0.0f), transformComp.rot.y);
+            model = model * math::AxisAngle(math::Vec3(0.0f, 0.0f, 1.0f), transformComp.rot.z);
+
+            model = model * math::Scale(transformComp.scale);
+
+            math::Mat4 mvp = camera->proj * camera->view * model;
+
             mesh[i].material->SetUniform("MVP", shader::ast::Type::Mat4, &mvp[0]);
         }
     }
 
-    void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, const TransformComponent*, const MeshComponent* mesh, ActiveCameraComponent*)
+    void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, ActiveCameraComponent*)
     {
         auto app = Application::Get();
 
@@ -105,7 +118,7 @@ namespace app
         }
     }
 
-    void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, const TransformComponent*,
+    void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*,
                                 const MeshComponent*, ActiveCameraComponent*)
     {
 
