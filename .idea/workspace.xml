@@ -29,21 +29,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="cleanup some debug code">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/input/Key.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/input/Key.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/KeyMap.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/KeyMap.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/TransformComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/spark.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/spark.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +70,8 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/WinUser.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Program Files (x86)/Windows Kits/10/Include/10.0.22000.0/um/winnt.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/format" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/memory" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/include/type_traits" root0="FORCE_HIGHLIGHTING" />
@@ -396,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717334406615</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="bump engine">
+      <option name="closed" value="true" />
+      <created>1717384871501</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717384871501</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,9 +426,9 @@
     <MESSAGE value="can now assign values to components after creating them. currently relies on allocating a temp component in an arena before copying to comp data. not the most elegant solution" />
     <MESSAGE value="Add singleton components" />
     <MESSAGE value="system updates are now passed a list of entities they are operating on." />
-    <MESSAGE value="bump engine" />
     <MESSAGE value="ported existing test code to ecs." />
-    <option name="LAST_COMMIT_MESSAGE" value="ported existing test code to ecs." />
+    <MESSAGE value="bump engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,16 +457,6 @@
           <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h</url>
           <line>17</line>
           <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp</url>
-          <line>166</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/TestSystem.cpp</url>
-          <line>86</line>
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
