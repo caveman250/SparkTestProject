@@ -99,23 +99,16 @@ namespace app
 
         auto renderer = se::render::Renderer::Get();
         auto window = app->GetPrimaryWindow();
-        renderer->Submit(window, se::render::RenderCommand([]
-        {
-            se::render::RenderCommand::Clear(true, true);
-        }));
+        renderer->Submit<se::render::commands::Clear>(window, true, true);
 
         for (int i = 0; i < entities.size(); ++i)
         {
             const auto& meshComp = mesh[i];
-            renderer->Submit(window, se::render::RenderCommand([&meshComp]
-            {
-                se::render::RenderCommand::SubmitGeo(meshComp.material, meshComp.vertBuffer, 12 * 3);
-            }));
+            renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 12 * 3);
         }
     }
 
-    void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*,
-                                const MeshComponent*, camera::ActiveCameraComponent*)
+    void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
     {
 
     }
