@@ -29,16 +29,46 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="add support for mouse states">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="add support for fbx models">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/FBXBlueprint.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/FBXBlueprint.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/StaticMesh.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/StaticMesh.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/libdeflate.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/libdeflate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/ofbx.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/ofbx.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/models/cube.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/models/cube.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/textures/uvmap.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/textures/uvmap.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/textures/uvmap2.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/textures/uvmap2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Renderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Renderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Renderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Renderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/RenderCommand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/RenderCommand.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/CMake/IncludeDirs.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/CMake/IncludeDirs.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/AssetBuilder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Primitives.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Primitives.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ShaderGenerator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ShaderGenerator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/WindowsRunLoop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/WindowsRunLoop.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate2.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/textures/uvtemplate2.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +152,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ouchqt/CLionProjects/CarSim&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ouchqt/CLionProjects/TestProject/Spark/Engine/third_party/OpenFBX-365f52c&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -136,9 +166,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ouchqt\CLionProjects\TestProject\Spark\Engine\third_party\OpenFBX-365f52c" />
       <recent name="C:\Users\ouchqt\CLionProjects\TestProject" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ouchqt\CLionProjects\TestProject\Spark\Engine\src\engine\asset\mesh" />
       <recent name="C:\Users\ouchqt\CLionProjects\TestProject\Spark\Engine\src\engine\ecs" />
     </key>
   </component>
@@ -159,11 +191,6 @@
       </method>
     </configuration>
     <configuration name="TestProject" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="TestProject" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Spark" RUN_TARGET_NAME="TestProject">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -194,15 +221,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.TestProject" />
+      <item itemvalue="CMake Application.AssetBuilder" />
       <item itemvalue="CMake Application.Editor" />
       <item itemvalue="CMake Application.Spark" />
+      <item itemvalue="CMake Application.TestProject" />
+      <item itemvalue="CMake Application.crn" />
+      <item itemvalue="CMake Application.crunch" />
       <item itemvalue="CMake Application.jpeg-compressor" />
       <item itemvalue="CMake Application.lzma" />
       <item itemvalue="CMake Application.miniz" />
-      <item itemvalue="CMake Application.crn" />
-      <item itemvalue="CMake Application.crunch" />
-      <item itemvalue="CMake Application.AssetBuilder" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -224,7 +251,9 @@
       <workItem from="1717332436499" duration="2336000" />
       <workItem from="1717334800699" duration="303000" />
       <workItem from="1717411211300" duration="6765000" />
-      <workItem from="1717934519483" duration="1403000" />
+      <workItem from="1717934519483" duration="9165000" />
+      <workItem from="1717987752723" duration="1068000" />
+      <workItem from="1718121634460" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -410,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717416965003</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="refactor rendercommands and fix crash on shutdown">
+      <option name="closed" value="true" />
+      <created>1717935978555</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1717935978555</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +478,9 @@
     <MESSAGE value="ported existing test code to ecs." />
     <MESSAGE value="delete unused code" />
     <MESSAGE value="add support for mouse states" />
-    <option name="LAST_COMMIT_MESSAGE" value="add support for mouse states" />
+    <MESSAGE value="refactor rendercommands and fix crash on shutdown" />
+    <MESSAGE value="add support for fbx models" />
+    <option name="LAST_COMMIT_MESSAGE" value="add support for fbx models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -465,16 +504,6 @@
           <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp</url>
           <line>370</line>
           <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h</url>
-          <line>16</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/platform/windows/WindowsRunLoop.cpp</url>
-          <line>60</line>
-          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

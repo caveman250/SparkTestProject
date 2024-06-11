@@ -8,6 +8,8 @@
 #include <engine/ecs/components/MeshComponent.h>
 #include <engine/render/RenderState.h>
 #include <engine/render/Renderer.h>
+#include <engine/asset/mesh/Model.h>
+#include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
 #include "engine/Application.h"
 #include "engine/ecs/components/TransformComponent.h"
@@ -19,6 +21,37 @@ using namespace se::ecs::components;
 namespace app
 {
     DEFINE_SPARK_SYSTEM(TestSystem)
+
+    void LoadCubeMesh(MeshComponent* meshComp)
+    {
+        auto db = asset::binary::Database::Load("/assets/models/cube.sass", true);
+        meshComp->model.Deserialise(db);
+        auto mesh = meshComp->model.GetMesh(0);
+
+        render::VertexStream posStream;
+        posStream.type = render::VertexStreamType::Position;
+        posStream.stride = 3;
+        posStream.data.reserve(mesh.vertices.size() * 3);
+        for (const auto& vec : mesh.vertices)
+        {
+            posStream.data.push_back(vec.x);
+            posStream.data.push_back(vec.y);
+            posStream.data.push_back(vec.z);
+        }
+
+        render::VertexStream uvStream;
+        uvStream.type = render::VertexStreamType::UV;
+        uvStream.stride = 2;
+        uvStream.data.reserve(mesh.vertices.size() * 2);
+        for (const auto& vec : mesh.uvs)
+        {
+            uvStream.data.push_back(vec.x);
+            uvStream.data.push_back(vec.y);
+        }
+
+        meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, uvStream });
+        meshComp->vertBuffer->CreatePlatformResource();
+    }
 
     void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
     {
@@ -33,6 +66,7 @@ namespace app
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
         auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
+        LoadCubeMesh(mesh);
         mesh->material = render::Material::CreateMaterial(
                 {"/builtin_assets/shader.vert"},
                 {"/builtin_assets/shader.frag", "/builtin_assets/shader2.frag"});
@@ -41,7 +75,7 @@ namespace app
         mesh->material->SetRenderState(rs);
         mesh->material->CreatePlatformResources();
 
-        auto db = asset::binary::Database::Load("/assets/textures/uvtemplate.sass", true);
+        auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
         asset::Texture texture;
         texture.Deserialise(db);
         texture.CreatePlatformResource();
@@ -54,13 +88,14 @@ namespace app
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
         auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
+        LoadCubeMesh(mesh2);
         mesh2->material = render::Material::CreateMaterial(
                 {"/builtin_assets/shader.vert"},
                 {"/builtin_assets/shader.frag", "/builtin_assets/shader2.frag"});
         mesh2->material->SetRenderState(rs);
         mesh2->material->CreatePlatformResources();
 
-        auto db2 = asset::binary::Database::Load("/assets/textures/uvtemplate2.sass", true);
+        auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
         asset::Texture texture2;
         texture2.Deserialise(db2);
         texture2.CreatePlatformResource();
@@ -104,7 +139,7 @@ namespace app
         for (int i = 0; i < entities.size(); ++i)
         {
             const auto& meshComp = mesh[i];
-            renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 12 * 3);
+            renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
         }
     }
 
