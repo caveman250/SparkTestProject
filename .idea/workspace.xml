@@ -35,72 +35,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)">
-      <change afterPath="$PROJECT_DIR$/Spark/CMake/Linux.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Format.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Mipmap.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/IWindow.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/KeyMap.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/KeyMap.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Array.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Database.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Object.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Type.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/binary/Type.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Format.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Format.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Mipmap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Mipmap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/texture/Texture.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/debug/Log.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/debug/Log.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/io/VFS.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/io/VFS.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/io/VFS.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/io/VFS.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec3.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Vec4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/math.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Enum.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Enum.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Primitives.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Primitives.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderState.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/TextureResource.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/TextureResource.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/GL_fwd.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/GL_fwd.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/TextureResource.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ASTNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ASTNode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec2Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec2Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec3Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec3Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec4Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec4Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Lexer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Lexer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/string/ArenaString.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/string/ArenaString.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/IWindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/IWindow.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/windows/Window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/spark.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/spark.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/third_party/Crunch2-1.3.1/inc/crn_decomp.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/third_party/Crunch2-1.3.1/inc/crn_decomp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/libdeflate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/third_party/OpenFBX-365f52c/libdeflate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/CameraSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/CameraSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine.">
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,7 +268,7 @@
       <workItem from="1718170878644" duration="2000" />
       <workItem from="1718171707877" duration="13676000" />
       <workItem from="1718376696478" duration="2000" />
-      <workItem from="1718376803951" duration="5742000" />
+      <workItem from="1718376803951" duration="6062000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -526,7 +462,23 @@
       <option name="project" value="LOCAL" />
       <updated>1717935978555</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)">
+      <option name="closed" value="true" />
+      <created>1718453725703</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718453725703</updated>
+    </task>
+    <task id="LOCAL-00026" summary="bump engine.">
+      <option name="closed" value="true" />
+      <created>1718453753983</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718453753983</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +512,8 @@
     <MESSAGE value="refactor rendercommands and fix crash on shutdown" />
     <MESSAGE value="add support for fbx models" />
     <MESSAGE value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
+    <MESSAGE value="bump engine." />
+    <option name="LAST_COMMIT_MESSAGE" value="bump engine." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
