@@ -109,7 +109,7 @@ namespace app
         auto app = Application::Get();
         auto dt = app->GetDeltaTime();
         camera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
-        for (int i = 0; i < entities.size(); ++i)
+        for (size_t i = 0; i < entities.size(); ++i)
         {
             auto& transformComp = transform[i];
 
@@ -136,7 +136,7 @@ namespace app
         auto window = app->GetPrimaryWindow();
         renderer->Submit<se::render::commands::Clear>(window, true, true);
 
-        for (int i = 0; i < entities.size(); ++i)
+        for (size_t i = 0; i < entities.size(); ++i)
         {
             const auto& meshComp = mesh[i];
             renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);

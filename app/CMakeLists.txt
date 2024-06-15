@@ -16,4 +16,5 @@ add_executable(TestProject ${SRC})
 
 setup_spark_target(TestProject ${USE_EDITOR})
 
-target_link_options(TestProject PUBLIC -ltbb) #enable parallel std::for_each
+find_package(TBB REQUIRED COMPONENTS tbb)
+target_link_libraries(TestProject tbb)

@@ -10,7 +10,7 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(CameraSystem)
 
-    void CameraSystem::OnUpdate(const std::vector<se::ecs::EntityId>& entities, camera::ActiveCameraComponent* camera, input::InputComponent* input)
+    void CameraSystem::OnUpdate(const std::vector<ecs::EntityId>&, camera::ActiveCameraComponent* camera, input::InputComponent* input)
     {
         //Orientation
         auto app = Application::Get();
@@ -24,6 +24,7 @@ namespace app
         {
             auto dt = app->GetDeltaTime();
             camera->rot = camera->rot + math::Vec3(dy * dt, dx * dt, 0.0f);
+
         }
 
         math::Vec3 forward(cos(camera->rot.x) * sin(camera->rot.y),
