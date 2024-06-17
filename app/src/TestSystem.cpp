@@ -10,6 +10,7 @@
 #include <engine/render/Renderer.h>
 #include <engine/asset/mesh/Model.h>
 #include <engine/render/VertexBuffer.h>
+#include <engine/render/opengl/GL_fwd.h>
 #include "TestSystem.h"
 #include "engine/Application.h"
 #include "engine/ecs/components/TransformComponent.h"
@@ -107,6 +108,7 @@ namespace app
                               const MeshComponent* mesh, camera::ActiveCameraComponent* camera)
     {
         auto app = Application::Get();
+
         auto dt = app->GetDeltaTime();
         camera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
         for (size_t i = 0; i < entities.size(); ++i)

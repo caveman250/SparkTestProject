@@ -1,6 +1,7 @@
 #include <engine/asset/binary/Database.h>
 #include <engine/asset/texture/Texture.h>
 #include <engine/ecs/System.h>
+#include <engine/render/opengl/GL_fwd.h>
 #include "TestApplication.h"
 
 #include "CameraSystem.h"
@@ -27,12 +28,15 @@ namespace app
 
         Application::Init();
 
+        IWindow::CreatePlatformWindow(800, 600);
+
         m_World.RegisterSystemUpdateGroup<CameraSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
 
         m_World.CreateSystem<CameraSystem>();
         m_World.CreateSystem<TestSystem>();
 
+        GetPrimaryWindow()->SetCurrent();
         m_World.Init();
     }
 

@@ -16,5 +16,10 @@ add_executable(TestProject ${SRC})
 
 setup_spark_target(TestProject ${USE_EDITOR})
 
-find_package(TBB REQUIRED COMPONENTS tbb)
-target_link_libraries(TestProject tbb)
+#enable parallel std::for_each
+if (${PLATFORM} MATCHES Windows)
+    target_link_options(TestProject PUBLIC -ltbb)
+elseif (${PLATFORM} MATCHES Linux)
+    find_package(TBB REQUIRED COMPONENTS tbb)
+    target_link_libraries(TestProject tbb)
+endif()
