@@ -28,15 +28,12 @@ namespace app
 
         Application::Init();
 
-        IWindow::CreatePlatformWindow(800, 600);
-
         m_World.RegisterSystemUpdateGroup<CameraSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
 
         m_World.CreateSystem<CameraSystem>();
         m_World.CreateSystem<TestSystem>();
 
-        GetPrimaryWindow()->SetCurrent();
         m_World.Init();
     }
 

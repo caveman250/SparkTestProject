@@ -23,5 +23,10 @@ namespace app
         void Init() override;
         void Update() override;
         void Render() override;
+
+        se::IWindow* GetSecondaryWindow() const { return m_SecondaryWindow; }
+
+    private:
+        se::IWindow* m_SecondaryWindow = nullptr;
     };
 }

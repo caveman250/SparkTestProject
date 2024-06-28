@@ -35,11 +35,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine.">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="fix crash when closing window on linux.">
+      <change afterPath="$PROJECT_DIR$/Spark/TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +60,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:DebugEditor" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -96,11 +104,19 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/Application.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/platform/linux/LinuxRunLoop.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/platform/linux/LinuxRunLoop.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/platform/linux/Window.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_events.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_keyboard.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_scancode.h" root0="FORCE_HIGHLIGHTING" />
@@ -231,6 +247,8 @@
       <workItem from="1718588995767" duration="4604000" />
       <workItem from="1718593643719" duration="191000" />
       <workItem from="1718594418780" duration="2821000" />
+      <workItem from="1719563719629" duration="2000" />
+      <workItem from="1719563915519" duration="2389000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -440,7 +458,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718453753983</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="fix crash when closing window on linux.">
+      <option name="closed" value="true" />
+      <created>1718598349992</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718598349992</updated>
+    </task>
+    <task id="LOCAL-00028" summary="fix crash when closing window on linux.">
+      <option name="closed" value="true" />
+      <created>1718598355070</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1718598355070</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,17 +531,7 @@
     <MESSAGE value="add support for fbx models" />
     <MESSAGE value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
     <MESSAGE value="bump engine." />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/debug/Log.h</url>
-          <line>50</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix crash when closing window on linux." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix crash when closing window on linux." />
   </component>
 </project>

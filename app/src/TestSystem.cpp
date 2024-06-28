@@ -12,6 +12,8 @@
 #include <engine/render/VertexBuffer.h>
 #include <engine/render/opengl/GL_fwd.h>
 #include "TestSystem.h"
+
+#include "TestApplication.h"
 #include "engine/Application.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "platform/IWindow.h"
@@ -28,29 +30,7 @@ namespace app
         auto db = asset::binary::Database::Load("/assets/models/cube.sass", true);
         meshComp->model.Deserialise(db);
         auto mesh = meshComp->model.GetMesh(0);
-
-        render::VertexStream posStream;
-        posStream.type = render::VertexStreamType::Position;
-        posStream.stride = 3;
-        posStream.data.reserve(mesh.vertices.size() * 3);
-        for (const auto& vec : mesh.vertices)
-        {
-            posStream.data.push_back(vec.x);
-            posStream.data.push_back(vec.y);
-            posStream.data.push_back(vec.z);
-        }
-
-        render::VertexStream uvStream;
-        uvStream.type = render::VertexStreamType::UV;
-        uvStream.stride = 2;
-        uvStream.data.reserve(mesh.vertices.size() * 2);
-        for (const auto& vec : mesh.uvs)
-        {
-            uvStream.data.push_back(vec.x);
-            uvStream.data.push_back(vec.y);
-        }
-
-        meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer({ posStream, uvStream });
+        meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer(mesh);
         meshComp->vertBuffer->CreatePlatformResource();
     }
 
@@ -132,7 +112,7 @@ namespace app
 
     void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, camera::ActiveCameraComponent*)
     {
-        auto app = Application::Get();
+        auto app = TestApplication::GetTestApplication();
 
         auto renderer = se::render::Renderer::Get();
         auto window = app->GetPrimaryWindow();
@@ -143,6 +123,13 @@ namespace app
             const auto& meshComp = mesh[i];
             renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
         }
+
+        // window = app->GetSecondaryWindow();
+        // for (size_t i = 0; i < entities.size(); ++i)
+        // {
+        //     const auto& meshComp = mesh[i];
+        //     renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
+        // }
     }
 
     void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
