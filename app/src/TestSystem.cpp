@@ -10,7 +10,6 @@
 #include <engine/render/Renderer.h>
 #include <engine/asset/mesh/Model.h>
 #include <engine/render/VertexBuffer.h>
-#include <engine/render/opengl/GL_fwd.h>
 #include "TestSystem.h"
 
 #include "TestApplication.h"
@@ -49,12 +48,12 @@ namespace app
         auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
         LoadCubeMesh(mesh);
         mesh->material = render::Material::CreateMaterial(
-                {"/builtin_assets/shader.vert"},
-                {"/builtin_assets/shader.frag", "/builtin_assets/shader2.frag"});
+                {"/builtin_assets/uber_vertex.slsl"},
+                {"/builtin_assets/diffuse_texture.slsl", "/builtin_assets/point_light.slsl"});
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
-        mesh->material->CreatePlatformResources();
+        mesh->material->CreatePlatformResources(*mesh->vertBuffer);
 
         auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
         asset::Texture texture;
@@ -71,10 +70,10 @@ namespace app
         auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
         mesh2->material = render::Material::CreateMaterial(
-                {"/builtin_assets/shader.vert"},
-                {"/builtin_assets/shader.frag", "/builtin_assets/shader2.frag"});
+                {"/builtin_assets/uber_vertex.slsl"},
+                {"/builtin_assets/diffuse_texture.slsl", "/builtin_assets/point_light.slsl", "/builtin_assets/red.slsl"});
         mesh2->material->SetRenderState(rs);
-        mesh2->material->CreatePlatformResources();
+        mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
 
         auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
         asset::Texture texture2;
@@ -104,9 +103,11 @@ namespace app
 
             model = model * math::Scale(transformComp.scale);
 
-            math::Mat4 mvp = camera->proj * camera->view * model;
-
-            mesh[i].material->SetUniform("MVP", shader::ast::Type::Mat4, &mvp[0]);
+            mesh[i].material->SetUniform("model", shader::ast::Type::Mat4, &model[0]);
+            mesh[i].material->SetUniform("view", shader::ast::Type::Mat4, &camera->view[0]);
+            mesh[i].material->SetUniform("proj", shader::ast::Type::Mat4, &camera->proj[0]);
+            math::Vec3 lol = {5.f, 5.f, 5.f };
+            mesh[i].material->SetUniform("lightPos", shader::ast::Type::Vec3, &lol[0]);
         }
     }
 
@@ -123,13 +124,6 @@ namespace app
             const auto& meshComp = mesh[i];
             renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
         }
-
-        // window = app->GetSecondaryWindow();
-        // for (size_t i = 0; i < entities.size(); ++i)
-        // {
-        //     const auto& meshComp = mesh[i];
-        //     renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
-        // }
     }
 
     void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)

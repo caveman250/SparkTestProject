@@ -35,18 +35,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="fix crash when closing window on linux.">
-      <change afterPath="$PROJECT_DIR$/Spark/TODO" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/point_light.slsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/red.slsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/uber_vertex.slsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/VertexBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/VertexBuffer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/red.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/diffuse_texture.slsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader2.frag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AssignmentNode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AssignmentNode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OperatorNode.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OperatorNode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +68,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:DebugEditor" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -111,19 +119,66 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/Application.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/shader/parser/Parser.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/shader/parser/Parser.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/platform/linux/Window.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_events.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_keyboard.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_scancode.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_video.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///usr/include/c++/13/bits/allocator.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/c++/13/bits/hashtable_policy.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///usr/include/c++/13/bits/regex.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///usr/include/c++/13/bits/stl_vector.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/c++/13/format" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/c++/13/functional" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file:///usr/include/clang/19/include/sanitizer/netbsd_syscall_hooks.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/x86_64-linux-gnu/bits/mathcalls.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="OCResolveContextSettings">
@@ -248,7 +303,12 @@
       <workItem from="1718593643719" duration="191000" />
       <workItem from="1718594418780" duration="2821000" />
       <workItem from="1719563719629" duration="2000" />
-      <workItem from="1719563915519" duration="2389000" />
+      <workItem from="1719563915519" duration="7253000" />
+      <workItem from="1720251759939" duration="8431000" />
+      <workItem from="1720260753519" duration="4064000" />
+      <workItem from="1720265969076" duration="1410000" />
+      <workItem from="1720768534591" duration="8979000" />
+      <workItem from="1720844360041" duration="2321000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -474,7 +534,31 @@
       <option name="project" value="LOCAL" />
       <updated>1718598355070</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Cleanup vertex buffer creation">
+      <option name="closed" value="true" />
+      <created>1719566368093</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1719566368093</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Additional AST Nodes.&#10;AST nodes can now dump debug text to aid debugging.">
+      <option name="closed" value="true" />
+      <created>1720777541851</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1720777541851</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer">
+      <option name="closed" value="true" />
+      <created>1720777735658</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720777735658</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,8 +592,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set up project structure with Engine as Submodule" />
-    <MESSAGE value="delete TestProject again (?)" />
     <MESSAGE value="clion generated gumph" />
     <MESSAGE value="make sure warnings are enabled for first party code. fix all existing warnings." />
     <MESSAGE value="make image format easier to use." />
@@ -532,6 +614,55 @@
     <MESSAGE value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
     <MESSAGE value="bump engine." />
     <MESSAGE value="fix crash when closing window on linux." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix crash when closing window on linux." />
+    <MESSAGE value="Cleanup vertex buffer creation" />
+    <MESSAGE value="Additional AST Nodes.&#10;AST nodes can now dump debug text to aid debugging." />
+    <MESSAGE value="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>137</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>271</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>992</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>1020</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>640</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>986</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <line>1014</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableReferenceNode.cpp</url>
+          <line>20</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
