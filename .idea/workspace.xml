@@ -35,26 +35,86 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/point_light.slsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/red.slsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/uber_vertex.slsl" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Types.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/red.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.frag" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/diffuse_texture.slsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader.vert" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shader2.frag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AssignmentNode.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AssignmentNode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OperatorNode.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OperatorNode.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Type.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Type.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ShaderGenerator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCompiler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ShaderGenerator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCompiler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ShaderStage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ASTNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ASTNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ASTNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ASTNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AnonymousScopeNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/AnonymousScopeNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/AnonymousScopeNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/AnonymousScopeNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/BinaryExpressionNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/BinaryExpressionNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/BinaryExpressionNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ClampNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ClampNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ClampNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ClampNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ConstantNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ConstantNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/DotNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/DotNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/DotNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/DotNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/EndOfExpressionNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/EndOfExpressionNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/EndOfExpressionNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/EndOfExpressionNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputAttributeNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputAttributeNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputAttributeNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputAttributeNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputPortNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputPortNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/InputPortNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/InputPortNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/LengthNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/LengthNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/LengthNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/LengthNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/MainNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/MainNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/MainNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/MainNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/NameGenerator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/NameGenerator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/NameGenerator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/NameGenerator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/NormalizeNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/NormalizeNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/NormalizeNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/NormalizeNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Operators.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Operators.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Operators.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OutputNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/OutputNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OutputNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/OutputNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OutputPortNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/OutputPortNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/OutputPortNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/OutputPortNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PowNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/PowNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PowNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/PowNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/PropertyAccessNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/PropertyAccessNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/PropertyAccessNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ReflectNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ReflectNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ReflectNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/ReflectNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/Shader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/ShaderStage.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/Shader.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TextureSampleNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/TextureSampleNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TextureSampleNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/TextureSampleNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/TypeUtil.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/TypeUtil.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/TypeUtil.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Types.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Types.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableDeclarationNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VariableDeclarationNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableDeclarationNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VariableDeclarationNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableReferenceNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VariableReferenceNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableReferenceNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VariableReferenceNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec2Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec2Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec2Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec2Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec3Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec3Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec3Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec3Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec4Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec4Node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/Vec4Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Vec4Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VertexPositionOutputNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VertexPositionOutputNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VertexPositionOutputNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VertexPositionOutputNode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCombiner.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler/ShaderStageCombiner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCombiner.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Builtins.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Builtins.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Builtins.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Lexer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Lexer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Lexer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Lexer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Token.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Token.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Token.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Token.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +129,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:DebugEditor" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -81,92 +142,11 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/shader/parser/Parser.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/shader/parser/Parser.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/Shader.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCombiner.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCombiner.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCompiler.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/platform/linux/LinuxRunLoop.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_events.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file:///usr/include/SDL2/SDL_keyboard.h" root0="FORCE_HIGHLIGHTING" />
@@ -221,13 +201,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/asset" />
+      <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/shader" />
+      <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/shader/compiler" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.TestProject">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="TestProject" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="TestProject" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Spark" RUN_TARGET_NAME="TestProject">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestProject" type="CMakeRunConfiguration" factoryName="Application" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Spark" TARGET_NAME="TestProject" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Spark" RUN_TARGET_NAME="TestProject">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -309,6 +296,7 @@
       <workItem from="1720265969076" duration="1410000" />
       <workItem from="1720768534591" duration="8979000" />
       <workItem from="1720844360041" duration="2321000" />
+      <workItem from="1720868368060" duration="3574000" />
     </task>
     <task id="LOCAL-00001" summary="Set up project structure with Engine as Submodule">
       <option name="closed" value="true" />
@@ -623,42 +611,22 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.cpp</url>
           <line>137</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>271</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>992</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>1020</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.cpp</url>
           <line>640</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/Parser.cpp</url>
           <line>986</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/parser/Parser.cpp</url>
-          <line>1014</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/shader/ast/VariableReferenceNode.cpp</url>
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/VariableReferenceNode.cpp</url>
           <line>20</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>

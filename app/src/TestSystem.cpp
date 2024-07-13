@@ -4,7 +4,7 @@
 #include <engine/asset/binary/Database.h>
 #include <engine/asset/texture/Texture.h>
 #include <engine/render/Material.h>
-#include <engine/shader/ast/Types.h>
+#include <engine/asset/shader/ast/Types.h>
 #include <engine/ecs/components/MeshComponent.h>
 #include <engine/render/RenderState.h>
 #include <engine/render/Renderer.h>
@@ -45,7 +45,7 @@ namespace app
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
-        auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
+        auto* mesh = world->AddComponent<MeshComponent>(entity);
         LoadCubeMesh(mesh);
         mesh->material = render::Material::CreateMaterial(
                 {"/builtin_assets/uber_vertex.ssl"},
@@ -60,7 +60,7 @@ namespace app
         texture.Deserialise(db);
         texture.CreatePlatformResource();
 
-        mesh->material->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture);
+        mesh->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture);
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
@@ -80,7 +80,7 @@ namespace app
         texture2.Deserialise(db2);
         texture2.CreatePlatformResource();
 
-        mesh2->material->SetUniform("Texture", shader::ast::Type::Sampler2D, &texture2);
+        mesh2->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture2);
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
@@ -103,11 +103,11 @@ namespace app
 
             model = model * math::Scale(transformComp.scale);
 
-            mesh[i].material->SetUniform("model", shader::ast::Type::Mat4, &model[0]);
-            mesh[i].material->SetUniform("view", shader::ast::Type::Mat4, &camera->view[0]);
-            mesh[i].material->SetUniform("proj", shader::ast::Type::Mat4, &camera->proj[0]);
+            mesh[i].material->SetUniform("model", asset::shader::ast::Type::Mat4, &model[0]);
+            mesh[i].material->SetUniform("view", asset::shader::ast::Type::Mat4, &camera->view[0]);
+            mesh[i].material->SetUniform("proj", asset::shader::ast::Type::Mat4, &camera->proj[0]);
             math::Vec3 lol = {5.f, 5.f, 5.f };
-            mesh[i].material->SetUniform("lightPos", shader::ast::Type::Vec3, &lol[0]);
+            mesh[i].material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lol[0]);
         }
     }
 

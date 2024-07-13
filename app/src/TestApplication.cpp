@@ -9,7 +9,7 @@
 #include "engine/render/Material.h"
 #include "engine/render/Renderer.h"
 #include "engine/render/VertexBuffer.h"
-#include "engine/shader/ast/Types.h"
+#include "engine/asset/shader/ast/Types.h"
 #include "platform/IWindow.h"
 #include "engine/io/VFS.h"
 
