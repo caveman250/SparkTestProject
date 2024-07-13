@@ -48,8 +48,8 @@ namespace app
         auto* mesh = world->AddComponent<ecs::components::MeshComponent>(entity);
         LoadCubeMesh(mesh);
         mesh->material = render::Material::CreateMaterial(
-                {"/builtin_assets/uber_vertex.slsl"},
-                {"/builtin_assets/diffuse_texture.slsl", "/builtin_assets/point_light.slsl"});
+                {"/builtin_assets/uber_vertex.ssl"},
+                {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl"});
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
@@ -70,8 +70,8 @@ namespace app
         auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
         mesh2->material = render::Material::CreateMaterial(
-                {"/builtin_assets/uber_vertex.slsl"},
-                {"/builtin_assets/diffuse_texture.slsl", "/builtin_assets/point_light.slsl", "/builtin_assets/red.slsl"});
+                {"/builtin_assets/uber_vertex.ssl"},
+                {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl", "/builtin_assets/red.ssl"});
         mesh2->material->SetRenderState(rs);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
 
