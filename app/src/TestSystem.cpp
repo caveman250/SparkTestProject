@@ -40,6 +40,8 @@ namespace app
 
         world->AddSingletonComponent<camera::ActiveCameraComponent>();
 
+        math::Vec3 lightPos = {5.f, 5.f, 5.f };
+
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
         auto* transform = world->AddComponent<TransformComponent>(entity);
@@ -54,6 +56,7 @@ namespace app
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
+        mesh->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
 
         auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
         asset::Texture texture;
@@ -74,6 +77,7 @@ namespace app
                 {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl", "/builtin_assets/red.ssl"});
         mesh2->material->SetRenderState(rs);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
+        mesh2->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
 
         auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
         asset::Texture texture2;
@@ -106,8 +110,6 @@ namespace app
             mesh[i].material->SetUniform("model", asset::shader::ast::Type::Mat4, &model[0]);
             mesh[i].material->SetUniform("view", asset::shader::ast::Type::Mat4, &camera->view[0]);
             mesh[i].material->SetUniform("proj", asset::shader::ast::Type::Mat4, &camera->proj[0]);
-            math::Vec3 lol = {5.f, 5.f, 5.f };
-            mesh[i].material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lol[0]);
         }
     }
 
