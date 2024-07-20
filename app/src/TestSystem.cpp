@@ -28,7 +28,7 @@ namespace app
     void LoadCubeMesh(MeshComponent* meshComp)
     {
         auto db = asset::binary::Database::Load("/assets/models/cube.sass", true);
-        meshComp->model.Deserialise(db);
+        meshComp->model = reflect::DeserialiseType<asset::Model>(db);
         auto mesh = meshComp->model.GetMesh(0);
         meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer(mesh);
         meshComp->vertBuffer->CreatePlatformResource();
