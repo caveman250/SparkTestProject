@@ -15,6 +15,7 @@
 #include "TestApplication.h"
 #include "engine/Application.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/reflect/Util.h"
 #include "platform/IWindow.h"
 
 using namespace se;
@@ -59,8 +60,7 @@ namespace app
         mesh->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
 
         auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
-        asset::Texture texture;
-        texture.Deserialise(db);
+        asset::Texture texture = reflect::DeserialiseType<asset::Texture>(db);
         texture.CreatePlatformResource();
 
         mesh->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture);
@@ -80,11 +80,13 @@ namespace app
         mesh2->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
 
         auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
-        asset::Texture texture2;
-        texture2.Deserialise(db2);
+        asset::Texture texture2 = reflect::DeserialiseType<asset::Texture>(db);
         texture2.CreatePlatformResource();
 
         mesh2->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture2);
+
+        texture.Release();
+        texture2.Release();
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
