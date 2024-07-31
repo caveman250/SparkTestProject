@@ -14,6 +14,8 @@
 
 #include "TestApplication.h"
 #include "engine/Application.h"
+#include "engine/asset/shader/ast/ASTNode.h"
+#include "engine/asset/shader/ast/MainNode.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "engine/reflect/Util.h"
 #include "platform/IWindow.h"
@@ -57,13 +59,13 @@ namespace app
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
-        mesh->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
+        mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
         auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
         asset::Texture texture = reflect::DeserialiseType<asset::Texture>(db);
         texture.CreatePlatformResource();
 
-        mesh->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture);
+        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, &texture);
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
@@ -77,13 +79,13 @@ namespace app
                 {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl", "/builtin_assets/red.ssl"});
         mesh2->material->SetRenderState(rs);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
-        mesh2->material->SetUniform("lightPos", asset::shader::ast::Type::Vec3, &lightPos[0]);
+        mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
         auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
         asset::Texture texture2 = reflect::DeserialiseType<asset::Texture>(db);
         texture2.CreatePlatformResource();
 
-        mesh2->material->SetUniform("Texture", asset::shader::ast::Type::Sampler2D, &texture2);
+        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, &texture2);
 
         texture.Release();
         texture2.Release();
@@ -109,9 +111,11 @@ namespace app
 
             model = model * math::Scale(transformComp.scale);
 
-            mesh[i].material->SetUniform("model", asset::shader::ast::Type::Mat4, &model[0]);
-            mesh[i].material->SetUniform("view", asset::shader::ast::Type::Mat4, &camera->view[0]);
-            mesh[i].material->SetUniform("proj", asset::shader::ast::Type::Mat4, &camera->proj[0]);
+            SPARK_ASSERT((float*)&model[0] == &model[0][0]);
+
+            mesh[i].material->SetUniform("model", asset::shader::ast::AstType::Mat4, &model[0][0]);
+            mesh[i].material->SetUniform("view", asset::shader::ast::AstType::Mat4, &camera->view[0][0]);
+            mesh[i].material->SetUniform("proj", asset::shader::ast::AstType::Mat4, &camera->proj[0][0]);
         }
     }
 

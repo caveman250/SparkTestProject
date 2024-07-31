@@ -8,7 +8,7 @@ using namespace se;
 
 namespace app
 {
-    class CameraSystem : public ecs::System<camera::ActiveCameraComponent, input::InputComponent>
+    class CameraSystem : public ecs::System<camera::ActiveCameraComponent, input::InputComponent>, public reflect::ObjectBase
     {
         DECLARE_SPARK_SYSTEM(CameraSystem)
 
