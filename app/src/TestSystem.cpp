@@ -17,8 +17,14 @@
 #include "engine/asset/shader/ast/ASTNode.h"
 #include "engine/asset/shader/ast/MainNode.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/io/OutputFileStream.h"
 #include "engine/reflect/Util.h"
 #include "platform/IWindow.h"
+
+namespace se::io
+{
+    class OutputFileStream;
+}
 
 using namespace se;
 using namespace se::ecs::components;
@@ -50,18 +56,28 @@ namespace app
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
+        auto db = asset::binary::Database::Load("/builtin_assets/uber_vertex.sass", true);
+        io::OutputFileStream file("/builtin_assets/test.json", false);
+        file << db->ToJson().dump();
+        file.Close();
+        auto uberVertex = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        db = asset::binary::Database::Load("/builtin_assets/diffuse_texture.sass", true);
+        auto diffuse = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        db = asset::binary::Database::Load("/builtin_assets/point_light.sass", true);
+        auto pointLght = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+
         auto* mesh = world->AddComponent<MeshComponent>(entity);
         LoadCubeMesh(mesh);
         mesh->material = render::Material::CreateMaterial(
-                {"/builtin_assets/uber_vertex.ssl"},
-                {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl"});
+                {uberVertex},
+                {diffuse, pointLght});
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
         mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
-        auto db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
+        db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
         asset::Texture texture = reflect::DeserialiseType<asset::Texture>(db);
         texture.CreatePlatformResource();
 
@@ -72,17 +88,20 @@ namespace app
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
-        auto* mesh2 = world->AddComponent<ecs::components::MeshComponent>(entity2);
+        db = asset::binary::Database::Load("/assets/shaders/red.sass", true);
+        auto redShader = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+
+        auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
         mesh2->material = render::Material::CreateMaterial(
-                {"/builtin_assets/uber_vertex.ssl"},
-                {"/builtin_assets/diffuse_texture.ssl", "/builtin_assets/point_light.ssl", "/builtin_assets/red.ssl"});
+                {uberVertex},
+                {diffuse, pointLght, redShader});
         mesh2->material->SetRenderState(rs);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
         mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
         auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
-        asset::Texture texture2 = reflect::DeserialiseType<asset::Texture>(db);
+        asset::Texture texture2 = reflect::DeserialiseType<asset::Texture>(db2);
         texture2.CreatePlatformResource();
 
         mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, &texture2);
@@ -104,12 +123,12 @@ namespace app
 
             transformComp.rot.y += 5.f * dt;
 
-            math::Mat4 model = math::Translation(transformComp.pos);
-            model = model * math::AxisAngle(math::Vec3(1.0f, 0.0f, 0.0f), transformComp.rot.x);
-            model = model * math::AxisAngle(math::Vec3(0.0f, 1.0f, 0.0f), transformComp.rot.y);
-            model = model * math::AxisAngle(math::Vec3(0.0f, 0.0f, 1.0f), transformComp.rot.z);
+            math::Mat4 model = Translation(transformComp.pos);
+            model = model * AxisAngle(math::Vec3(1.0f, 0.0f, 0.0f), transformComp.rot.x);
+            model = model * AxisAngle(math::Vec3(0.0f, 1.0f, 0.0f), transformComp.rot.y);
+            model = model * AxisAngle(math::Vec3(0.0f, 0.0f, 1.0f), transformComp.rot.z);
 
-            model = model * math::Scale(transformComp.scale);
+            model = model * Scale(transformComp.scale);
 
             SPARK_ASSERT((float*)&model[0] == &model[0][0]);
 
@@ -119,18 +138,18 @@ namespace app
         }
     }
 
-    void TestSystem::OnRender(const std::vector<se::ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, camera::ActiveCameraComponent*)
+    void TestSystem::OnRender(const std::vector<ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, camera::ActiveCameraComponent*)
     {
         auto app = TestApplication::GetTestApplication();
 
-        auto renderer = se::render::Renderer::Get();
+        auto renderer = render::Renderer::Get();
         auto window = app->GetPrimaryWindow();
-        renderer->Submit<se::render::commands::Clear>(window, true, true);
+        renderer->Submit<render::commands::Clear>(window, true, true);
 
         for (size_t i = 0; i < entities.size(); ++i)
         {
             const auto& meshComp = mesh[i];
-            renderer->Submit<se::render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
+            renderer->Submit<render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
         }
     }
 
