@@ -57,14 +57,11 @@ namespace app
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
         auto db = asset::binary::Database::Load("/builtin_assets/uber_vertex.sass", true);
-        io::OutputFileStream file("/builtin_assets/test.json", false);
-        file << db->ToJson().dump();
-        file.Close();
-        auto uberVertex = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        auto uberVertex = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
         db = asset::binary::Database::Load("/builtin_assets/diffuse_texture.sass", true);
-        auto diffuse = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        auto diffuse = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
         db = asset::binary::Database::Load("/builtin_assets/point_light.sass", true);
-        auto pointLght = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        auto pointLght = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
 
         auto* mesh = world->AddComponent<MeshComponent>(entity);
         LoadCubeMesh(mesh);
@@ -89,7 +86,7 @@ namespace app
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
         db = asset::binary::Database::Load("/assets/shaders/red.sass", true);
-        auto redShader = std::make_shared<asset::shader::ast::Shader>(reflect::DeserialiseType<asset::shader::ast::Shader>(db));
+        auto redShader = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
