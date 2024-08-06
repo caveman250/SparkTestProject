@@ -69,6 +69,9 @@ namespace app
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
+        ShaderSettings settings;
+        settings.SetSetting("numLights", 1);
+        mesh->material->SetShaderSettings(settings);
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
         mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
@@ -91,9 +94,10 @@ namespace app
                 {diffuse, pointLght, redShader});
         mesh2->material->SetRenderState(rs);
 
-        ShaderSettings settings;
-        settings.SetSetting("color_setting", math::Vec3(0, 0, 1));
-        mesh2->material->SetShaderSettings(settings);
+        ShaderSettings settings2;
+        settings2.SetSetting("color_setting", math::Vec3(0, 0, 1));
+        settings2.SetSetting("numLights", 1);
+        mesh2->material->SetShaderSettings(settings2);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
         mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
