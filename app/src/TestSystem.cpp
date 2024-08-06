@@ -82,7 +82,7 @@ namespace app
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
-        auto redShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/red.sass");
+        auto redShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
@@ -90,6 +90,10 @@ namespace app
                 {uberVertex},
                 {diffuse, pointLght, redShader});
         mesh2->material->SetRenderState(rs);
+
+        ShaderSettings settings;
+        settings.SetSetting("color_setting", math::Vec3(0, 0, 1));
+        mesh2->material->SetShaderSettings(settings);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
         mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
