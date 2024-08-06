@@ -14,6 +14,7 @@
 
 #include "TestApplication.h"
 #include "engine/Application.h"
+#include "engine/asset/AssetManager.h"
 #include "engine/asset/shader/ast/ASTNode.h"
 #include "engine/asset/shader/ast/MainNode.h"
 #include "engine/ecs/components/TransformComponent.h"
@@ -35,9 +36,8 @@ namespace app
 
     void LoadCubeMesh(MeshComponent* meshComp)
     {
-        auto db = asset::binary::Database::Load("/assets/models/cube.sass", true);
-        meshComp->model = reflect::DeserialiseType<asset::Model>(db);
-        auto mesh = meshComp->model.GetMesh(0);
+        meshComp->model = asset::AssetManager::Get()->GetAsset<asset::Model>("/assets/models/cube.sass");
+        auto mesh = meshComp->model->GetMesh(0);
         meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer(mesh);
         meshComp->vertBuffer->CreatePlatformResource();
     }
@@ -56,12 +56,10 @@ namespace app
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
-        auto db = asset::binary::Database::Load("/builtin_assets/uber_vertex.sass", true);
-        auto uberVertex = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
-        db = asset::binary::Database::Load("/builtin_assets/diffuse_texture.sass", true);
-        auto diffuse = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
-        db = asset::binary::Database::Load("/builtin_assets/point_light.sass", true);
-        auto pointLght = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
+        auto* assetManager = asset::AssetManager::Get();
+        auto uberVertex = assetManager->GetAsset<asset::Shader>("/builtin_assets/uber_vertex.sass");
+        auto diffuse = assetManager->GetAsset<asset::Shader>("/builtin_assets/diffuse_texture.sass");
+        auto pointLght = assetManager->GetAsset<asset::Shader>("/builtin_assets/point_light.sass");
 
         auto* mesh = world->AddComponent<MeshComponent>(entity);
         LoadCubeMesh(mesh);
@@ -74,19 +72,17 @@ namespace app
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
         mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
-        db = asset::binary::Database::Load("/assets/textures/uvmap.sass", true);
-        asset::Texture texture = reflect::DeserialiseType<asset::Texture>(db);
-        texture.CreatePlatformResource();
+        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
+        texture->CreatePlatformResource();
 
-        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, &texture);
+        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, texture.get());
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
-        db = asset::binary::Database::Load("/assets/shaders/red.sass", true);
-        auto redShader = std::make_shared<asset::Shader>(reflect::DeserialiseType<asset::Shader>(db));
+        auto redShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/red.sass");
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
@@ -97,14 +93,13 @@ namespace app
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
         mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
 
-        auto db2 = asset::binary::Database::Load("/assets/textures/uvmap2.sass", true);
-        asset::Texture texture2 = reflect::DeserialiseType<asset::Texture>(db2);
-        texture2.CreatePlatformResource();
+        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
+        texture2->CreatePlatformResource();
 
-        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, &texture2);
+        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, texture2.get());
 
-        texture.Release();
-        texture2.Release();
+        texture->Release();
+        texture2->Release();
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
