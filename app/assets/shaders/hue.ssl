@@ -1,4 +1,6 @@
-port(Frag_OutColour) out vec3 color;
+SSL_FRAGMENT
+
+port(FinalFragColor) out vec3 color;
 
 setting vec3 color_setting;
 
