@@ -1,7 +1,6 @@
 #include "spark.h"
 
 #include <engine/math/Mat4.h>
-#include <engine/asset/binary/Database.h>
 #include <engine/asset/texture/Texture.h>
 #include <engine/render/Material.h>
 #include <engine/asset/shader/ast/Types.h>
@@ -15,11 +14,7 @@
 #include "TestApplication.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
-#include "engine/asset/shader/ast/ASTNode.h"
-#include "engine/asset/shader/ast/MainNode.h"
 #include "engine/ecs/components/TransformComponent.h"
-#include "engine/io/OutputFileStream.h"
-#include "engine/reflect/Util.h"
 #include "platform/IWindow.h"
 
 namespace se::io
@@ -49,7 +44,8 @@ namespace app
 
         world->AddSingletonComponent<camera::ActiveCameraComponent>();
 
-        math::Vec3 lightPos = {5.f, 5.f, 5.f };
+        std::vector<math::Vec3> lightPos = {{-5.f, 5.f, 5.f}, {5.f, 5.f, 5.f} };
+        std::vector<math::Vec3> lightColor = {{0.f, 0.f, 1.f}, {1.f, 0.f, 0.f} };
 
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
@@ -70,15 +66,16 @@ namespace app
         rs.depthComp = render::DepthCompare::Less;
         mesh->material->SetRenderState(rs);
         ShaderSettings settings;
-        settings.SetSetting("numLights", 1);
+        settings.SetSetting("numLights", lightPos.size());
         mesh->material->SetShaderSettings(settings);
         mesh->material->CreatePlatformResources(*mesh->vertBuffer);
-        mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
+        mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, lightPos.size(), &lightPos[0]);
+        mesh->material->SetUniform("lightColor", asset::shader::ast::AstType::Vec3, lightColor.size(), &lightColor[0]);
 
         auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
         texture->CreatePlatformResource();
 
-        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, texture.get());
+        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture.get());
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
@@ -96,15 +93,16 @@ namespace app
 
         ShaderSettings settings2;
         settings2.SetSetting("color_setting", math::Vec3(0, 0, 1));
-        settings2.SetSetting("numLights", 1);
+        settings2.SetSetting("numLights", lightPos.size());
         mesh2->material->SetShaderSettings(settings2);
         mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
-        mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, &lightPos[0]);
+        mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, lightPos.size(), &lightPos[0]);
+        mesh2->material->SetUniform("lightColor", asset::shader::ast::AstType::Vec3, lightColor.size(), &lightColor[0]);
 
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
         texture2->CreatePlatformResource();
 
-        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, texture2.get());
+        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture2.get());
 
         texture->Release();
         texture2->Release();
@@ -132,9 +130,9 @@ namespace app
 
             SPARK_ASSERT((float*)&model[0] == &model[0][0]);
 
-            mesh[i].material->SetUniform("model", asset::shader::ast::AstType::Mat4, &model[0][0]);
-            mesh[i].material->SetUniform("view", asset::shader::ast::AstType::Mat4, &camera->view[0][0]);
-            mesh[i].material->SetUniform("proj", asset::shader::ast::AstType::Mat4, &camera->proj[0][0]);
+            mesh[i].material->SetUniform("model", asset::shader::ast::AstType::Mat4, 1, &model);
+            mesh[i].material->SetUniform("view", asset::shader::ast::AstType::Mat4, 1, &camera->view);
+            mesh[i].material->SetUniform("proj", asset::shader::ast::AstType::Mat4, 1, &camera->proj);
         }
     }
 

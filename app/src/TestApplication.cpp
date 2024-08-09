@@ -1,18 +1,5 @@
-#include <engine/asset/binary/Database.h>
-#include <engine/asset/texture/Texture.h>
-#include <engine/ecs/System.h>
-#include <engine/render/opengl/GL_fwd.h>
 #include "TestApplication.h"
-
 #include "CameraSystem.h"
-#include "engine/math/Mat4.h"
-#include "engine/render/Material.h"
-#include "engine/render/Renderer.h"
-#include "engine/render/VertexBuffer.h"
-#include "engine/asset/shader/ast/Types.h"
-#include "platform/IWindow.h"
-#include "engine/io/VFS.h"
-
 #include "TestSystem.h"
 
 namespace app
