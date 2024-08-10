@@ -77,7 +77,7 @@ namespace app
         rs.lit = true;
         mesh->material->SetRenderState(rs);
         auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
-        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture.get());
+        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         // Cube 2
         ecs::EntityId entity2 = world->CreateEntity();
@@ -94,7 +94,7 @@ namespace app
         mesh2->material->SetRenderState(rs);
         mesh2->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
-        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture2.get());
+        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
