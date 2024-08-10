@@ -15,6 +15,7 @@
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/render/components/PointLightComponent.h"
 #include "platform/IWindow.h"
 
 namespace se::io
@@ -44,8 +45,17 @@ namespace app
 
         world->AddSingletonComponent<camera::ActiveCameraComponent>();
 
-        std::vector<math::Vec3> lightPos = {{-5.f, 5.f, 5.f}, {5.f, 5.f, 5.f} };
-        std::vector<math::Vec3> lightColor = {{0.f, 0.f, 1.f}, {1.f, 0.f, 0.f} };
+        ecs::EntityId light1 = world->CreateEntity();
+        auto* light1Transform = world->AddComponent<TransformComponent>(light1);
+        light1Transform->pos = {-5.f, 5.f, 5.f};
+        auto* light1Light = world->AddComponent<render::components::PointLightComponent>(light1);
+        light1Light->color = {0.f, 0.f, 1.f};
+
+        ecs::EntityId light2 = world->CreateEntity();
+        auto* light2Transform = world->AddComponent<TransformComponent>(light2);
+        light2Transform->pos = {5.f, 5.f, 5.f};
+        auto* light2Light = world->AddComponent<render::components::PointLightComponent>(light2);
+        light2Light->color = {1.f, 0.f, 0.f};
 
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
@@ -64,17 +74,9 @@ namespace app
                 {diffuse, pointLght});
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
+        rs.lit = true;
         mesh->material->SetRenderState(rs);
-        ShaderSettings settings;
-        settings.SetSetting("numLights", lightPos.size());
-        mesh->material->SetShaderSettings(settings);
-        mesh->material->CreatePlatformResources(*mesh->vertBuffer);
-        mesh->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, lightPos.size(), &lightPos[0]);
-        mesh->material->SetUniform("lightColor", asset::shader::ast::AstType::Vec3, lightColor.size(), &lightColor[0]);
-
         auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
-        texture->CreatePlatformResource();
-
         mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture.get());
 
         // Cube 2
@@ -90,22 +92,9 @@ namespace app
                 {uberVertex},
                 {diffuse, pointLght, redShader});
         mesh2->material->SetRenderState(rs);
-
-        ShaderSettings settings2;
-        settings2.SetSetting("color_setting", math::Vec3(0, 0, 1));
-        settings2.SetSetting("numLights", lightPos.size());
-        mesh2->material->SetShaderSettings(settings2);
-        mesh2->material->CreatePlatformResources(*mesh2->vertBuffer);
-        mesh2->material->SetUniform("lightPos", asset::shader::ast::AstType::Vec3, lightPos.size(), &lightPos[0]);
-        mesh2->material->SetUniform("lightColor", asset::shader::ast::AstType::Vec3, lightColor.size(), &lightColor[0]);
-
+        mesh2->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
-        texture2->CreatePlatformResource();
-
         mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, texture2.get());
-
-        texture->Release();
-        texture2->Release();
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,

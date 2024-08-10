@@ -20,9 +20,11 @@ namespace app
     public:
         static TestApplication* GetTestApplication();
 
-        void Init() override;
         void Update() override;
         void Render() override;
+
+        void CreateInitialSystemUpdateGroups() override;
+        void CreateInitialSystems() override;
 
         se::IWindow* GetSecondaryWindow() const { return m_SecondaryWindow; }
 

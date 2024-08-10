@@ -10,7 +10,7 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    class TestSystem : public ecs::System<TransformComponent, const MeshComponent, camera::ActiveCameraComponent>, public reflect::ObjectBase
+    class TestSystem : public ecs::System<TransformComponent, const MeshComponent, camera::ActiveCameraComponent>
     {
         DECLARE_SPARK_SYSTEM(TestSystem)
     public:

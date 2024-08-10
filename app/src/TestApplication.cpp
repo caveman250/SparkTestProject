@@ -9,21 +9,6 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
-    void TestApplication::Init()
-    {
-        using namespace se;
-
-        Application::Init();
-
-        m_World.RegisterSystemUpdateGroup<CameraSystem>();
-        m_World.RegisterSystemUpdateGroup<TestSystem>();
-
-        m_World.CreateSystem<CameraSystem>();
-        m_World.CreateSystem<TestSystem>();
-
-        m_World.Init();
-    }
-
     void TestApplication::Update()
     {
         Application::Update();
@@ -33,5 +18,21 @@ namespace app
     void TestApplication::Render()
     {
        m_World.Render();
+    }
+
+    void TestApplication::CreateInitialSystemUpdateGroups()
+    {
+        Application::CreateInitialSystemUpdateGroups();
+
+        m_World.RegisterSystemUpdateGroup<CameraSystem>();
+        m_World.RegisterSystemUpdateGroup<TestSystem>();
+    }
+
+    void TestApplication::CreateInitialSystems()
+    {
+        Application::CreateInitialSystems();
+
+        m_World.CreateSystem<CameraSystem>();
+        m_World.CreateSystem<TestSystem>();
     }
 }
