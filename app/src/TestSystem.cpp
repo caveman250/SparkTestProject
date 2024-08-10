@@ -14,6 +14,7 @@
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/render/IndexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
 
 using namespace se;
@@ -29,6 +30,8 @@ namespace app
         auto mesh = meshComp->model->GetMesh(0);
         meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer(mesh);
         meshComp->vertBuffer->CreatePlatformResource();
+        meshComp->indexBuffer = render::IndexBuffer::CreateIndexBuffer(mesh);
+        meshComp->indexBuffer->CreatePlatformResource();
     }
 
     void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*)
@@ -97,7 +100,6 @@ namespace app
         for (size_t i = 0; i < entities.size(); ++i)
         {
             auto& transformComp = transform[i];
-
             transformComp.rot.y += 5.f * dt;
         }
     }

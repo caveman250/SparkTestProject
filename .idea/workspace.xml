@@ -35,10 +35,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="removed unused component types form test system">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/IndexBuffer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/IndexBuffer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/IndexBuffer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/IndexBuffer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/mesh/Model.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/RenderCommand.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/RenderCommand.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/RenderCommand.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +61,28 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:DebugEditor" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -1172,14 +1200,6 @@
       <workItem from="1722924397915" duration="11464000" />
       <workItem from="1722941700274" duration="20948000" />
     </task>
-    <task id="LOCAL-00006" summary="Shader compiler can now handle textures. severely lacking in validation.">
-      <option name="closed" value="true" />
-      <created>1714998101913</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1714998101913</updated>
-    </task>
     <task id="LOCAL-00007" summary="texture loaded from a .sass file that was auto generated and set as a uniform via a material. milestone baby!">
       <option name="closed" value="true" />
       <created>1715081985593</created>
@@ -1564,7 +1584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723289596566</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="removed unused component types form test system">
+      <option name="closed" value="true" />
+      <created>1723289708190</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1723289708190</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1598,7 +1626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add support for mouse states" />
     <MESSAGE value="refactor rendercommands and fix crash on shutdown" />
     <MESSAGE value="add support for fbx models" />
     <MESSAGE value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
@@ -1623,7 +1650,8 @@
     <MESSAGE value="fixed issue with uniform values being applied before the gl program was created." />
     <MESSAGE value="moved a bunch of gumph in test app into the engine where it should have been all along" />
     <MESSAGE value="bump engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
+    <MESSAGE value="removed unused component types form test system" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unused component types form test system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1674,9 +1702,14 @@
           <option name="timeStamp" value="88" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp</url>
-          <line>21</line>
-          <option name="timeStamp" value="89" />
+          <url>file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/builder/FBXBlueprint.cpp</url>
+          <line>32</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Spark/Editor/src/startup/ImportAssets.cpp</url>
+          <line>30</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
