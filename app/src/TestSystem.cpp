@@ -6,7 +6,6 @@
 #include <engine/asset/shader/ast/Types.h>
 #include <engine/ecs/components/MeshComponent.h>
 #include <engine/render/RenderState.h>
-#include <engine/render/Renderer.h>
 #include <engine/asset/mesh/Model.h>
 #include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
@@ -16,12 +15,6 @@
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "engine/render/components/PointLightComponent.h"
-#include "platform/IWindow.h"
-
-namespace se::io
-{
-    class OutputFileStream;
-}
 
 using namespace se;
 using namespace se::ecs::components;
@@ -38,7 +31,7 @@ namespace app
         meshComp->vertBuffer->CreatePlatformResource();
     }
 
-    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
+    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*)
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
@@ -97,8 +90,7 @@ namespace app
         mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
     }
 
-    void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
-                              const MeshComponent*, camera::ActiveCameraComponent*)
+    void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform)
     {
         auto app = Application::Get();
         auto dt = app->GetDeltaTime();

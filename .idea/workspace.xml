@@ -35,11 +35,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="fixed issue with uniform values being applied before the gl program was created.">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
@@ -1175,22 +1172,6 @@
       <workItem from="1722924397915" duration="11464000" />
       <workItem from="1722941700274" duration="20948000" />
     </task>
-    <task id="LOCAL-00004" summary="bump engine">
-      <option name="closed" value="true" />
-      <created>1714706026215</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1714706026215</updated>
-    </task>
-    <task id="LOCAL-00005" summary="make image format easier to use.">
-      <option name="closed" value="true" />
-      <created>1714995052250</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1714995052250</updated>
-    </task>
     <task id="LOCAL-00006" summary="Shader compiler can now handle textures. severely lacking in validation.">
       <option name="closed" value="true" />
       <created>1714998101913</created>
@@ -1567,7 +1548,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723289068737</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="moved a bunch of gumph in test app into the engine where it should have been all along">
+      <option name="closed" value="true" />
+      <created>1723289585981</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1723289585981</updated>
+    </task>
+    <task id="LOCAL-00054" summary="bump engine">
+      <option name="closed" value="true" />
+      <created>1723289596566</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1723289596566</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1601,7 +1598,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete unused code" />
     <MESSAGE value="add support for mouse states" />
     <MESSAGE value="refactor rendercommands and fix crash on shutdown" />
     <MESSAGE value="add support for fbx models" />
@@ -1624,9 +1620,10 @@
     <MESSAGE value="ssl now supports for loops + input and output ports can now be arrays" />
     <MESSAGE value="slight point light optimisation" />
     <MESSAGE value="shaders now need to specify a type. port naming rules have been relaxed" />
-    <MESSAGE value="bump engine" />
     <MESSAGE value="fixed issue with uniform values being applied before the gl program was created." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with uniform values being applied before the gl program was created." />
+    <MESSAGE value="moved a bunch of gumph in test app into the engine where it should have been all along" />
+    <MESSAGE value="bump engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
