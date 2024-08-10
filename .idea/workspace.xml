@@ -35,19 +35,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/UniformStorage.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/UniformStorage.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="fixed issue with uniform values being applied before the gl program was created.">
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/math/Mat4.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/Material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/GL_fwd.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/GL_fwd.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/Material.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/opengl/OpenGLRenderer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/platform/linux/Window.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +54,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:DebugEditor" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Spark" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -1181,14 +1175,6 @@
       <workItem from="1722924397915" duration="11464000" />
       <workItem from="1722941700274" duration="20948000" />
     </task>
-    <task id="LOCAL-00003" summary="make sure warnings are enabled for first party code. fix all existing warnings.">
-      <option name="closed" value="true" />
-      <created>1714706007661</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1714706007661</updated>
-    </task>
     <task id="LOCAL-00004" summary="bump engine">
       <option name="closed" value="true" />
       <created>1714706026215</created>
@@ -1573,7 +1559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723206452487</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fixed issue with uniform values being applied before the gl program was created.">
+      <option name="closed" value="true" />
+      <created>1723289068737</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1723289068737</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1607,7 +1601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ported existing test code to ecs." />
     <MESSAGE value="delete unused code" />
     <MESSAGE value="add support for mouse states" />
     <MESSAGE value="refactor rendercommands and fix crash on shutdown" />
@@ -1632,7 +1625,8 @@
     <MESSAGE value="slight point light optimisation" />
     <MESSAGE value="shaders now need to specify a type. port naming rules have been relaxed" />
     <MESSAGE value="bump engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
+    <MESSAGE value="fixed issue with uniform values being applied before the gl program was created." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issue with uniform values being applied before the gl program was created." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

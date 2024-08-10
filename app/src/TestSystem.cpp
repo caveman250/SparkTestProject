@@ -98,50 +98,15 @@ namespace app
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform,
-                              const MeshComponent* mesh, camera::ActiveCameraComponent* camera)
+                              const MeshComponent*, camera::ActiveCameraComponent*)
     {
         auto app = Application::Get();
-
         auto dt = app->GetDeltaTime();
-        camera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
         for (size_t i = 0; i < entities.size(); ++i)
         {
             auto& transformComp = transform[i];
 
             transformComp.rot.y += 5.f * dt;
-
-            math::Mat4 model = Translation(transformComp.pos);
-            model = model * AxisAngle(math::Vec3(1.0f, 0.0f, 0.0f), transformComp.rot.x);
-            model = model * AxisAngle(math::Vec3(0.0f, 1.0f, 0.0f), transformComp.rot.y);
-            model = model * AxisAngle(math::Vec3(0.0f, 0.0f, 1.0f), transformComp.rot.z);
-
-            model = model * Scale(transformComp.scale);
-
-            SPARK_ASSERT((float*)&model[0] == &model[0][0]);
-
-            mesh[i].material->SetUniform("model", asset::shader::ast::AstType::Mat4, 1, &model);
-            mesh[i].material->SetUniform("view", asset::shader::ast::AstType::Mat4, 1, &camera->view);
-            mesh[i].material->SetUniform("proj", asset::shader::ast::AstType::Mat4, 1, &camera->proj);
         }
-    }
-
-    void TestSystem::OnRender(const std::vector<ecs::EntityId>& entities, TransformComponent*, const MeshComponent* mesh, camera::ActiveCameraComponent*)
-    {
-        auto app = TestApplication::GetTestApplication();
-
-        auto renderer = render::Renderer::Get();
-        auto window = app->GetPrimaryWindow();
-        renderer->Submit<render::commands::Clear>(window, true, true);
-
-        for (size_t i = 0; i < entities.size(); ++i)
-        {
-            const auto& meshComp = mesh[i];
-            renderer->Submit<render::commands::SubmitGeo>(window, meshComp.material, meshComp.vertBuffer, 36);
-        }
-    }
-
-    void TestSystem::OnShutdown(const std::vector<ecs::EntityId>&, TransformComponent*, const MeshComponent*, camera::ActiveCameraComponent*)
-    {
-
     }
 }
