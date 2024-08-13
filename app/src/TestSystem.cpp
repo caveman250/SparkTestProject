@@ -10,10 +10,12 @@
 #include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
 
+#include "RelationshipTestSystem.h"
 #include "TestApplication.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/ecs/relationships/ChildOf.h"
 #include "engine/render/IndexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
 
@@ -52,6 +54,9 @@ namespace app
         light2Transform->pos = {5.f, 5.f, 5.f};
         auto* light2Light = world->AddComponent<render::components::PointLightComponent>(light2);
         light2Light->color = {1.f, 0.f, 0.f};
+        world->AddRelationship(light2, ecs::CreateRelationship<ChildOf>(light1));
+
+        m_World->CreateSystem<RelationshipTestSystem>({ecs::CreateRelationship<ChildOf>(light1)});
 
         // Cube 1
         ecs::EntityId entity = world->CreateEntity();
@@ -80,13 +85,13 @@ namespace app
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
-        auto redShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
+        auto hueShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
         mesh2->material = render::Material::CreateMaterial(
                 {uberVertex},
-                {diffuse, pointLght, redShader});
+                {diffuse, pointLght, hueShader});
         mesh2->material->SetRenderState(rs);
         mesh2->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");

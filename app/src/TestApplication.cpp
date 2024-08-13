@@ -1,6 +1,8 @@
 #include "TestApplication.h"
 #include "CameraSystem.h"
+#include "RelationshipTestSystem.h"
 #include "TestSystem.h"
+#include "engine/render/components/PointLightComponent.h"
 
 namespace app
 {
@@ -24,7 +26,7 @@ namespace app
     {
         Application::CreateInitialSystemUpdateGroups();
 
-        m_World.RegisterSystemUpdateGroup<CameraSystem>();
+        m_World.RegisterSystemUpdateGroup<CameraSystem, RelationshipTestSystem>();
         m_World.RegisterSystemUpdateGroup<TestSystem>();
     }
 
@@ -32,7 +34,7 @@ namespace app
     {
         Application::CreateInitialSystems();
 
-        m_World.CreateSystem<CameraSystem>();
-        m_World.CreateSystem<TestSystem>();
+        m_World.CreateSystem<CameraSystem>({});
+        m_World.CreateSystem<TestSystem>({});
     }
 }
