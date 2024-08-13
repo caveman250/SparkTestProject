@@ -22,19 +22,11 @@ namespace app
        m_World.Render();
     }
 
-    void TestApplication::CreateInitialSystemUpdateGroups()
-    {
-        Application::CreateInitialSystemUpdateGroups();
-
-        m_World.RegisterSystemUpdateGroup<CameraSystem, RelationshipTestSystem>();
-        m_World.RegisterSystemUpdateGroup<TestSystem>();
-    }
-
     void TestApplication::CreateInitialSystems()
     {
         Application::CreateInitialSystems();
 
-        m_World.CreateSystem<CameraSystem>({});
-        m_World.CreateSystem<TestSystem>({});
+        m_World.CreateAppSystem<CameraSystem>({});
+        m_World.CreateAppSystem<TestSystem>({});
     }
 }

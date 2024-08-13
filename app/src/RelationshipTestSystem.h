@@ -9,10 +9,10 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    class RelationshipTestSystem : public ecs::System<TransformComponent>
+    class RelationshipTestSystem : public ecs::AppSystem<TransformComponent>
     {
         DECLARE_SPARK_SYSTEM(RelationshipTestSystem)
 
-        void OnUpdate(const std::vector<se::ecs::EntityId>&, TransformComponent*) override;
+        void OnUpdate(const std::vector<se::ecs::Id>&, TransformComponent*) override;
     };
 }

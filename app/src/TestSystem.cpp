@@ -36,30 +36,30 @@ namespace app
         meshComp->indexBuffer->CreatePlatformResource();
     }
 
-    void TestSystem::OnInit(const std::vector<ecs::EntityId>&, TransformComponent*)
+    void TestSystem::OnInit(const std::vector<ecs::Id>&, TransformComponent*)
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
 
         world->AddSingletonComponent<camera::ActiveCameraComponent>();
 
-        ecs::EntityId light1 = world->CreateEntity();
+        ecs::Id light1 = world->CreateEntity();
         auto* light1Transform = world->AddComponent<TransformComponent>(light1);
         light1Transform->pos = {-5.f, 5.f, 5.f};
         auto* light1Light = world->AddComponent<render::components::PointLightComponent>(light1);
         light1Light->color = {0.f, 0.f, 1.f};
 
-        ecs::EntityId light2 = world->CreateEntity();
+        ecs::Id light2 = world->CreateEntity();
         auto* light2Transform = world->AddComponent<TransformComponent>(light2);
         light2Transform->pos = {5.f, 5.f, 5.f};
         auto* light2Light = world->AddComponent<render::components::PointLightComponent>(light2);
         light2Light->color = {1.f, 0.f, 0.f};
         world->AddRelationship(light2, ecs::CreateRelationship<ChildOf>(light1));
 
-        m_World->CreateSystem<RelationshipTestSystem>({ecs::CreateRelationship<ChildOf>(light1)});
+        m_World->CreateAppSystem<RelationshipTestSystem>({ecs::CreateRelationship<ChildOf>(light1)});
 
         // Cube 1
-        ecs::EntityId entity = world->CreateEntity();
+        ecs::Id entity = world->CreateEntity();
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(-2.f, 0.f, 0.f);
 
@@ -81,7 +81,7 @@ namespace app
         mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         // Cube 2
-        ecs::EntityId entity2 = world->CreateEntity();
+        ecs::Id entity2 = world->CreateEntity();
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(2.f, 0.f, 0.f);
 
@@ -98,7 +98,7 @@ namespace app
         mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
     }
 
-    void TestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform)
+    void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
     {
         auto app = Application::Get();
         auto dt = app->GetDeltaTime();

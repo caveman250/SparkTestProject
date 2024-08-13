@@ -4,7 +4,7 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(RelationshipTestSystem)
 
-    void RelationshipTestSystem::OnUpdate(const std::vector<ecs::EntityId>& entities, TransformComponent* transform)
+    void RelationshipTestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
     {
         float dt = Application::Get()->GetDeltaTime();
         for (size_t i = 0; i < entities.size(); ++i)

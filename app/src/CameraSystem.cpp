@@ -10,7 +10,7 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(CameraSystem)
 
-    void CameraSystem::OnUpdate(const std::vector<ecs::EntityId>&, camera::ActiveCameraComponent* camera, input::InputComponent* input)
+    void CameraSystem::OnUpdate(const std::vector<ecs::Id>&, camera::ActiveCameraComponent* camera, input::InputComponent* input)
     {
         //Orientation
         auto app = Application::Get();

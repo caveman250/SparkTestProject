@@ -8,11 +8,11 @@ using namespace se;
 
 namespace app
 {
-    class CameraSystem : public ecs::System<camera::ActiveCameraComponent, input::InputComponent>
+    class CameraSystem : public ecs::AppSystem<camera::ActiveCameraComponent, input::InputComponent>
     {
         DECLARE_SPARK_SYSTEM(CameraSystem)
 
-        void OnUpdate(const std::vector<se::ecs::EntityId>& entities, camera::ActiveCameraComponent* camera, input::InputComponent* input) override;
+        void OnUpdate(const std::vector<se::ecs::Id>& entities, camera::ActiveCameraComponent* camera, input::InputComponent* input) override;
     };
 
 }
