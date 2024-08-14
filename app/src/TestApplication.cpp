@@ -1,8 +1,6 @@
 #include "TestApplication.h"
 #include "CameraSystem.h"
-#include "RelationshipTestSystem.h"
 #include "TestSystem.h"
-#include "engine/render/components/PointLightComponent.h"
 
 namespace app
 {
@@ -11,15 +9,11 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
-    void TestApplication::Update()
+    void TestApplication::CreateInitialSingletonComponents()
     {
-        Application::Update();
-        m_World.Update();
-    }
+        Application::CreateInitialSingletonComponents();
 
-    void TestApplication::Render()
-    {
-       m_World.Render();
+        m_World.AddSingletonComponent<camera::ActiveCameraComponent>();
     }
 
     void TestApplication::CreateInitialSystems()
