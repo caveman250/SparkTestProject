@@ -93,9 +93,10 @@ namespace app
             mesh2->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
             auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
             mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
-            world->AddRelationship(entity2, ecs::CreateRelationship<ChildOf>(entity));
 
-            m_World->CreateAppSystem<TestSystem>({ecs::CreateRelationship<ChildOf>(entity)});
+            auto testRelationship = ecs::CreateEntityRelationship<ChildOf>(entity);
+            world->AddRelationship(entity2, testRelationship);
+            world->CreateAppSystem<TestSystem>({ testRelationship });
         }
     }
 

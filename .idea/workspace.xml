@@ -35,24 +35,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="bump engine">
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="System ids are now generated at runtime. You can now have as many instances of a system as you like.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/AssetManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Variable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/ast/Variable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Relationship.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Relationship.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/components/MeshComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Object.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Object.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/reflect/Reflect.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/MeshRenderSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/RelationshipTestSystem.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/RelationshipTestSystem.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -1242,6 +1227,7 @@
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/asset/shader/compiler/ShaderCompiler.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/ecs/Action.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Archetype.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/ecs/Relationship.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/ecs/Relationship.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/Spark/Engine/src/engine/ecs/System.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Spark/Engine/src/engine/ecs/System.h" root0="FORCE_HIGHLIGHTING" />
@@ -1263,6 +1249,7 @@
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestApplication.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/TestSystem.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///home/ouchqt/CLionProjects/SparkTestProject/app/src/TestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -1454,15 +1441,7 @@
       <workItem from="1723372208950" duration="3000" />
       <workItem from="1723372308741" duration="17000" />
       <workItem from="1723372950956" duration="5127000" />
-      <workItem from="1723454451580" duration="15345000" />
-    </task>
-    <task id="LOCAL-00010" summary="bump engine">
-      <option name="closed" value="true" />
-      <created>1715082436054</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1715082436054</updated>
+      <workItem from="1723454451580" duration="15893000" />
     </task>
     <task id="LOCAL-00011" summary="ecs initial commit">
       <option name="closed" value="true" />
@@ -1848,7 +1827,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723533954573</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="System ids are now generated at runtime. You can now have as many instances of a system as you like.">
+      <option name="closed" value="true" />
+      <created>1723627854066</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1723627854066</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1882,7 +1869,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Engine now compiles for linux in gcc and clang (tested on Ubuntu 24.04)" />
     <MESSAGE value="bump engine." />
     <MESSAGE value="fix crash when closing window on linux." />
     <MESSAGE value="Cleanup vertex buffer creation" />
@@ -1907,7 +1893,8 @@
     <MESSAGE value="Add support for relationships." />
     <MESSAGE value="system update order and grouping is now calculated automatically." />
     <MESSAGE value="bump engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="bump engine" />
+    <MESSAGE value="System ids are now generated at runtime. You can now have as many instances of a system as you like." />
+    <option name="LAST_COMMIT_MESSAGE" value="System ids are now generated at runtime. You can now have as many instances of a system as you like." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
