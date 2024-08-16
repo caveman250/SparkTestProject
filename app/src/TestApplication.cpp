@@ -20,7 +20,7 @@ namespace app
     {
         Application::CreateInitialSystems();
 
-        m_World.CreateAppSystem<CameraSystem>({});
-        m_World.CreateAppSystem<TestSystem>({});
+        m_World.CreateAppSystem<CameraSystem>({}, {});
+        m_World.CreateAppSystem<TestSystem>({}, {});
     }
 }
