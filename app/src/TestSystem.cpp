@@ -58,9 +58,9 @@ namespace app
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
 
         auto* assetManager = asset::AssetManager::Get();
-        auto uberVertex = assetManager->GetAsset<asset::Shader>("/builtin_assets/uber_vertex.sass");
-        auto diffuse = assetManager->GetAsset<asset::Shader>("/builtin_assets/diffuse_texture.sass");
-        auto pointLght = assetManager->GetAsset<asset::Shader>("/builtin_assets/point_light.sass");
+        auto uberVertex = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/uber_vertex.sass");
+        auto diffuse = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/diffuse_texture.sass");
+        auto pointLght = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/point_light.sass");
         auto hueShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
 
         auto* mesh = world->AddComponent<MeshComponent>(entity);

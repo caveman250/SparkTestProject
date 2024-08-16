@@ -38,14 +38,8 @@ namespace app
         world->AddChild(entity, entity2);
     }
 
-    void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* transform)
+    void UITestSystem::OnUpdate(const std::vector<ecs::Id>&, ui::components::RectTransformComponent*)
     {
-        auto app = Application::Get();
-        auto dt = app->GetDeltaTime();
-        for (size_t i = 0; i < entities.size(); ++i)
-        {
-            auto& transformComp = transform[i];
-            int lol = 1;
-        }
+
     }
 }

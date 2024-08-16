@@ -30,25 +30,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Fix windows build.">
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/Anchors.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/Anchors.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/Rect.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/Rect.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/components/RectTransformComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/components/RectTransformComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/systems/RectTransformSystem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ui/systems/RectTransformSystem.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/UITestSystem.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/UITestSystem.h" afterDir="false" />
+    <list default="true" id="d2558aff-3c2b-4e6d-9433-12067c7bb4e4" name="Changes" comment="Add support for rect transforms.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Spark" beforeDir="false" afterPath="$PROJECT_DIR$/Spark" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/ecs/World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/PointLightSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/PointLightSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/PointLightSystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems/PointLightSystem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/CameraSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/CameraSystem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/TestApplication.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestApplication.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/diffuse_texture.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/diffuse_texture.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/diffuse_texture.ssl" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/diffuse_texture.ssl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/point_light.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/point_light.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/point_light.ssl" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/point_light.ssl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/uber_vertex.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/uber_vertex.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Spark/Engine/builtin_assets/uber_vertex.ssl" beforeDir="false" afterPath="$PROJECT_DIR$/Spark/Engine/builtin_assets/shaders/uber_vertex.ssl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/TestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/TestSystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/UITestSystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/UITestSystem.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,11 +210,11 @@
       <recent name="C:\Users\jwood\CLionProjects\SparkTestProject\Spark\Engine\src\engine\ui\systems" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jwood\CLionProjects\SparkTestProject\Spark\Engine\builtin_assets\shaders" />
       <recent name="C:\Users\jwood\CLionProjects\SparkTestProject\app\src" />
       <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/render/systems" />
       <recent name="$PROJECT_DIR$/app/assets/shaders" />
       <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/memory" />
-      <recent name="$PROJECT_DIR$/Spark/Engine/src/engine/asset" />
     </key>
   </component>
   <component name="RunManager">
@@ -297,14 +289,6 @@
       <workItem from="1723454451580" duration="15893000" />
       <workItem from="1723631480296" duration="1139000" />
       <workItem from="1723716060566" duration="12191000" />
-    </task>
-    <task id="LOCAL-00012" summary="System / Component creation/deletion is now deferred.">
-      <option name="closed" value="true" />
-      <created>1716647834628</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1716647834628</updated>
     </task>
     <task id="LOCAL-00013" summary="bump engine">
       <option name="closed" value="true" />
@@ -690,7 +674,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723809241626</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Add support for rect transforms.">
+      <option name="closed" value="true" />
+      <created>1723815491276</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1723815491276</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -724,7 +716,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix crash when closing window on linux." />
     <MESSAGE value="Cleanup vertex buffer creation" />
     <MESSAGE value="Additional AST Nodes.&#10;AST nodes can now dump debug text to aid debugging." />
     <MESSAGE value="Shader compiler updates&#10;- handles binary ops much better&#10;- uniform locations are now determined by looking at the vertex buffer" />
@@ -749,7 +740,8 @@
     <MESSAGE value="bump engine" />
     <MESSAGE value="System ids are now generated at runtime. You can now have as many instances of a system as you like." />
     <MESSAGE value="Fix windows build." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix windows build." />
+    <MESSAGE value="Add support for rect transforms." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add support for rect transforms." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
