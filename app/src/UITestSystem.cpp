@@ -29,7 +29,7 @@ namespace app
         rectTransform->maxY = 20;
 
         ecs::Id entity2 = world->CreateEntity();
-        ui::components::RectTransformComponent* rectTransform2 = world->AddComponent<ui::components::RectTransformComponent>(entity2);
+        auto rectTransform2 = world->AddComponent<ui::components::RectTransformComponent>(entity2);
         rectTransform2->anchors = { 0.f, 0.8f, 0.f, 0.8f };
         rectTransform2->minX = 0;
         rectTransform2->maxX = 0;
