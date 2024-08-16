@@ -1,6 +1,7 @@
 #include "TestApplication.h"
 #include "CameraSystem.h"
 #include "TestSystem.h"
+#include "UITestSystem.h"
 
 namespace app
 {
@@ -22,5 +23,6 @@ namespace app
 
         m_World.CreateAppSystem<CameraSystem>({}, {});
         m_World.CreateAppSystem<TestSystem>({}, {});
+        m_World.CreateAppSystem<UITestSystem>({}, {});
     }
 }

@@ -15,8 +15,8 @@ namespace app
         //Orientation
         auto app = Application::Get();
 
-        float dx = static_cast<float>(camera->lastMouseX - input->mouseX);
-        float dy = static_cast<float>(camera->lastMouseY - input->mouseY);
+        auto dx = static_cast<float>(camera->lastMouseX - input->mouseX);
+        auto dy = static_cast<float>(camera->lastMouseY - input->mouseY);
         camera->lastMouseX = input->mouseX;
         camera->lastMouseY = input->mouseY;
 
