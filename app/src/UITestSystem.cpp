@@ -38,8 +38,8 @@ namespace app
         world->AddChild(entity, entity2);
     }
 
-    void UITestSystem::OnUpdate(const std::vector<ecs::Id>&, ui::components::RectTransformComponent*)
+    void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)
     {
-
+        int lol =1;
     }
 }
