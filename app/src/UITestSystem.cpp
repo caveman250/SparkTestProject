@@ -36,12 +36,12 @@ namespace app
 
         auto image = world->AddComponent<ui::components::ImageComponent>(entity);
         image->material = render::Material::CreateMaterial({vert}, {frag});
-        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/red.sass");
+        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/blue.sass");
         image->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         ecs::Id entity2 = world->CreateEntity();
         auto rectTransform2 = world->AddComponent<ui::components::RectTransformComponent>(entity2);
-        rectTransform2->anchors = { 0.f, 0.8f, 0.f, 0.8f };
+        rectTransform2->anchors = { 0.1f, 0.9f, 0.1f, 0.9f };
         rectTransform2->minX = 0;
         rectTransform2->maxX = 0;
         rectTransform2->minY = 0;
@@ -49,7 +49,7 @@ namespace app
 
         auto image2 = world->AddComponent<ui::components::ImageComponent>(entity2);
         image2->material = render::Material::CreateMaterial({vert}, {frag});
-        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/blue.sass");
+        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/red.sass");
         image2->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
