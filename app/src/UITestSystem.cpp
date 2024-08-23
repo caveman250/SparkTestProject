@@ -8,7 +8,9 @@
 #include "TestApplication.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
+#include "engine/ecs/components/RootComponent.h"
 #include "engine/ui/components/ImageComponent.h"
+#include "engine/ui/components/TextComponent.h"
 
 using namespace se;
 using namespace se::ecs::components;
@@ -53,6 +55,20 @@ namespace app
         image2->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
+
+
+        ecs::Id entity3 = world->CreateEntity();
+        auto rectTransform3 = world->AddComponent<ui::components::RectTransformComponent>(entity3);
+        world->AddComponent<RootComponent>(entity3);
+        rectTransform3->anchors = { 0.f, 0.f, 1.f, 1.f };
+        rectTransform3->minX = 0;
+        rectTransform3->maxX = 400;
+        rectTransform3->minY = 400;
+        rectTransform3->maxY = 500;
+        auto text = world->AddComponent<ui::components::TextComponent>(entity3);
+        text->font = assetManager->GetAsset<asset::Font>("/builtin_assets/fonts/Arial.sass");
+        text->fontSize = 36;
+        text->text = "Lorem ipsum";
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)

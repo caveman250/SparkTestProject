@@ -2,8 +2,6 @@
 
 #include "engine/Application.h"
 #include "engine/input/InputComponent.h"
-#include "engine/input/InputUtil.h"
-#include "platform/IWindow.h"
 #include "engine/input/MouseButton.h"
 
 namespace app
@@ -24,7 +22,6 @@ namespace app
         {
             auto dt = app->GetDeltaTime();
             camera->rot = camera->rot + math::Vec3(dy * dt, dx * dt, 0.0f);
-
         }
 
         math::Vec3 forward(cos(camera->rot.x) * sin(camera->rot.y),
