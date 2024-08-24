@@ -9,6 +9,7 @@
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/RootComponent.h"
+#include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/ImageComponent.h"
 #include "engine/ui/components/TextComponent.h"
 
@@ -38,7 +39,7 @@ namespace app
 
         auto image = world->AddComponent<ui::components::ImageComponent>(entity);
         image->material = render::Material::CreateMaterial({vert}, {frag});
-        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/blue.sass");
+        auto texture = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_texture.sass");
         image->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         ecs::Id entity2 = world->CreateEntity();
@@ -51,7 +52,7 @@ namespace app
 
         auto image2 = world->AddComponent<ui::components::ImageComponent>(entity2);
         image2->material = render::Material::CreateMaterial({vert}, {frag});
-        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/red.sass");
+        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/aang.sass");
         image2->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
@@ -83,6 +84,16 @@ namespace app
         text->text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sed felis et pulvinar. Etiam tincidunt magna eget faucibus venenatis.";
 
         world->AddChild(entity3, entity4);
+
+        ecs::Id entity5 = world->CreateEntity();
+        auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(entity5);
+        rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
+        rectTransform5->minX = 900;
+        rectTransform5->maxX = 1000;
+        rectTransform5->minY = 10;
+        rectTransform5->maxY = 110;
+
+        world->AddComponent<ui::components::ButtonComponent>(entity5);
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)
