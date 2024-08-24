@@ -70,7 +70,6 @@ namespace app
         image3->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0.2f, 0.2f, 0.2f));
         image3->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
-
         ecs::Id entity4 = world->CreateEntity();
         auto rectTransform4 = world->AddComponent<ui::components::RectTransformComponent>(entity4);
         rectTransform4->anchors = { 0.f, 1.f, 0.f, 1.f };
