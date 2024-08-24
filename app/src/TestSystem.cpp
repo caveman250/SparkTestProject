@@ -11,6 +11,7 @@
 #include "TestSystem.h"
 
 #include "TestApplication.h"
+#include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
@@ -92,6 +93,8 @@ namespace app
         mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
+
+        world->CreateObserver<TestObserver, MeshComponent>();
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
