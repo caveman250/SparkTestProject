@@ -80,7 +80,7 @@ namespace app
         rectTransform4->maxY = 0;
         auto text = world->AddComponent<ui::components::TextComponent>(entity4);
         text->font = assetManager->GetAsset<asset::Font>("/builtin_assets/fonts/Arial.sass");
-        text->fontSize = 36;
+        text->fontSize = 24;
         text->text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sed felis et pulvinar. Etiam tincidunt magna eget faucibus venenatis.";
 
         world->AddChild(entity3, entity4);
