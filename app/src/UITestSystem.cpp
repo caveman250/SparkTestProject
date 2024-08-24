@@ -56,19 +56,34 @@ namespace app
 
         world->AddChild(entity, entity2);
 
-
         ecs::Id entity3 = world->CreateEntity();
         auto rectTransform3 = world->AddComponent<ui::components::RectTransformComponent>(entity3);
-        world->AddComponent<RootComponent>(entity3);
-        rectTransform3->anchors = { 0.f, 0.f, 1.f, 1.f };
-        rectTransform3->minX = 0;
-        rectTransform3->maxX = 400;
-        rectTransform3->minY = 400;
-        rectTransform3->maxY = 500;
-        auto text = world->AddComponent<ui::components::TextComponent>(entity3);
+        rectTransform3->anchors = { 0.f, 0.f, 0.f, 0.f };
+        rectTransform3->minX = 210;
+        rectTransform3->maxX = 710;
+        rectTransform3->minY = 10;
+        rectTransform3->maxY = 200;
+
+        auto colorFrag = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/flat_color.sass");
+        auto image3 = world->AddComponent<ui::components::ImageComponent>(entity3);
+        image3->material = render::Material::CreateMaterial({vert}, {colorFrag});
+        image3->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0.2f, 0.2f, 0.2f));
+        image3->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
+
+
+        ecs::Id entity4 = world->CreateEntity();
+        auto rectTransform4 = world->AddComponent<ui::components::RectTransformComponent>(entity4);
+        rectTransform4->anchors = { 0.f, 1.f, 0.f, 1.f };
+        rectTransform4->minX = 0;
+        rectTransform4->maxX = 0;
+        rectTransform4->minY = 0;
+        rectTransform4->maxY = 0;
+        auto text = world->AddComponent<ui::components::TextComponent>(entity4);
         text->font = assetManager->GetAsset<asset::Font>("/builtin_assets/fonts/Arial.sass");
         text->fontSize = 36;
-        text->text = "Lorem ipsum";
+        text->text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sed felis et pulvinar. Etiam tincidunt magna eget faucibus venenatis.";
+
+        world->AddChild(entity3, entity4);
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)
