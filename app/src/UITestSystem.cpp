@@ -40,7 +40,7 @@ namespace app
         auto image = world->AddComponent<ui::components::ImageComponent>(entity);
         image->material = render::Material::CreateMaterial({vert}, {frag});
         auto texture = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_texture.sass");
-        image->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
+        image->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         ecs::Id entity2 = world->CreateEntity();
         auto rectTransform2 = world->AddComponent<ui::components::RectTransformComponent>(entity2);
@@ -53,7 +53,7 @@ namespace app
         auto image2 = world->AddComponent<ui::components::ImageComponent>(entity2);
         image2->material = render::Material::CreateMaterial({vert}, {frag});
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/aang.sass");
-        image2->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
+        image2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
 
@@ -69,7 +69,7 @@ namespace app
         auto image3 = world->AddComponent<ui::components::ImageComponent>(entity3);
         image3->material = render::Material::CreateMaterial({vert}, {colorFrag});
         image3->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0.2f, 0.2f, 0.2f));
-        image3->material->SetUniform("Image", asset::shader::ast::AstType::Sampler2D, 1, &texture);
+        image3->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         ecs::Id entity4 = world->CreateEntity();
         auto rectTransform4 = world->AddComponent<ui::components::RectTransformComponent>(entity4);
@@ -84,16 +84,6 @@ namespace app
         text->text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sed felis et pulvinar. Etiam tincidunt magna eget faucibus venenatis.";
 
         world->AddChild(entity3, entity4);
-
-        ecs::Id entity5 = world->CreateEntity();
-        auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(entity5);
-        rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
-        rectTransform5->minX = 900;
-        rectTransform5->maxX = 1000;
-        rectTransform5->minY = 10;
-        rectTransform5->maxY = 110;
-
-        world->AddComponent<ui::components::ButtonComponent>(entity5);
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)

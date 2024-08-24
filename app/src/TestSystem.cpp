@@ -10,7 +10,9 @@
 #include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
 
+#include "ReactToButtonComponent.h"
 #include "TestApplication.h"
+#include "TestButtonSystem.h"
 #include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
@@ -18,6 +20,9 @@
 #include "engine/ecs/relationships/ChildOf.h"
 #include "engine/render/IndexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
+#include "engine/ui/button/ButtonSubscription.h"
+#include "engine/ui/components/ButtonComponent.h"
+#include "engine/ui/components/RectTransformComponent.h"
 
 using namespace se;
 using namespace se::ecs::components;
@@ -95,6 +100,22 @@ namespace app
         world->AddChild(entity, entity2);
 
         world->CreateObserver<TestObserver, MeshComponent>();
+
+        ecs::Id buttonEntity = world->CreateEntity();
+        auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
+        rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
+        rectTransform5->minX = 900;
+        rectTransform5->maxX = 1000;
+        rectTransform5->minY = 10;
+        rectTransform5->maxY = 110;
+
+        auto button = world->AddComponent<ui::components::ButtonComponent>(buttonEntity);
+        button->image = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button.sass");
+        button->pressedImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_pressed.sass");
+        button->hoveredImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_hovered.sass");
+
+        auto reactToButton = world->AddComponent<ui::components::ReactToButtonComponent>(entity);
+        reactToButton->subscription = ui::button::ButtonSubscription::CreateButtonSubscription(*button);
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
