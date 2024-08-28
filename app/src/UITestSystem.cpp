@@ -86,7 +86,7 @@ namespace app
         world->AddChild(entity3, entity4);
     }
 
-    void UITestSystem::OnUpdate(const std::vector<ecs::Id>& entities, ui::components::RectTransformComponent* rect)
+    void UITestSystem::OnUpdate(const std::vector<ecs::Id>& , ui::components::RectTransformComponent*)
     {
     }
 }

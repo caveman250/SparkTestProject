@@ -10,17 +10,13 @@
 #include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
 
-#include "ReactToButtonComponent.h"
 #include "TestApplication.h"
-#include "TestButtonSystem.h"
 #include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/ecs/components/TransformComponent.h"
-#include "engine/ecs/relationships/ChildOf.h"
 #include "engine/render/IndexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
-#include "engine/ui/button/ButtonSubscription.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
 
@@ -114,8 +110,14 @@ namespace app
         button->pressedImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_pressed.sass");
         button->hoveredImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_hovered.sass");
 
-        auto reactToButton = world->AddComponent<ui::components::ReactToButtonComponent>(entity);
-        reactToButton->subscription = ui::button::ButtonSubscription::CreateButtonSubscription(*button);
+        auto cb = [](TransformComponent* transform)
+        {
+            auto app = Application::Get();
+            auto dt = app->GetDeltaTime();
+
+            transform->rot.y += 90.f;
+        };
+        button->onReleased.Subscribe<TransformComponent>(entity, std::move(cb));
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
