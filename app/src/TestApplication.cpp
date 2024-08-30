@@ -1,5 +1,5 @@
 #include "TestApplication.h"
-#include "CameraSystem.h"
+#include "FirstPersonCameraSystem.h"
 #include "TestSystem.h"
 #include "UITestSystem.h"
 
@@ -10,18 +10,11 @@ namespace app
         return static_cast<TestApplication*>(Get());
     }
 
-    void TestApplication::CreateInitialSingletonComponents()
-    {
-        Application::CreateInitialSingletonComponents();
-
-        m_World.AddSingletonComponent<camera::ActiveCameraComponent>();
-    }
-
     void TestApplication::CreateInitialSystems()
     {
         Application::CreateInitialSystems();
 
-        m_World.CreateAppSystem<CameraSystem>({}, {}, {});
+        m_World.CreateAppSystem<FirstPersonCameraSystem>({}, {}, {});
         m_World.CreateAppSystem<TestSystem>({}, {}, {});
         m_World.CreateAppSystem<UITestSystem>({}, {}, {});
     }

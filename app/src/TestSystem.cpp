@@ -10,6 +10,7 @@
 #include <engine/render/VertexBuffer.h>
 #include "TestSystem.h"
 
+#include "FirstPersonCameraComponent.h"
 #include "TestApplication.h"
 #include "TestObserver.h"
 #include "engine/Application.h"
@@ -19,6 +20,7 @@
 #include "engine/render/components/PointLightComponent.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
+#include "engine/ui/components/WindowComponent.h"
 
 using namespace se;
 using namespace se::ecs::components;
@@ -41,6 +43,9 @@ namespace app
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
+
+        ecs::Id cameraEntity = world->CreateEntity();
+        world->AddComponent<FirstPersonCameraComponent>(cameraEntity);
 
         ecs::Id light1 = world->CreateEntity();
         auto* light1Transform = world->AddComponent<TransformComponent>(light1);
@@ -112,12 +117,20 @@ namespace app
 
         auto cb = [](TransformComponent* transform)
         {
-            auto app = Application::Get();
-            auto dt = app->GetDeltaTime();
-
             transform->rot.y += 90.f;
         };
         button->onReleased.Subscribe<TransformComponent>(entity, std::move(cb));
+
+
+        ecs::Id windowEntity = world->CreateEntity();
+        auto rectTransform6 = world->AddComponent<ui::components::RectTransformComponent>(windowEntity);
+        rectTransform6->anchors = { 0.f, 0.f, 0.f, 0.f };
+        rectTransform6->minX = 800;
+        rectTransform6->maxX = 1200;
+        rectTransform6->minY = 200;
+        rectTransform6->maxY = 720;
+
+        world->AddComponent<ui::components::WindowComponent>(windowEntity);
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)

@@ -20,7 +20,6 @@ namespace app
     public:
         static TestApplication* GetTestApplication();
 
-        void CreateInitialSingletonComponents() override;
         void CreateInitialSystems() override;
 
         se::IWindow* GetSecondaryWindow() const { return m_SecondaryWindow; }
