@@ -105,10 +105,10 @@ namespace app
         ecs::Id buttonEntity = world->CreateEntity();
         auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
         rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
-        rectTransform5->minX = 900;
-        rectTransform5->maxX = 1000;
-        rectTransform5->minY = 10;
-        rectTransform5->maxY = 110;
+        rectTransform5->minX = 20;
+        rectTransform5->maxX = 120;
+        rectTransform5->minY = 20;
+        rectTransform5->maxY = 120;
 
         auto button = world->AddComponent<ui::components::ButtonComponent>(buttonEntity);
         button->image = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button.sass");
