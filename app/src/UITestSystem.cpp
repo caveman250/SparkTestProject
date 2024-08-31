@@ -12,6 +12,9 @@
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/ImageComponent.h"
 #include "engine/ui/components/TextComponent.h"
+#include "engine/ui/components/TitleBarComponent.h"
+#include "engine/ui/components/WindowComponent.h"
+#include "engine/ui/util/WindowUtil.h"
 
 using namespace se;
 using namespace se::ecs::components;
@@ -84,6 +87,17 @@ namespace app
         text->text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies sed felis et pulvinar. Etiam tincidunt magna eget faucibus venenatis.";
 
         world->AddChild(entity3, entity4);
+
+        ui::components::RectTransformComponent* windowTransform;
+        ui::components::WindowComponent* windowComp;
+        ui::components::TitleBarComponent* titleBarComp;
+        ecs::Id childArea;
+        ui::util::CreateWindow(&windowTransform, &windowComp, &titleBarComp, childArea);
+        windowTransform->anchors = { 0.f, 0.f, 0.f, 0.f };
+        windowTransform->minX = 800;
+        windowTransform->maxX = 1200;
+        windowTransform->minY = 200;
+        windowTransform->maxY = 720;
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& , ui::components::RectTransformComponent*)

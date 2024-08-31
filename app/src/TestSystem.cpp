@@ -120,17 +120,6 @@ namespace app
             transform->rot.y += 90.f;
         };
         button->onReleased.Subscribe<TransformComponent>(entity, std::move(cb));
-
-
-        ecs::Id windowEntity = world->CreateEntity();
-        auto rectTransform6 = world->AddComponent<ui::components::RectTransformComponent>(windowEntity);
-        rectTransform6->anchors = { 0.f, 0.f, 0.f, 0.f };
-        rectTransform6->minX = 800;
-        rectTransform6->maxX = 1200;
-        rectTransform6->minY = 200;
-        rectTransform6->maxY = 720;
-
-        world->AddComponent<ui::components::WindowComponent>(windowEntity);
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
