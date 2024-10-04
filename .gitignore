@@ -2,6 +2,7 @@ cmake-build-debug
 cmake-build-release
 cmake-build-dist
 cmake-build-debugeditor
+cmake-build-debug-editor
 cmake-build-releaseeditor
 *.sass
 .idea/workspace.xml
