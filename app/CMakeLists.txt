@@ -16,6 +16,9 @@ add_executable(TestProject ${SRC})
 
 setup_spark_target(TestProject ${USE_EDITOR})
 
+#target_compile_options(TestProject PUBLIC -fsanitize=address)
+#target_link_options(TestProject PUBLIC -fsanitize=address)
+
 #enable parallel std::for_each
 if (${PLATFORM} MATCHES Windows)
     target_link_options(TestProject PUBLIC -ltbb)

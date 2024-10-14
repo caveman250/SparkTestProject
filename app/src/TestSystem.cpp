@@ -115,7 +115,7 @@ namespace app
         button->pressedImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_pressed.sass");
         button->hoveredImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_hovered.sass");
 
-        auto cb = [](TransformComponent* transform)
+        std::function<void(TransformComponent*)> cb = [](TransformComponent* transform)
         {
             transform->rot.y += 90.f;
         };
