@@ -44,23 +44,23 @@ namespace app
         auto app = Application::Get();
         auto world = app->GetWorld();
 
-        ecs::Id cameraEntity = world->CreateEntity();
+        ecs::Id cameraEntity = world->CreateEntity("Camera");
         world->AddComponent<FirstPersonCameraComponent>(cameraEntity);
 
-        ecs::Id light1 = world->CreateEntity();
+        ecs::Id light1 = world->CreateEntity("Light 1");
         auto* light1Transform = world->AddComponent<TransformComponent>(light1);
         light1Transform->pos = {-5.f, 5.f, 5.f};
         auto* light1Light = world->AddComponent<render::components::PointLightComponent>(light1);
         light1Light->color = {0.f, 0.f, 1.f};
 
-        ecs::Id light2 = world->CreateEntity();
+        ecs::Id light2 = world->CreateEntity("Light 2");
         auto* light2Transform = world->AddComponent<TransformComponent>(light2);
         light2Transform->pos = {5.f, 5.f, 5.f};
         auto* light2Light = world->AddComponent<render::components::PointLightComponent>(light2);
         light2Light->color = {1.f, 0.f, 0.f};
 
         // Cube 1
-        ecs::Id entity = world->CreateEntity();
+        ecs::Id entity = world->CreateEntity("Cube 1");
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
 
@@ -85,7 +85,7 @@ namespace app
         mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         // Cube 2
-        ecs::Id entity2 = world->CreateEntity();
+        ecs::Id entity2 = world->CreateEntity("Cube 2");
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(3.f, 0.f, 0.f);
 
@@ -102,7 +102,7 @@ namespace app
 
         world->CreateObserver<TestObserver, MeshComponent>();
 
-        ecs::Id buttonEntity = world->CreateEntity();
+        ecs::Id buttonEntity = world->CreateEntity("Cube 3");
         auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
         rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
         rectTransform5->minX = 20;

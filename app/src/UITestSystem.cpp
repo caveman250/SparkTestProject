@@ -43,22 +43,22 @@ namespace app
 
         ui::components::TreeNodeComponent* treeNodeComp = nullptr;
         ui::components::TextComponent* textComp = nullptr;
-        auto treeNode = ui::util::InsertTreeNode(treeView, treeViewComp, treeView, &treeNodeComp, &textComp);
+        auto treeNode = ui::util::InsertTreeNode(treeView, treeViewComp, treeView, "TreeNode One", &treeNodeComp, &textComp);
         textComp->text = "one";
 
         ui::components::TreeNodeComponent* treeNodeComp2 = nullptr;
         ui::components::TextComponent* textComp2 = nullptr;
-        auto treeNode2 = ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, &treeNodeComp2, &textComp2);
+        auto treeNode2 = ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, "TreeNode Two", &treeNodeComp2, &textComp2);
         textComp2->text = "two";
 
         ui::components::TreeNodeComponent* treeNodeComp3 = nullptr;
         ui::components::TextComponent* textComp3 = nullptr;
-        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, &treeNodeComp3, &textComp3);
+        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, "TreeNode Three", &treeNodeComp3, &textComp3);
         textComp3->text = "three";
 
         ui::components::TreeNodeComponent* treeNodeComp4 = nullptr;
         ui::components::TextComponent* textComp4 = nullptr;
-        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode2, &treeNodeComp4, &textComp4);
+        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode2, "TreeNode Four", &treeNodeComp4, &textComp4);
         textComp4->text = "four";
     }
 
