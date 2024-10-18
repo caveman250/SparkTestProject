@@ -41,25 +41,25 @@ namespace app
         world->AddChild(childArea, treeView);
         transformComp->anchors = { 0.f, 1.f, 0.f, 1.f };
 
-        ui::components::TreeNodeComponent* treeNodeComp = nullptr;
-        ui::components::TextComponent* textComp = nullptr;
-        auto treeNode = ui::util::InsertTreeNode(treeView, treeViewComp, treeView, "TreeNode One", &treeNodeComp, &textComp);
-        textComp->text = "one";
+        std::vector<ecs::Id> treeNodes = {};
+        for (size_t i = 0; i < 40; ++i)
+        {
+            ui::components::TreeNodeComponent* treeNodeComp = nullptr;
+            ui::components::TextComponent* textComp = nullptr;
+            ecs::Id parent;
+            if (!treeNodes.empty())
+            {
+                parent = treeNodes[(i - 1) % 5];
+            }
+            else
+            {
+                parent = treeView;
+            }
 
-        ui::components::TreeNodeComponent* treeNodeComp2 = nullptr;
-        ui::components::TextComponent* textComp2 = nullptr;
-        auto treeNode2 = ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, "TreeNode Two", &treeNodeComp2, &textComp2);
-        textComp2->text = "two";
-
-        ui::components::TreeNodeComponent* treeNodeComp3 = nullptr;
-        ui::components::TextComponent* textComp3 = nullptr;
-        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode, "TreeNode Three", &treeNodeComp3, &textComp3);
-        textComp3->text = "three";
-
-        ui::components::TreeNodeComponent* treeNodeComp4 = nullptr;
-        ui::components::TextComponent* textComp4 = nullptr;
-        ui::util::InsertTreeNode(treeView, treeViewComp, treeNode2, "TreeNode Four", &treeNodeComp4, &textComp4);
-        textComp4->text = "four";
+            auto treeNode = ui::util::InsertTreeNode(treeView, treeViewComp, parent, std::format("TreeNode {0}", i), &treeNodeComp, &textComp);
+            textComp->text = std::format("Node {0}", i);
+            treeNodes.push_back(treeNode);
+        }
     }
 
     void UITestSystem::OnUpdate(const std::vector<ecs::Id>& , ui::components::RectTransformComponent*)
