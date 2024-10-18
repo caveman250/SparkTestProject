@@ -49,7 +49,7 @@ namespace app
             ecs::Id parent;
             if (!treeNodes.empty())
             {
-                parent = treeNodes[(i - 1) % 5];
+                parent = treeNodes[std::rand() % treeNodes.size()];
             }
             else
             {
