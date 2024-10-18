@@ -20,9 +20,7 @@ setup_spark_target(TestProject ${USE_EDITOR})
 #target_link_options(TestProject PUBLIC -fsanitize=address)
 
 #enable parallel std::for_each
-if (${PLATFORM} MATCHES Windows)
-    target_link_options(TestProject PUBLIC -ltbb)
-elseif (${PLATFORM} MATCHES Linux)
+if (${PLATFORM} MATCHES Linux)
     find_package(TBB REQUIRED COMPONENTS tbb)
     target_link_libraries(TestProject tbb)
 endif()

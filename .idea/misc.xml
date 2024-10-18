@@ -14,7 +14,9 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <excludeRoots>
+      <file path="$PROJECT_DIR$/Spark/Engine/third_party" />
       <file path="$PROJECT_DIR$/cmake-build-debug-editor" />
+      <file path="$PROJECT_DIR$/cmake-build-debugeditor" />
     </excludeRoots>
   </component>
 </project>
