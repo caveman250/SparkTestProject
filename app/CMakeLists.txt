@@ -8,11 +8,15 @@ include(${ROOT_DIR}/CMake/Spark.cmake)
 ###### Includes ######
 include_directories(src)
 
-###### Source Code ######
-file(GLOB_RECURSE SRC src/*.cpp src/*.h)
+###### Generate Unity Files #######
+execute_process(COMMAND python UnityBatcher.py ../../app/unity.conf ${PLATFORM}
+        WORKING_DIRECTORY ${ROOT_DIR}/Build/)
+
+###### Source ######
+file(GLOB SOURCE ./unity_generated/*.cpp)
 
 ###### Output ######
-add_executable(TestProject ${SRC})
+add_executable(TestProject ${SOURCE})
 
 setup_spark_target(TestProject ${USE_EDITOR})
 

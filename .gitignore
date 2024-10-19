@@ -6,3 +6,5 @@ cmake-build-debug-editor
 cmake-build-releaseeditor
 *.sass
 .idea/workspace.xml
+venv
+app/unity_generated
