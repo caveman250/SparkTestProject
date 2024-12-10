@@ -1,3 +1,5 @@
+
+#include <engine/ui/components/ScrollBoxComponent.h>
 #include "spark.h"
 
 #include "UITestSystem.h"
@@ -35,10 +37,16 @@ namespace app
         windowTransform->minY = 200;
         windowTransform->maxY = 720;
 
+        auto scrollBoxEntity = world->CreateEntity("ScrollBox");
+        world->AddComponent<ui::components::ScrollBoxComponent>(scrollBoxEntity);
+        auto scrollBoxRect = world->AddComponent<ui::components::RectTransformComponent>(scrollBoxEntity);
+        scrollBoxRect->anchors = { 0.f, 1.f, 0.f, 1.f };
+        world->AddChild(childArea, scrollBoxEntity);
+
         ui::components::TreeViewComponent* treeViewComp = nullptr;
         ui::components::RectTransformComponent* transformComp = nullptr;
         auto treeView = ui::util::CreateTreeView(&treeViewComp, &transformComp);
-        world->AddChild(childArea, treeView);
+        world->AddChild(scrollBoxEntity, treeView);
         transformComp->anchors = { 0.f, 1.f, 0.f, 1.f };
 
         std::vector<ecs::Id> treeNodes = {};
