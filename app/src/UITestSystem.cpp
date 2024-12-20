@@ -47,7 +47,7 @@ namespace app
         ui::components::RectTransformComponent* transformComp = nullptr;
         auto treeView = ui::util::CreateTreeView(&treeViewComp, &transformComp);
         world->AddChild(scrollBoxEntity, treeView);
-        transformComp->anchors = { 0.f, 1.f, 0.f, 1.f };
+        transformComp->anchors = { 0.f, 1.f, 0.f, 0.f };
 
         std::vector<ecs::Id> treeNodes = {};
         for (size_t i = 0; i < 40; ++i)
