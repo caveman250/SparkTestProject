@@ -102,7 +102,7 @@ namespace app
 
         world->CreateObserver<TestObserver, MeshComponent>();
 
-        ecs::Id buttonEntity = world->CreateEntity("Cube 3");
+        ecs::Id buttonEntity = world->CreateEntity("Button");
         auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
         rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
         rectTransform5->minX = 20;
