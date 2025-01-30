@@ -10,6 +10,8 @@
 #include "engine/render/VertexBuffer.h"
 #include "TestSystem.h"
 
+#include <engine/ui/components/TextComponent.h>
+
 #include "FirstPersonCameraComponent.h"
 #include "TestApplication.h"
 #include "TestObserver.h"
@@ -130,6 +132,10 @@ namespace app
         {
             auto& transformComp = transform[i];
             transformComp.rot.y += 10.f * dt;
+            if (transformComp.rot.y > 360.f)
+            {
+                transformComp.rot.y -= 360.f;
+            }
         }
     }
 }
