@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Spark" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Spark/Engine/third_party/Crunch2" vcs="Git" />
   </component>
 </project>
