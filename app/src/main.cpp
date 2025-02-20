@@ -1,7 +1,6 @@
 
 
 #include <platform/PlatformRunLoop.h>
-#include <platform/mac/AppDelegate.h>
 
 #include "spark.h"
 #include "TestApplication.h"
