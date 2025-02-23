@@ -29,3 +29,8 @@ if (${PLATFORM} MATCHES Linux)
     find_package(TBB REQUIRED COMPONENTS tbb)
     target_link_libraries(TestProject tbb)
 endif()
+
+###### Add non Unity files for visualisation in VS and Xcode ######
+file(GLOB_RECURSE NON_UNITY_SOURCE src/*.cpp src/*.h)
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${NON_UNITY_SOURCE})
+add_custom_target("App_Source_Files" SOURCES ${NON_UNITY_SOURCE})
