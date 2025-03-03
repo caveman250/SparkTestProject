@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(Spark)
-
-set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE) #make third party libs using old cmake versions shut up.
+project(Spark LANGUAGES C CXX OBJC OBJCXX)
 
 option(USE_EDITOR "" OFF)
 
