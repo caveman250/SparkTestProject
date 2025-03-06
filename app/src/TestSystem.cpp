@@ -1,6 +1,5 @@
 #include "spark.h"
 
-#include "engine/math/Mat4.h"
 #include "engine/asset/texture/Texture.h"
 #include "engine/render/Material.h"
 #include "engine/asset/shader/ast/Types.h"
@@ -8,12 +7,10 @@
 #include "engine/render/RenderState.h"
 #include "engine/asset/mesh/Model.h"
 #include "engine/render/VertexBuffer.h"
+#include "engine/render/MaterialInstance.h"
 #include "TestSystem.h"
 
-#include <engine/ui/components/TextComponent.h>
-
 #include "FirstPersonCameraComponent.h"
-#include "TestApplication.h"
 #include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
@@ -22,7 +19,6 @@
 #include "engine/render/components/PointLightComponent.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
-#include "engine/ui/components/WindowComponent.h"
 
 using namespace se;
 using namespace se::ecs::components;
@@ -75,16 +71,18 @@ namespace app
         auto* mesh = world->AddComponent<MeshComponent>(entity);
         LoadCubeMesh(mesh);
 
-        mesh->material = render::Material::CreateMaterial(
+        auto material = render::Material::CreateMaterial(
             {uberVertex},
             {diffuse, pointLght, hueShader});
-        mesh->material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
+        material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
         render::RenderState rs;
         rs.depthComp = render::DepthCompare::Less;
         rs.lit = true;
-        mesh->material->SetRenderState(rs);
+        material->SetRenderState(rs);
+
+        mesh->materialInstance = render::MaterialInstance::CreateMaterialInstance(material);
         auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
-        mesh->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
+        mesh->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         // Cube 2
         ecs::Id entity2 = world->CreateEntity("Cube 2");
@@ -93,12 +91,14 @@ namespace app
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         LoadCubeMesh(mesh2);
-        mesh2->material = render::Material::CreateMaterial(
-            {uberVertex},
-            {diffuse, pointLght});
-        mesh2->material->SetRenderState(rs);
+        auto material2 = render::Material::CreateMaterial(
+                {uberVertex},
+                {diffuse, pointLght});
+        material2->SetRenderState(rs);
+
+        mesh2->materialInstance = render::MaterialInstance::CreateMaterialInstance(material2);
         auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
-        mesh2->material->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
+        mesh2->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
 
