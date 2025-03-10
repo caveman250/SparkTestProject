@@ -4,6 +4,7 @@
 #include "engine/input/InputComponent.h"
 #include "engine/input/InputUtil.h"
 #include "engine/input/MouseButton.h"
+#include "platform/IWindow.h"
 
 namespace app
 {
@@ -85,5 +86,7 @@ namespace app
                 activeCamera->pos,
                 activeCamera->pos + forward,
                 up);
+
+        activeCamera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
     }
 }
