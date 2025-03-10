@@ -117,11 +117,12 @@ namespace app
         button->pressedImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_pressed.sass");
         button->hoveredImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_hovered.sass");
 
-        std::function<void(TransformComponent*)> cb = [](TransformComponent* transform)
+        std::function<void()> cb = [entity]()
         {
+            auto transform = Application::Get()->GetWorld()->GetComponent<TransformComponent>(entity);
             transform->rot.y += 90.f;
         };
-        button->onReleased.Subscribe<TransformComponent>(entity, std::move(cb));
+        button->onReleased.Subscribe(std::move(cb));
     }
 
     void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
