@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.28)
-project(Spark LANGUAGES C CXX OBJC OBJCXX)
+
+if (${PLATFORM} MATCHES Mac)
+    project(Spark LANGUAGES C CXX OBJC OBJCXX)
+else ()
+    project(Spark LANGUAGES C CXX)
+endif()
 
 option(USE_EDITOR "" OFF)
 
