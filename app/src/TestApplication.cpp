@@ -14,8 +14,13 @@ namespace app
     {
         Application::CreateInitialSystems();
 
-        m_World.CreateAppSystem<FirstPersonCameraSystem>("FirstPersonCameraSystem", {}, {}, {});
-        m_World.CreateAppSystem<TestSystem>("TestSystem", {}, {}, {});
-        m_World.CreateAppSystem<UITestSystem>("UITestSystem", {}, {}, {});
+        ecs::SystemCreationInfo firstPersonReg = ecs::SystemCreationInfo("FirstPersonCameraSystem");
+        m_World.CreateAppSystem<FirstPersonCameraSystem>(firstPersonReg);
+
+        ecs::SystemCreationInfo testReg = ecs::SystemCreationInfo("TestSystem");
+        m_World.CreateAppSystem<TestSystem>(testReg);
+
+        ecs::SystemCreationInfo uiTestReg = ecs::SystemCreationInfo("UITestSystem");
+        m_World.CreateAppSystem<UITestSystem>(uiTestReg);
     }
 }
