@@ -9,3 +9,5 @@ app/built
 venv
 app/unity_generated
 xcode
+*.generated.h
+*.generated.cpp
