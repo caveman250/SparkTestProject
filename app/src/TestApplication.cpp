@@ -1,7 +1,6 @@
 #include "TestApplication.h"
 #include "FirstPersonCameraSystem.h"
 #include "TestSystem.h"
-#include "UITestSystem.h"
 
 namespace app
 {
@@ -14,13 +13,14 @@ namespace app
     {
         Application::CreateInitialSystems();
 
-        ecs::SystemCreationInfo firstPersonReg = ecs::SystemCreationInfo("FirstPersonCameraSystem");
+        ecs::SystemDeclaration firstPersonReg = ecs::SystemDeclaration("FirstPersonCameraSystem")
+            .WithComponent<FirstPersonCameraComponent>()
+            .WithSingletonComponent<camera::ActiveCameraComponent>()
+            .WithSingletonComponent<input::InputComponent>();
         m_World.CreateAppSystem<FirstPersonCameraSystem>(firstPersonReg);
 
-        ecs::SystemCreationInfo testReg = ecs::SystemCreationInfo("TestSystem");
+        ecs::SystemDeclaration testReg = ecs::SystemDeclaration("TestSystem")
+            .WithComponent<TransformComponent>();
         m_World.CreateAppSystem<TestSystem>(testReg);
-
-        ecs::SystemCreationInfo uiTestReg = ecs::SystemCreationInfo("UITestSystem");
-        m_World.CreateAppSystem<UITestSystem>(uiTestReg);
     }
 }

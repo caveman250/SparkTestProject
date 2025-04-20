@@ -10,11 +10,11 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    class TestSystem : public ecs::AppSystem<TransformComponent>
+    class TestSystem : public ecs::AppSystem
     {
         DECLARE_SPARK_SYSTEM(TestSystem)
     public:
-        void OnInit(const std::vector<ecs::Id> &entities, TransformComponent* transform) override;
-        void OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform) override;
+        void OnInit(const ecs::SystemUpdateData& updateData) override;
+        void OnUpdate(const ecs::SystemUpdateData& updateData) override;
     };
 }

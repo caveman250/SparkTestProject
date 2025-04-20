@@ -9,11 +9,11 @@ using namespace se;
 
 namespace app
 {
-    class FirstPersonCameraSystem : public ecs::AppSystem<FirstPersonCameraComponent, camera::ActiveCameraComponent, input::InputComponent>
+    class FirstPersonCameraSystem : public ecs::AppSystem
     {
         DECLARE_SPARK_SYSTEM(FirstPersonCameraSystem)
 
-        void OnUpdate(const std::vector<se::ecs::Id>& entities, FirstPersonCameraComponent* camera, camera::ActiveCameraComponent* activeCamera, input::InputComponent* input) override;
+        void OnUpdate(const ecs::SystemUpdateData& updateData) override;
     };
 
 }

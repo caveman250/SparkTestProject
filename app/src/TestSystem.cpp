@@ -37,7 +37,7 @@ namespace app
         meshComp->indexBuffer->CreatePlatformResource();
     }
 
-    void TestSystem::OnInit(const std::vector<ecs::Id>&, TransformComponent*)
+    void TestSystem::OnInit(const ecs::SystemUpdateData&)
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
@@ -125,10 +125,13 @@ namespace app
         button->onReleased.Subscribe(std::move(cb));
     }
 
-    void TestSystem::OnUpdate(const std::vector<ecs::Id>& entities, TransformComponent* transform)
+    void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
         auto app = Application::Get();
         auto dt = app->GetDeltaTime();
+
+        const auto& entities = updateData.GetEntities();
+        auto* transform = updateData.GetComponentArray<TransformComponent>();
         for (size_t i = 0; i < entities.size(); ++i)
         {
             auto& transformComp = transform[i];

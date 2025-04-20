@@ -10,8 +10,12 @@ namespace app
 {
     DEFINE_SPARK_SYSTEM(FirstPersonCameraSystem)
 
-    void FirstPersonCameraSystem::OnUpdate(const std::vector<ecs::Id>& entities, FirstPersonCameraComponent* camera, camera::ActiveCameraComponent* activeCamera, input::InputComponent* input)
+    void FirstPersonCameraSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
+        const auto& entities = updateData.GetEntities();
+        auto* activeCamera = updateData.GetSingletonComponent<camera::ActiveCameraComponent>();
+        auto* input = updateData.GetSingletonComponent<input::InputComponent>();
+        auto* cameras = updateData.GetComponentArray<FirstPersonCameraComponent>();
         if (entities.empty())
         {
             return;
@@ -25,68 +29,72 @@ namespace app
         activeCamera->lastMouseX = input->mouseX;
         activeCamera->lastMouseY = input->mouseY;
 
-        input::InputUtil::ProcessMouseEvents(input, [&camera](const input::MouseEvent& mouseEvent)
+        for (size_t i = 0; i < entities.size(); ++i)
         {
-            if (mouseEvent.button == input::MouseButton::Left)
+            auto& camera = cameras[i];
+            input::InputUtil::ProcessMouseEvents(input, [&camera](const input::MouseEvent& mouseEvent)
             {
-                if (mouseEvent.state == input::KeyState::Down)
+                if (mouseEvent.button == input::MouseButton::Left)
                 {
-                    camera->mouseDown = true;
-                }
-                else
-                {
-                    camera->mouseDown = false;
+                    if (mouseEvent.state == input::KeyState::Down)
+                    {
+                        camera.mouseDown = true;
+                    }
+                    else
+                    {
+                        camera.mouseDown = false;
+                    }
+
+                    return true;
                 }
 
-                return true;
+                return false;
+            });
+
+            if (camera.mouseDown)
+            {
+                auto dt = app->GetDeltaTime();
+                activeCamera->rot = activeCamera->rot + math::Vec3(dy * dt, dx * dt, 0.0f);
             }
 
-            return false;
-        });
+            math::Vec3 forward(cos(activeCamera->rot.x) * sin(activeCamera->rot.y),
+                         sin(activeCamera->rot.x),
+                         cos(activeCamera->rot.x) * cos(activeCamera->rot.y));
 
-        if (camera->mouseDown)
-        {
-            auto dt = app->GetDeltaTime();
-            activeCamera->rot = activeCamera->rot + math::Vec3(dy * dt, dx * dt, 0.0f);
+            math::Vec3 right = math::Vec3(
+                sin(activeCamera->rot.y - 3.14f / 2.0f),
+                0,
+                cos(activeCamera->rot.y - 3.14f / 2.0f));
+
+            math::Vec3 up = math::Cross(right, forward);
+
+            // Movement
+            if (input->keyStates.at(input::Key::W) == input::KeyState::Down)
+            {
+                activeCamera->pos += forward * 5.f * Application::Get()->GetDeltaTime();
+            }
+
+            if (input->keyStates.at(input::Key::S) == input::KeyState::Down)
+            {
+                activeCamera->pos -= forward * 5.f * Application::Get()->GetDeltaTime();
+            }
+
+            if (input->keyStates.at(input::Key::A) == input::KeyState::Down)
+            {
+                activeCamera->pos -= right * 5.f * Application::Get()->GetDeltaTime();
+            }
+
+            if (input->keyStates.at(input::Key::D) == input::KeyState::Down)
+            {
+                activeCamera->pos += right * 5.f * Application::Get()->GetDeltaTime();
+            }
+
+            activeCamera->view = math::LookAt(
+                    activeCamera->pos,
+                    activeCamera->pos + forward,
+                    up);
+
+            activeCamera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
         }
-
-        math::Vec3 forward(cos(activeCamera->rot.x) * sin(activeCamera->rot.y),
-                     sin(activeCamera->rot.x),
-                     cos(activeCamera->rot.x) * cos(activeCamera->rot.y));
-
-        math::Vec3 right = math::Vec3(
-            sin(activeCamera->rot.y - 3.14f / 2.0f),
-            0,
-            cos(activeCamera->rot.y - 3.14f / 2.0f));
-
-        math::Vec3 up = math::Cross(right, forward);
-
-        // Movement
-        if (input->keyStates.at(input::Key::W) == input::KeyState::Down)
-        {
-            activeCamera->pos += forward * 5.f * Application::Get()->GetDeltaTime();
-        }
-
-        if (input->keyStates.at(input::Key::S) == input::KeyState::Down)
-        {
-            activeCamera->pos -= forward * 5.f * Application::Get()->GetDeltaTime();
-        }
-
-        if (input->keyStates.at(input::Key::A) == input::KeyState::Down)
-        {
-            activeCamera->pos -= right * 5.f * Application::Get()->GetDeltaTime();
-        }
-
-        if (input->keyStates.at(input::Key::D) == input::KeyState::Down)
-        {
-            activeCamera->pos += right * 5.f * Application::Get()->GetDeltaTime();
-        }
-
-        activeCamera->view = math::LookAt(
-                activeCamera->pos,
-                activeCamera->pos + forward,
-                up);
-
-        activeCamera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
     }
 }
