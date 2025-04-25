@@ -31,8 +31,9 @@ namespace app
 
         for (size_t i = 0; i < entities.size(); ++i)
         {
+            const auto& entity = entities[i];
             auto& camera = cameras[i];
-            input::InputUtil::ProcessMouseEvents(input, [&camera](const input::MouseEvent& mouseEvent)
+            input::InputUtil::ProcessMouseEvents(entity, input, [&camera](const input::MouseEvent& mouseEvent)
             {
                 if (mouseEvent.button == input::MouseButton::Left)
                 {
