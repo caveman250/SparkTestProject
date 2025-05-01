@@ -63,9 +63,9 @@ namespace app
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
 
         auto* assetManager = asset::AssetManager::Get();
-        auto uberVertex = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/uber_vertex.sass");
-        auto diffuse = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/diffuse_texture.sass");
-        auto pointLght = assetManager->GetAsset<asset::Shader>("/builtin_assets/shaders/point_light.sass");
+        auto uberVertex = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/uber_vertex.sass");
+        auto diffuse = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/diffuse_texture.sass");
+        auto pointLght = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/point_light.sass");
         auto hueShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
 
         auto* mesh = world->AddComponent<MeshComponent>(entity);
@@ -113,9 +113,9 @@ namespace app
         rectTransform5->maxY = 120;
 
         auto button = world->AddComponent<ui::components::ButtonComponent>(buttonEntity);
-        button->image = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button.sass");
-        button->pressedImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_pressed.sass");
-        button->hoveredImage = assetManager->GetAsset<asset::Texture>("/builtin_assets/textures/default_button_hovered.sass");
+        button->image = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button.sass");
+        button->pressedImage = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button_pressed.sass");
+        button->hoveredImage = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button_hovered.sass");
 
         std::function<void()> cb = [entity]()
         {
