@@ -21,7 +21,7 @@ include(./Spark/Cmake/ExternalTools.cmake)
 
 set(REGEN_CMAKE_TARGET RegenCmake)
 add_custom_target(RegenCmake COMMAND echo Generating Project Files... & ${CMAKE_COMMAND} .
-                             WORKING_DIRECTORY ../)
+                             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
 get_filename_component(ENGINE_ABSOLUTE_PATH Spark/Engine/src ABSOLUTE)
 get_filename_component(EDITOR_ABSOLUTE_PATH Spark/Editor/src ABSOLUTE)
