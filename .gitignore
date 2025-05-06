@@ -1,9 +1,4 @@
-cmake-build-debug
-cmake-build-release
-cmake-build-distribution
-cmake-build-debugeditor
-cmake-build-debug-editor
-cmake-build-releaseeditor
+bin/*
 app/built
 .idea/workspace.xml
 venv

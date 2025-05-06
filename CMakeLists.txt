@@ -7,6 +7,7 @@ else ()
 endif()
 
 option(USE_EDITOR "" OFF)
+option(DIST_BUILD "" OFF)
 
 function(message)
     if (NOT MESSAGE_QUIET)
@@ -14,8 +15,8 @@ function(message)
     endif()
 endfunction()
 
-add_compile_definitions(APP_DIR="../../app")
-add_compile_definitions(ENGINE_DIR="../../Spark/Engine")
+add_compile_definitions(APP_DIR="../../../app")
+add_compile_definitions(ENGINE_DIR="../../../Spark/Engine")
 
 include(./Spark/Cmake/ExternalTools.cmake)
 
