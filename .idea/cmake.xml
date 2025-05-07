@@ -3,7 +3,7 @@
   <component name="CMakeSharedSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" GENERATION_DIR="bin/debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja" />
-      <configuration PROFILE_NAME="DebugEditor" ENABLED="true" GENERATION_DIR="bin/debugeditor" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja -DUSE_EDITOR=ON" />
+      <configuration PROFILE_NAME="Debug Editor" ENABLED="true" GENERATION_DIR="bin/debugeditor" CONFIG_NAME="Debug" GENERATION_OPTIONS="-G Ninja -DUSE_EDITOR=ON" />
       <configuration PROFILE_NAME="Release" ENABLED="true" GENERATION_DIR="bin/release" CONFIG_NAME="RelWithDebInfo" GENERATION_OPTIONS="-G Ninja" />
       <configuration PROFILE_NAME="Release Editor" ENABLED="true" GENERATION_DIR="bin/releaseeditor" CONFIG_NAME="RelWithDebInfo" GENERATION_OPTIONS="-G Ninja -DUSE_EDITOR=ON" />
       <configuration PROFILE_NAME="Distribution" ENABLED="true" GENERATION_DIR="bin/dist" CONFIG_NAME="RelWithDebInfo" GENERATION_OPTIONS="-G Ninja -DDIST_BUILD=ON" />
