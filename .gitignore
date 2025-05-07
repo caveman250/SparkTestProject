@@ -1,4 +1,7 @@
 bin/*
+vs/*
+.vs/*
+out/*
 app/built
 .idea/workspace.xml
 venv
