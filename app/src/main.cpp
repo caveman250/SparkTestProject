@@ -9,7 +9,7 @@
 int main(int, char*[])
 {
     se::Application::CreateInstance<app::TestApplication>();
-    auto runLoop = PlatformRunLoop::CreatePlatformRunloop();
+    auto runLoop = se::PlatformRunLoop::CreatePlatformRunloop();
     runLoop->Run();
     runLoop->Shutdown();
 }
