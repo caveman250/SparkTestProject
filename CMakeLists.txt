@@ -24,7 +24,7 @@ add_compile_definitions(ENGINE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Spark/Engine")
 
 include(./Spark/Cmake/ExternalTools.cmake)
 
-#this is more annoying than helpful in Visual Studio. Just have to manually regen project if using that shitty ide.
+#this breaks the build in VS and Xcode.
 if(NOT CMAKE_CONFIGURATION_TYPES)
     set(REGEN_CMAKE_TARGET RegenCmake)
     add_custom_target(RegenCmake COMMAND echo Generating Project Files... & ${CMAKE_COMMAND} .
