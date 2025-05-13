@@ -1,0 +1,301 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "Debug (Win64)",
+      "displayName": "Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Debug Editor (Win64)",
+      "displayName": "Debug Editor",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Release (Win64)",
+      "displayName": "Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/release",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Release Editor (Win64)",
+      "displayName": "Release Editor",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Distribution (Win64)",
+      "displayName": "Distribution",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Distribution Editor (Win64)",
+      "displayName": "Distribution Editor",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "DIST_BUILD": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      }
+    },
+    {
+      "name": "Debug (Mac)",
+      "displayName": "Debug",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Debug Editor (Mac)",
+      "displayName": "Debug Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Release (Mac)",
+      "displayName": "Release",
+      "binaryDir": "${sourceDir}/projects/${generator}/release",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Release Editor (Mac)",
+      "displayName": "Release Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Distribution (Mac)",
+      "displayName": "Distribution",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Distribution Editor (Mac)",
+      "displayName": "Distribution Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "DIST_BUILD": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "Debug (Linux)",
+      "displayName": "Debug",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Debug Editor (Linux)",
+      "displayName": "Debug Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Release (Linux)",
+      "displayName": "Release",
+      "binaryDir": "${sourceDir}/projects/${generator}/release",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Release Editor (Linux)",
+      "displayName": "Release Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Distribution (Linux)",
+      "displayName": "Distribution",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution",
+      "cacheVariables": {
+        "USE_EDITOR": "OFF",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Distribution Editor (Linux)",
+      "displayName": "Distribution Editor",
+      "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
+      "cacheVariables": {
+        "USE_EDITOR": "ON",
+        "DIST_BUILD": "ON",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    }
+  ]
+}
