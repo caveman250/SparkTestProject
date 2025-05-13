@@ -25,7 +25,7 @@
 5. Select your desired Profile.
 6. Build run and debug as normal.
 
-## Visual Studio
+## Visual Studio / Rider (Windows only)
 1. Run GenerateVSProject.bat from the repo root.
 2. Navigate to projects/vs
 3. Open Spark.sln
@@ -38,6 +38,7 @@
    - Distribution
    - DistributionEditor
 6. Build run and debug as normal.
+7. Rerun GenerateVSProject.bat every time you add new files.
 
 ## Xcode
 1. Run GenerateXcodeProject.sh from the repo root.
@@ -52,6 +53,7 @@
     - Distribution
     - DistributionEditor
 6. Build run and debug as normal.
+7. Rerun GenerateXcodeProject.sh every time you add new files.
 
 ## CLI
 1. generate the build files for a given config with: `cmake --preset "Preset Name"`
