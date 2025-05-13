@@ -8,6 +8,7 @@
 - Visual Studio 2022 (Windows)
 - Xcode (Mac)
 - gcc/g++ (Linux)
+- SDL2 (Linux)
 
 # Building
 ## CLion
