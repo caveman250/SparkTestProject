@@ -223,6 +223,7 @@
     {
       "name": "Debug (Linux)",
       "displayName": "Debug",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/debug",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -237,6 +238,7 @@
     {
       "name": "Debug Editor (Linux)",
       "displayName": "Debug Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -251,6 +253,7 @@
     {
       "name": "Release (Linux)",
       "displayName": "Release",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/release",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -265,6 +268,7 @@
     {
       "name": "Release Editor (Linux)",
       "displayName": "Release Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -279,6 +283,7 @@
     {
       "name": "Distribution (Linux)",
       "displayName": "Distribution",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -294,6 +299,7 @@
     {
       "name": "Distribution Editor (Linux)",
       "displayName": "Distribution Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",

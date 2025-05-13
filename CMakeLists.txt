@@ -11,7 +11,7 @@ option(DIST_BUILD "" OFF)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-include(./Spark/Cmake/MultiTarget.cmake)
+include(Spark/CMake/MultiTarget.cmake)
 
 function(message)
     if (NOT MESSAGE_QUIET)
@@ -22,7 +22,7 @@ endfunction()
 add_compile_definitions(APP_DIR="${CMAKE_CURRENT_SOURCE_DIR}/app")
 add_compile_definitions(ENGINE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Spark/Engine")
 
-include(./Spark/Cmake/ExternalTools.cmake)
+include(Spark/CMake/ExternalTools.cmake)
 
 #this breaks the build in VS and Xcode.
 if(NOT CMAKE_CONFIGURATION_TYPES)
