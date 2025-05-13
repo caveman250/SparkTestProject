@@ -93,6 +93,7 @@
       "binaryDir": "${sourceDir}/projects/${generator}/distribution",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
+        "DIST_BUILD": "ON",
         "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       },
       "condition": {
@@ -130,6 +131,7 @@
     {
       "name": "Debug (Mac)",
       "displayName": "Debug",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/debug",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -144,6 +146,7 @@
     {
       "name": "Debug Editor (Mac)",
       "displayName": "Debug Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -158,6 +161,7 @@
     {
       "name": "Release (Mac)",
       "displayName": "Release",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/release",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -172,6 +176,7 @@
     {
       "name": "Release Editor (Mac)",
       "displayName": "Release Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -186,9 +191,11 @@
     {
       "name": "Distribution (Mac)",
       "displayName": "Distribution",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
+        "DIST_BUILD": "ON",
         "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       },
       "condition": {
@@ -200,6 +207,7 @@
     {
       "name": "Distribution Editor (Mac)",
       "displayName": "Distribution Editor",
+      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -274,6 +282,7 @@
       "binaryDir": "${sourceDir}/projects/${generator}/distribution",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
+        "DIST_BUILD": "ON",
         "CMAKE_BUILD_TYPE": "RelWithDebInfo"
       },
       "condition": {
