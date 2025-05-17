@@ -9,8 +9,13 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <excludeRoots>
+      <file path="$PROJECT_DIR$/Spark/Engine/built" />
+      <file path="$PROJECT_DIR$/Spark/Engine/unity_generated" />
+      <file path="$PROJECT_DIR$/app/built" />
+      <file path="$PROJECT_DIR$/app/unity_generated" />
       <file path="$PROJECT_DIR$/cmake-build-debug-editor" />
       <file path="$PROJECT_DIR$/cmake-build-debugeditor" />
+      <file path="$PROJECT_DIR$/projects" />
       <file path="$PROJECT_DIR$/venv" />
     </excludeRoots>
   </component>
