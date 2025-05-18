@@ -25,8 +25,6 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    DEFINE_SPARK_SYSTEM(TestSystem)
-
     void LoadCubeMesh(MeshComponent* meshComp)
     {
         meshComp->model = asset::AssetManager::Get()->GetAsset<asset::Model>("/assets/models/cube.sass");
@@ -59,7 +57,7 @@ namespace app
 
         // Cube 1
         ecs::Id entity = world->CreateEntity("Cube 1");
-        auto* transform = world->AddComponent<TransformComponent>(entity);
+        auto* transform = world->AddComponent<TransformComponent>(entity);	
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
 
         auto* assetManager = asset::AssetManager::Get();

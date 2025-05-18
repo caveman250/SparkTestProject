@@ -37,7 +37,7 @@ get_filename_component(ENGINE_ABSOLUTE_PATH Spark/Engine/src ABSOLUTE)
 get_filename_component(EDITOR_ABSOLUTE_PATH Spark/Editor/src ABSOLUTE)
 get_filename_component(APP_ABSOLUTE_PATH app/src ABSOLUTE)
 execute_process(COMMAND ${PYTHON_EXE} SparkHeaderTool.py "${ENGINE_ABSOLUTE_PATH}:${EDITOR_ABSOLUTE_PATH}:${APP_ABSOLUTE_PATH}"
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Spark/Build)
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Spark/Build/SparkHeaderTool)
 
 add_subdirectory(Spark/Engine)
 add_subdirectory(Spark/Editor)

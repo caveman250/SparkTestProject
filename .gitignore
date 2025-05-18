@@ -3,6 +3,7 @@ projects/*
 app/built
 .idea/workspace.xml
 venv
-app/unity_generated
+app/src/generated
+app/unity
 *.generated.h
 *.generated.cpp

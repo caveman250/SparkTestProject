@@ -9,6 +9,7 @@ namespace app
     {
         DECLARE_SPARK_COMPONENT(FirstPersonCameraComponent)
 
+        SPARK_MEMBER()
         bool mouseDown = false;
     };
 }

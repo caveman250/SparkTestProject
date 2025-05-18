@@ -8,8 +8,6 @@
 
 namespace app
 {
-    DEFINE_SPARK_SYSTEM(FirstPersonCameraSystem)
-
     void FirstPersonCameraSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
         const auto& entities = updateData.GetEntities();
