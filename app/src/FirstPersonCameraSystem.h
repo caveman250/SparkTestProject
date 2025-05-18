@@ -11,7 +11,7 @@ namespace app
 {
     class FirstPersonCameraSystem : public ecs::AppSystem
     {
-        SPARK_SYSTEM(FirstPersonCameraSystem)
+        SPARK_SYSTEM()
 
         void OnUpdate(const ecs::SystemUpdateData& updateData) override;
     };

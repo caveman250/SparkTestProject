@@ -12,7 +12,7 @@ namespace app
 {
     class TestSystem : public ecs::AppSystem
     {
-        SPARK_SYSTEM(TestSystem)
+        SPARK_SYSTEM()
     public:
         void OnInit(const ecs::SystemUpdateData& updateData) override;
         void OnUpdate(const ecs::SystemUpdateData& updateData) override;
