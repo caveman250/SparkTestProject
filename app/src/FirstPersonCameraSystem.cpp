@@ -68,22 +68,22 @@ namespace app
             math::Vec3 up = math::Cross(right, forward);
 
             // Movement
-            if (input->keyStates.at(input::Key::W) == input::KeyState::Down)
+            if (input->keyStates.at(static_cast<int>(input::Key::W)) == input::KeyState::Down)
             {
                 activeCamera->pos += forward * 5.f * Application::Get()->GetDeltaTime();
             }
 
-            if (input->keyStates.at(input::Key::S) == input::KeyState::Down)
+            if (input->keyStates.at(static_cast<int>(input::Key::S)) == input::KeyState::Down)
             {
                 activeCamera->pos -= forward * 5.f * Application::Get()->GetDeltaTime();
             }
 
-            if (input->keyStates.at(input::Key::A) == input::KeyState::Down)
+            if (input->keyStates.at(static_cast<int>(input::Key::A)) == input::KeyState::Down)
             {
                 activeCamera->pos -= right * 5.f * Application::Get()->GetDeltaTime();
             }
 
-            if (input->keyStates.at(input::Key::D) == input::KeyState::Down)
+            if (input->keyStates.at(static_cast<int>(input::Key::D)) == input::KeyState::Down)
             {
                 activeCamera->pos += right * 5.f * Application::Get()->GetDeltaTime();
             }
