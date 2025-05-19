@@ -46,6 +46,6 @@ endif()
 
 add_subdirectory(Spark/engine)
 add_subdirectory(Spark/editor)
-add_subdirectory(Spark/Tools)
+add_subdirectory(Spark/tools)
 
 add_subdirectory(app)
