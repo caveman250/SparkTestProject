@@ -2,8 +2,6 @@ projects/*
 .vs/*
 app/built
 .idea/workspace.xml
-venv
-app/src/generated
-app/unity
 *.generated.h
 *.generated.cpp
+*.generated.mm
