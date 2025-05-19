@@ -36,7 +36,7 @@ endif()
 get_filename_component(ENGINE_ABSOLUTE_PATH Spark/engine/src ABSOLUTE)
 get_filename_component(EDITOR_ABSOLUTE_PATH Spark/editor/src ABSOLUTE)
 get_filename_component(APP_ABSOLUTE_PATH app/src ABSOLUTE)
-execute_process(COMMAND ${PYTHON_EXE} SparkHeaderTool.py "${ENGINE_ABSOLUTE_PATH}:${EDITOR_ABSOLUTE_PATH}:${APP_ABSOLUTE_PATH}"
+execute_process(COMMAND ${PYTHON_EXE} SparkHeaderTool.py "${ENGINE_ABSOLUTE_PATH};${EDITOR_ABSOLUTE_PATH};${APP_ABSOLUTE_PATH}"
         RESULT_VARIABLE header_tool_result
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Spark/build/SparkHeaderTool)
 
