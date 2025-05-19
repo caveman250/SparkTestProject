@@ -11,7 +11,7 @@ option(DIST_BUILD "" OFF)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Spark/CMake/")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/Spark/build/cmake/")
 
 include(MultiTarget)
 
@@ -22,7 +22,7 @@ function(message)
 endfunction()
 
 add_compile_definitions(APP_DIR="${CMAKE_CURRENT_SOURCE_DIR}/app")
-add_compile_definitions(ENGINE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Spark/Engine")
+add_compile_definitions(ENGINE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Spark/engine")
 
 include(ExternalTools)
 
@@ -33,19 +33,19 @@ if(NOT CMAKE_CONFIGURATION_TYPES)
                                  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 endif()
 
-get_filename_component(ENGINE_ABSOLUTE_PATH Spark/Engine/src ABSOLUTE)
-get_filename_component(EDITOR_ABSOLUTE_PATH Spark/Editor/src ABSOLUTE)
+get_filename_component(ENGINE_ABSOLUTE_PATH Spark/engine/src ABSOLUTE)
+get_filename_component(EDITOR_ABSOLUTE_PATH Spark/editor/src ABSOLUTE)
 get_filename_component(APP_ABSOLUTE_PATH app/src ABSOLUTE)
 execute_process(COMMAND ${PYTHON_EXE} SparkHeaderTool.py "${ENGINE_ABSOLUTE_PATH}:${EDITOR_ABSOLUTE_PATH}:${APP_ABSOLUTE_PATH}"
         RESULT_VARIABLE header_tool_result
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Spark/Build/SparkHeaderTool)
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Spark/build/SparkHeaderTool)
 
 if(NOT ${header_tool_result} EQUAL 0)
     message(FATAL_ERROR "Spark Header Tool failed with error code: ${header_tool_result}.")
 endif()
 
-add_subdirectory(Spark/Engine)
-add_subdirectory(Spark/Editor)
+add_subdirectory(Spark/engine)
+add_subdirectory(Spark/editor)
 add_subdirectory(Spark/Tools)
 
 add_subdirectory(app)

@@ -94,7 +94,7 @@ No additional debugging scripts at this time.
 ## Mac
 Add the following to your ~/.lldbinit
 ````
-command script import <path to repo>/Spark/debug/lldb/lldb_init.py
+command script import <path to repo>/Spark/Debug/lldb/lldb_init.py
 ````
 ## Linux
 Add the following to your ~/.gdbinit
