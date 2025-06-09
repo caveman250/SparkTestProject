@@ -12,7 +12,7 @@ namespace app
         TestObserver() = default;
 
     private:
-        void OnAdded(ecs::Id entity, ecs::components::MeshComponent *component) override;
-        void OnRemoved(ecs::Id , ecs::components::MeshComponent *) override;
+        void OnAdded(const ecs::Id& entity, ecs::components::MeshComponent *component) override;
+        void OnRemoved(const ecs::Id& , ecs::components::MeshComponent *) override;
     };
 }

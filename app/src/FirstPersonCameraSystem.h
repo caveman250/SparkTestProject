@@ -1,9 +1,6 @@
 #pragma once
 
-#include "FirstPersonCameraComponent.h"
 #include "engine/ecs/System.h"
-#include "engine/input/InputComponent.h"
-#include "engine/camera/ActiveCameraComponent.h"
 
 using namespace se;
 

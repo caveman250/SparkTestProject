@@ -119,6 +119,8 @@ namespace app
         {
             auto transform = Application::Get()->GetWorld()->GetComponent<TransformComponent>(entity);
             transform->rot.y += 90.f;
+
+            Application::Get()->GetWorld()->DumpWidgetHeirachy();
         };
         button->onReleased.Subscribe(std::move(cb));
     }

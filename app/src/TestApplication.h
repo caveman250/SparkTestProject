@@ -1,8 +1,6 @@
 #pragma once
 
 #include "engine/Application.h"
-#include "engine/math/Mat4.h"
-#include "engine/ecs/World.h"
 
 namespace se::render
 {

@@ -1,6 +1,8 @@
 #include "FirstPersonCameraSystem.h"
 
+#include "FirstPersonCameraComponent.h"
 #include "engine/Application.h"
+#include "engine/camera/ActiveCameraComponent.h"
 #include "engine/input/InputComponent.h"
 #include "engine/input/InputUtil.h"
 #include "engine/input/MouseButton.h"

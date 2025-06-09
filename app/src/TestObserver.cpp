@@ -2,11 +2,11 @@
 
 namespace app
 {
-    void TestObserver::OnAdded(ecs::Id, ecs::components::MeshComponent*)
+    void TestObserver::OnAdded(const ecs::Id&, ecs::components::MeshComponent*)
     {
     }
 
-    void TestObserver::OnRemoved(ecs::Id, ecs::components::MeshComponent*)
+    void TestObserver::OnRemoved(const ecs::Id&, ecs::components::MeshComponent*)
     {
 
     }

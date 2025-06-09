@@ -1,6 +1,7 @@
 #include "TestApplication.h"
 #include "FirstPersonCameraSystem.h"
 #include "TestSystem.h"
+#include "engine/ecs/components/TransformComponent.h"
 
 namespace app
 {

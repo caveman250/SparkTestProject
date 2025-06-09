@@ -2,7 +2,6 @@
 
 #include <platform/PlatformRunLoop.h>
 
-#include "spark.h"
 #include "TestApplication.h"
 #include "engine/Application.h"
 
