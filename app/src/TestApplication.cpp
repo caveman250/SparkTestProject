@@ -2,12 +2,19 @@
 #include "FirstPersonCameraSystem.h"
 #include "TestSystem.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "generated/Classes.generated.h"
 
 namespace app
 {
     TestApplication* TestApplication::GetTestApplication()
     {
         return static_cast<TestApplication*>(Get());
+    }
+
+    void TestApplication::Init()
+    {
+        Application::Init();
+        app_InitClassReflection();
     }
 
     void TestApplication::CreateInitialSystems()
