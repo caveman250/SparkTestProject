@@ -95,7 +95,7 @@ namespace app
                     activeCamera->pos + forward,
                     up);
 
-            activeCamera->proj = math::Perspective(math::Radians(45.f), (float)app->GetPrimaryWindow()->GetWidth() / (float)app->GetPrimaryWindow()->GetHeight(),.1f, 100.f);
+            activeCamera->proj = math::Perspective(math::Radians(45.f), (float)app->GetWindow()->GetWidth() / (float)app->GetWindow()->GetHeight(),.1f, 100.f);
         }
     }
 }
