@@ -20,8 +20,6 @@ namespace app
 
         void Init() override;
 
-        void CreateInitialSystems() override;
-
         se::IWindow* GetSecondaryWindow() const { return m_SecondaryWindow; }
 
     private:

@@ -1,21 +1,20 @@
 #include "spark.h"
 
-#include "engine/asset/texture/Texture.h"
-#include "engine/render/Material.h"
-#include "engine/asset/shader/ast/Types.h"
-#include "engine/ecs/components/MeshComponent.h"
-#include "engine/render/RenderState.h"
-#include "engine/asset/mesh/Model.h"
-#include "engine/render/VertexBuffer.h"
-#include "engine/render/MaterialInstance.h"
 #include "TestSystem.h"
-
 #include "FirstPersonCameraComponent.h"
 #include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
+#include "engine/asset/mesh/Model.h"
+#include "engine/asset/shader/ast/Types.h"
+#include "engine/asset/texture/Texture.h"
+#include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "engine/render/IndexBuffer.h"
+#include "engine/render/Material.h"
+#include "engine/render/MaterialInstance.h"
+#include "engine/render/RenderState.h"
+#include "engine/render/VertexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
@@ -33,6 +32,12 @@ namespace app
         meshComp->vertBuffer->CreatePlatformResource();
         meshComp->indexBuffer = render::IndexBuffer::CreateIndexBuffer(mesh);
         meshComp->indexBuffer->CreatePlatformResource();
+    }
+
+    ecs::SystemDeclaration TestSystem::GetSystemDeclaration()
+    {
+        return ecs::SystemDeclaration("TestSystem")
+            .WithComponent<TransformComponent>();
     }
 
     void TestSystem::OnInit(const ecs::SystemUpdateData&)

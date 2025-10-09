@@ -10,6 +10,14 @@
 
 namespace app
 {
+    ecs::SystemDeclaration FirstPersonCameraSystem::GetSystemDeclaration()
+    {
+        return ecs::SystemDeclaration("First Person Camera System")
+            .WithComponent<FirstPersonCameraComponent>()
+            .WithSingletonComponent<camera::ActiveCameraComponent>()
+            .WithSingletonComponent<input::InputComponent>();
+    }
+
     void FirstPersonCameraSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
         const auto& entities = updateData.GetEntities();
