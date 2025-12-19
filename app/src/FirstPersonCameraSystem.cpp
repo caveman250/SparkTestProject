@@ -1,5 +1,7 @@
 #include "FirstPersonCameraSystem.h"
 
+#include <engine/math/math.h>
+
 #include "FirstPersonCameraComponent.h"
 #include "engine/Application.h"
 #include "engine/camera/ActiveCameraComponent.h"
