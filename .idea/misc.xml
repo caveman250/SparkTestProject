@@ -9,10 +9,10 @@
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
   <component name="CidrRootsConfiguration">
     <excludeRoots>
-      <file path="$PROJECT_DIR$/Spark/Editor/src/generated" />
-      <file path="$PROJECT_DIR$/Spark/Engine/built" />
-      <file path="$PROJECT_DIR$/Spark/Engine/src/generated" />
-      <file path="$PROJECT_DIR$/Spark/Engine/unity_generated" />
+      <file path="$PROJECT_DIR$/Spark/editor/src/generated" />
+      <file path="$PROJECT_DIR$/Spark/engine/built" />
+      <file path="$PROJECT_DIR$/Spark/engine/src/generated" />
+      <file path="$PROJECT_DIR$/Spark/engine/unity_generated" />
       <file path="$PROJECT_DIR$/app/built" />
       <file path="$PROJECT_DIR$/app/unity" />
       <file path="$PROJECT_DIR$/app/unity_generated" />
