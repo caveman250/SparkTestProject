@@ -6,15 +6,10 @@
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/asset/mesh/Model.h"
-#include "engine/asset/shader/ast/Types.h"
 #include "engine/asset/texture/Texture.h"
 #include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
-#include "engine/render/IndexBuffer.h"
 #include "engine/render/Material.h"
-#include "engine/render/MaterialInstance.h"
-#include "engine/render/RenderState.h"
-#include "engine/render/VertexBuffer.h"
 #include "engine/render/components/PointLightComponent.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
@@ -27,7 +22,8 @@ namespace app
     ecs::SystemDeclaration TestSystem::GetSystemDeclaration()
     {
         return ecs::SystemDeclaration("TestSystem")
-            .WithComponent<TransformComponent>();
+            .WithComponent<TransformComponent>()
+            .WithComponent<const MeshComponent>();
     }
 
     void TestSystem::OnInit(const ecs::SystemUpdateData&)
@@ -60,11 +56,6 @@ namespace app
         mesh->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
         mesh->material = asset::AssetReference<render::Material>("/assets/materials/cube_mat.sass");
 
-        // TODO
-        mesh->materialInstance = render::MaterialInstance::CreateMaterialInstance(mesh->material.GetAsset());
-        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
-        mesh->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
-
         // Cube 2
         ecs::Id entity2 = world->CreateEntity("Cube 2");
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
@@ -73,10 +64,6 @@ namespace app
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         mesh2->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
         mesh2->material = asset::AssetReference<render::Material>("/assets/materials/cube2_mat.sass");
-
-        mesh2->materialInstance = render::MaterialInstance::CreateMaterialInstance(mesh2->material.GetAsset());
-        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
-        mesh2->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
 
@@ -123,4 +110,5 @@ namespace app
         }
     }
 }
+
 
