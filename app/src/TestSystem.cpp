@@ -24,16 +24,6 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    void LoadCubeMesh(MeshComponent* meshComp)
-    {
-        meshComp->model = asset::AssetManager::Get()->GetAsset<asset::Model>("/assets/models/cube.sass");
-        auto mesh = meshComp->model->GetMesh(0);
-        meshComp->vertBuffer = render::VertexBuffer::CreateVertexBuffer(mesh);
-        meshComp->vertBuffer->CreatePlatformResource();
-        meshComp->indexBuffer = render::IndexBuffer::CreateIndexBuffer(mesh);
-        meshComp->indexBuffer->CreatePlatformResource();
-    }
-
     ecs::SystemDeclaration TestSystem::GetSystemDeclaration()
     {
         return ecs::SystemDeclaration("TestSystem")
@@ -44,6 +34,7 @@ namespace app
     {
         auto app = Application::Get();
         auto world = app->GetWorld();
+        auto assetManager = asset::AssetManager::Get();
 
         ecs::Id cameraEntity = world->CreateEntity("Camera");
         world->AddComponent<FirstPersonCameraComponent>(cameraEntity);
@@ -62,29 +53,16 @@ namespace app
 
         // Cube 1
         ecs::Id entity = world->CreateEntity("Cube 1");
-        auto* transform = world->AddComponent<TransformComponent>(entity);	
+        auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
 
-        auto* assetManager = asset::AssetManager::Get();
-        auto uberVertex = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/uber_vertex.sass");
-        auto diffuse = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/diffuse_texture.sass");
-        auto pointLght = assetManager->GetAsset<asset::Shader>("/engine_assets/shaders/point_light.sass");
-        auto hueShader = assetManager->GetAsset<asset::Shader>("/assets/shaders/hue.sass");
-
         auto* mesh = world->AddComponent<MeshComponent>(entity);
-        LoadCubeMesh(mesh);
+        mesh->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
+        mesh->material = asset::AssetReference<render::Material>("/assets/materials/cube_mat.sass");
 
-        auto material = render::Material::CreateMaterial(
-            {uberVertex},
-            {diffuse, pointLght, hueShader});
-        material->GetShaderSettings().SetSetting("color_setting", math::Vec3(0, 0, 1));
-        render::RenderState rs;
-        rs.depthComp = render::DepthCompare::Less;
-        rs.lit = true;
-        material->SetRenderState(rs);
-
-        mesh->materialInstance = render::MaterialInstance::CreateMaterialInstance(material);
-        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
+        // TODO
+        mesh->materialInstance = render::MaterialInstance::CreateMaterialInstance(mesh->material.GetAsset());
+        auto texture = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
         mesh->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture);
 
         // Cube 2
@@ -93,14 +71,11 @@ namespace app
         transform2->pos = math::Vec3(3.f, 0.f, 0.f);
 
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
-        LoadCubeMesh(mesh2);
-        auto material2 = render::Material::CreateMaterial(
-                {uberVertex},
-                {diffuse, pointLght});
-        material2->SetRenderState(rs);
+        mesh2->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
+        mesh2->material = asset::AssetReference<render::Material>("/assets/materials/cube2_mat.sass");
 
-        mesh2->materialInstance = render::MaterialInstance::CreateMaterialInstance(material2);
-        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap2.sass");
+        mesh2->materialInstance = render::MaterialInstance::CreateMaterialInstance(mesh2->material.GetAsset());
+        auto texture2 = assetManager->GetAsset<asset::Texture>("/assets/textures/uvmap.sass");
         mesh2->materialInstance->SetUniform("Texture", asset::shader::ast::AstType::Sampler2D, 1, &texture2);
 
         world->AddChild(entity, entity2);
@@ -148,3 +123,4 @@ namespace app
         }
     }
 }
+
