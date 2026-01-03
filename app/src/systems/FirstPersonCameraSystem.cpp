@@ -2,7 +2,7 @@
 
 #include <engine/math/math.h>
 
-#include "FirstPersonCameraComponent.h"
+#include "../components/FirstPersonCameraComponent.h"
 #include "engine/Application.h"
 #include "engine/camera/ActiveCameraComponent.h"
 #include "engine/input/InputComponent.h"
