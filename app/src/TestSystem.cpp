@@ -5,7 +5,6 @@
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/asset/mesh/Model.h"
-#include "engine/asset/texture/Texture.h"
 #include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
 #include "engine/render/Material.h"
@@ -27,9 +26,8 @@ namespace app
 
     void TestSystem::OnInit(const ecs::SystemUpdateData&)
     {
-        auto app = Application::Get();
-        auto world = app->GetWorld();
-        auto assetManager = asset::AssetManager::Get();
+        const auto app = Application::Get();
+        const auto world = app->GetWorld();
 
         // Camera
         ecs::Id cameraEntity = world->CreateEntity("Camera");
@@ -54,16 +52,16 @@ namespace app
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
         auto* mesh = world->AddComponent<MeshComponent>(entity);
-        mesh->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
-        mesh->material = asset::AssetReference<render::Material>("/assets/materials/cube_mat.sass");
+        mesh->model = "/assets/models/cube.sass";
+        mesh->material = "/assets/materials/cube_mat.sass";
 
         // Cube 2
         ecs::Id entity2 = world->CreateEntity("Cube 2");
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(3.f, 0.f, 0.f);
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
-        mesh2->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
-        mesh2->material = asset::AssetReference<render::Material>("/assets/materials/cube2_mat.sass");
+        mesh2->model = "/assets/models/cube.sass";
+        mesh2->material = "/assets/materials/cube2_mat.sass";
         world->AddChild(entity, entity2);
 
         // Button
