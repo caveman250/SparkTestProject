@@ -2,7 +2,6 @@
 
 #include "TestSystem.h"
 #include "FirstPersonCameraComponent.h"
-#include "TestObserver.h"
 #include "engine/Application.h"
 #include "engine/asset/AssetManager.h"
 #include "engine/asset/mesh/Model.h"
@@ -32,15 +31,18 @@ namespace app
         auto world = app->GetWorld();
         auto assetManager = asset::AssetManager::Get();
 
+        // Camera
         ecs::Id cameraEntity = world->CreateEntity("Camera");
         world->AddComponent<FirstPersonCameraComponent>(cameraEntity);
 
+        // Light 1
         ecs::Id light1 = world->CreateEntity("Light 1");
         auto* light1Transform = world->AddComponent<TransformComponent>(light1);
         light1Transform->pos = {-5.f, 5.f, 5.f};
         auto* light1Light = world->AddComponent<render::components::PointLightComponent>(light1);
         light1Light->color = {0.f, 0.f, 1.f};
 
+        // Light 2
         ecs::Id light2 = world->CreateEntity("Light 2");
         auto* light2Transform = world->AddComponent<TransformComponent>(light2);
         light2Transform->pos = {5.f, 5.f, 5.f};
@@ -51,7 +53,6 @@ namespace app
         ecs::Id entity = world->CreateEntity("Cube 1");
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
-
         auto* mesh = world->AddComponent<MeshComponent>(entity);
         mesh->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
         mesh->material = asset::AssetReference<render::Material>("/assets/materials/cube_mat.sass");
@@ -60,15 +61,12 @@ namespace app
         ecs::Id entity2 = world->CreateEntity("Cube 2");
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(3.f, 0.f, 0.f);
-
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
         mesh2->model = asset::AssetReference<asset::Model>("/assets/models/cube.sass");
         mesh2->material = asset::AssetReference<render::Material>("/assets/materials/cube2_mat.sass");
-
         world->AddChild(entity, entity2);
 
-        world->CreateObserver<TestObserver, MeshComponent>();
-
+        // Button
         ecs::Id buttonEntity = world->CreateEntity("Button");
         auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
         rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
@@ -76,18 +74,14 @@ namespace app
         rectTransform5->maxX = 120;
         rectTransform5->minY = 20;
         rectTransform5->maxY = 120;
-
         auto button = world->AddComponent<ui::components::ButtonComponent>(buttonEntity);
-        button->image = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button.sass");
-        button->pressedImage = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button_pressed.sass");
-        button->hoveredImage = assetManager->GetAsset<asset::Texture>("/engine_assets/textures/default_button_hovered.sass");
-
+        button->image = "/engine_assets/textures/default_button.sass";
+        button->pressedImage = "/engine_assets/textures/default_button_pressed.sass";
+        button->hoveredImage = "/engine_assets/textures/default_button_hovered.sass";
         std::function<void()> cb = [entity]()
         {
             auto transform = Application::Get()->GetWorld()->GetComponent<TransformComponent>(entity);
             transform->rot.y += 90.f;
-
-            Application::Get()->GetWorld()->DumpWidgetHeirachy();
         };
         button->onReleased.Subscribe(std::move(cb));
     }
