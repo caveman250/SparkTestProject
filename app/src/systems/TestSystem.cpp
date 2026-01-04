@@ -108,7 +108,7 @@ namespace app
         auto input = updateData.GetSingletonComponent<input::InputComponent>();
         if (!hasDestroyedScene && input->keyStates[static_cast<int>(input::Key::Backspace)] == input::KeyState::Down)
         {
-            Application::Get()->GetWorld()->SaveScene(s_Scene, "");
+            Application::Get()->GetWorld()->SaveScene(s_Scene, "/source_assets/scenes/test_scene.json");
             hasDestroyedScene = true;
         }
     }
