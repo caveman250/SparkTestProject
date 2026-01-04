@@ -5,6 +5,7 @@
 #include "engine/Application.h"
 #include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/input/InputSystem.h"
 #include "engine/render/components/PointLightComponent.h"
 #include "engine/ui/components/ButtonComponent.h"
 #include "engine/ui/components/RectTransformComponent.h"
@@ -18,34 +19,40 @@ namespace app
     {
         return ecs::SystemDeclaration("TestSystem")
             .WithComponent<TransformComponent>()
-            .WithComponent<const MeshComponent>();
+            .WithComponent<const MeshComponent>()
+            .WithSingletonComponent<input::InputComponent>();
     }
+
+    static ecs::Id s_Scene = {};
+    static bool hasDestroyedScene = false;
 
     void TestSystem::OnInit(const ecs::SystemUpdateData&)
     {
         const auto app = Application::Get();
         const auto world = app->GetWorld();
 
+        s_Scene = world->CreateScene("Test Scene");
+
         // Camera
-        ecs::Id cameraEntity = world->CreateEntity("Camera");
+        ecs::Id cameraEntity = world->CreateEntity(s_Scene, "Camera");
         world->AddComponent<FirstPersonCameraComponent>(cameraEntity);
 
         // Light 1
-        ecs::Id light1 = world->CreateEntity("Light 1");
+        ecs::Id light1 = world->CreateEntity(s_Scene, "Light 1");
         auto* light1Transform = world->AddComponent<TransformComponent>(light1);
         light1Transform->pos = {-5.f, 5.f, 5.f};
         auto* light1Light = world->AddComponent<render::components::PointLightComponent>(light1);
         light1Light->color = {0.f, 0.f, 1.f};
 
         // Light 2
-        ecs::Id light2 = world->CreateEntity("Light 2");
+        ecs::Id light2 = world->CreateEntity(s_Scene, "Light 2");
         auto* light2Transform = world->AddComponent<TransformComponent>(light2);
         light2Transform->pos = {5.f, 5.f, 5.f};
         auto* light2Light = world->AddComponent<render::components::PointLightComponent>(light2);
         light2Light->color = {1.f, 0.f, 0.f};
 
         // Cube 1
-        ecs::Id entity = world->CreateEntity("Cube 1");
+        ecs::Id entity = world->CreateEntity(s_Scene, "Cube 1");
         auto* transform = world->AddComponent<TransformComponent>(entity);
         transform->pos = math::Vec3(0.f, 0.f, 0.f);
         auto* mesh = world->AddComponent<MeshComponent>(entity);
@@ -53,7 +60,7 @@ namespace app
         mesh->material = "/assets/materials/cube_mat.sass";
 
         // Cube 2
-        ecs::Id entity2 = world->CreateEntity("Cube 2");
+        ecs::Id entity2 = world->CreateEntity(s_Scene, "Cube 2");
         auto* transform2 = world->AddComponent<TransformComponent>(entity2);
         transform2->pos = math::Vec3(3.f, 0.f, 0.f);
         auto* mesh2 = world->AddComponent<MeshComponent>(entity2);
@@ -62,7 +69,7 @@ namespace app
         world->AddChild(entity, entity2);
 
         // Button
-        ecs::Id buttonEntity = world->CreateEntity("Button");
+        ecs::Id buttonEntity = world->CreateEntity(s_Scene, "Button");
         auto rectTransform5 = world->AddComponent<ui::components::RectTransformComponent>(buttonEntity);
         rectTransform5->anchors = { 0.f, 0.f, 0.f, 0.f };
         rectTransform5->minX = 20;
@@ -96,6 +103,13 @@ namespace app
             {
                 transformComp.rot.y -= 360.f;
             }
+        }
+
+        auto input = updateData.GetSingletonComponent<input::InputComponent>();
+        if (!hasDestroyedScene && input->keyStates[static_cast<int>(input::Key::Backspace)] == input::KeyState::Down)
+        {
+            Application::Get()->GetWorld()->UnloadScene(s_Scene);
+            hasDestroyedScene = true;
         }
     }
 }
