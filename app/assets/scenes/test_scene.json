@@ -2,7 +2,7 @@
     "structs": [
         {
             "SceneSaveData": {
-                "entities": "Array"
+                "m_Entities": "Array"
             }
         },
         {
@@ -15,7 +15,7 @@
             }
         },
         {
-            "Id": {
+            "uint64_t": {
                 "val": "Uint64"
             }
         },
@@ -57,7 +57,12 @@
             }
         },
         {
-            "AssetReference": {
+            "AssetReference<Model>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "AssetReference<Material>": {
                 "m_AssetPath": "String"
             }
         },
@@ -65,7 +70,11 @@
             "ParentComponent": null
         },
         {
-            "MouseInputComponent": null
+            "MouseInputComponent": {
+                "buttonMask": "Int32",
+                "receivesScrollEvents": "bool",
+                "stateMask": "Int32"
+            }
         },
         {
             "WidgetComponent": {
@@ -106,292 +115,342 @@
             "ImageComponent": null
         },
         {
-            "ButtonComponent": null
+            "ButtonComponent": {
+                "hoveredImage": "Object",
+                "image": "Object",
+                "pressedImage": "Object"
+            }
+        },
+        {
+            "AssetReference<Texture>": {
+                "m_AssetPath": "String"
+            }
         }
     ],
     "root": {
         "SceneSaveData": {
-            "entities": [
-                {
-                    "SceneEntityData": {
-                        "entity": 158,
-                        "name": "Camera",
-                        "flags": 0,
-                        "children": null,
-                        "components": [
-                            {
-                                "RootComponent": null
+            "m_Entities": {
+                "struct": "SceneEntityData",
+                "contents": [
+                    {
+                        "SceneEntityData": {
+                            "entity": 152,
+                            "name": "Camera",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
                             },
-                            {
-                                "FirstPersonCameraComponent": null
-                            }
-                        ]
+                            "components": [
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "FirstPersonCameraComponent": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 153,
+                            "name": "Light 1",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "PointLightComponent": {
+                                        "color": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": -5.0,
+                                                "y": 5.0,
+                                                "z": 5.0
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 154,
+                            "name": "Light 2",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "PointLightComponent": {
+                                        "color": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 5.0,
+                                                "y": 5.0,
+                                                "z": 5.0
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 155,
+                            "name": "Cube 1",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": [
+                                    {
+                                        "uint64_t": {
+                                            "val": 156
+                                        }
+                                    }
+                                ]
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/cube.sass"
+                                            }
+                                        },
+                                        "material": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": "/assets/materials/cube_mat.sass"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "ParentComponent": null
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 264.890869140625,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 156,
+                            "name": "Cube 2",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/cube.sass"
+                                            }
+                                        },
+                                        "material": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": "/assets/materials/cube2_mat.sass"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 3.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 265.1895751953125,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 157,
+                            "name": "Button",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MouseInputComponent": {
+                                        "buttonMask": -1,
+                                        "stateMask": 3,
+                                        "receivesScrollEvents": false
+                                    }
+                                },
+                                {
+                                    "WidgetComponent": {
+                                        "visibility": "Visible",
+                                        "updateEnabled": true,
+                                        "dirty": false
+                                    }
+                                },
+                                {
+                                    "RectTransformComponent": {
+                                        "anchors": {
+                                            "Anchors": {
+                                                "left": 0.0,
+                                                "right": 0.0,
+                                                "top": 0.0,
+                                                "bottom": 0.0
+                                            }
+                                        },
+                                        "minX": 20.0,
+                                        "minY": 20.0,
+                                        "maxX": 120.0,
+                                        "maxY": 120.0,
+                                        "minAspectRatio": 0.0,
+                                        "maxAspectRatio": 0.0,
+                                        "minWidth": 0.0,
+                                        "minHeight": 0.0,
+                                        "desiredSize": {
+                                            "Vec2": {
+                                                "x": 0.0,
+                                                "y": 0.0
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "ImageComponent": null
+                                },
+                                {
+                                    "ButtonComponent": {
+                                        "image": {
+                                            "AssetReference<Texture>": {
+                                                "m_AssetPath": "/engine_assets/textures/default_button.sass"
+                                            }
+                                        },
+                                        "pressedImage": {
+                                            "AssetReference<Texture>": {
+                                                "m_AssetPath": "/engine_assets/textures/default_button_pressed.sass"
+                                            }
+                                        },
+                                        "hoveredImage": {
+                                            "AssetReference<Texture>": {
+                                                "m_AssetPath": "/engine_assets/textures/default_button_hovered.sass"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                }
+                            ]
+                        }
                     }
-                },
-                {
-                    "SceneEntityData": {
-                        "entity": 159,
-                        "name": "Light 1",
-                        "flags": 0,
-                        "children": null,
-                        "components": [
-                            {
-                                "PointLightComponent": {
-                                    "color": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 1.0
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "RootComponent": null
-                            },
-                            {
-                                "TransformComponent": {
-                                    "pos": {
-                                        "Vec3": {
-                                            "x": -5.0,
-                                            "y": 5.0,
-                                            "z": 5.0
-                                        }
-                                    },
-                                    "rot": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "scale": {
-                                        "Vec3": {
-                                            "x": 1.0,
-                                            "y": 1.0,
-                                            "z": 1.0
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "SceneEntityData": {
-                        "entity": 160,
-                        "name": "Light 2",
-                        "flags": 0,
-                        "children": null,
-                        "components": [
-                            {
-                                "PointLightComponent": {
-                                    "color": {
-                                        "Vec3": {
-                                            "x": 1.0,
-                                            "y": 0.0,
-                                            "z": 0.0
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "RootComponent": null
-                            },
-                            {
-                                "TransformComponent": {
-                                    "pos": {
-                                        "Vec3": {
-                                            "x": 5.0,
-                                            "y": 5.0,
-                                            "z": 5.0
-                                        }
-                                    },
-                                    "rot": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "scale": {
-                                        "Vec3": {
-                                            "x": 1.0,
-                                            "y": 1.0,
-                                            "z": 1.0
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "SceneEntityData": {
-                        "entity": 161,
-                        "name": "Cube 1",
-                        "flags": 0,
-                        "children": [
-                            {
-                                "Id": {
-                                    "val": 162
-                                }
-                            }
-                        ],
-                        "components": [
-                            {
-                                "MeshComponent": {
-                                    "model": {
-                                        "AssetReference": {
-                                            "m_AssetPath": "/assets/models/cube.sass"
-                                        }
-                                    },
-                                    "material": {
-                                        "AssetReference": {
-                                            "m_AssetPath": "/assets/materials/cube_mat.sass"
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "ParentComponent": null
-                            },
-                            {
-                                "RootComponent": null
-                            },
-                            {
-                                "TransformComponent": {
-                                    "pos": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 0.0,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "rot": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 17.78118133544922,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "scale": {
-                                        "Vec3": {
-                                            "x": 1.0,
-                                            "y": 1.0,
-                                            "z": 1.0
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "SceneEntityData": {
-                        "entity": 162,
-                        "name": "Cube 2",
-                        "flags": 0,
-                        "children": null,
-                        "components": [
-                            {
-                                "MeshComponent": {
-                                    "model": {
-                                        "AssetReference": {
-                                            "m_AssetPath": "/assets/models/cube.sass"
-                                        }
-                                    },
-                                    "material": {
-                                        "AssetReference": {
-                                            "m_AssetPath": "/assets/materials/cube2_mat.sass"
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "TransformComponent": {
-                                    "pos": {
-                                        "Vec3": {
-                                            "x": 3.0,
-                                            "y": 0.0,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "rot": {
-                                        "Vec3": {
-                                            "x": 0.0,
-                                            "y": 17.56983184814453,
-                                            "z": 0.0
-                                        }
-                                    },
-                                    "scale": {
-                                        "Vec3": {
-                                            "x": 1.0,
-                                            "y": 1.0,
-                                            "z": 1.0
-                                        }
-                                    }
-                                }
-                            }
-                        ]
-                    }
-                },
-                {
-                    "SceneEntityData": {
-                        "entity": 163,
-                        "name": "Button",
-                        "flags": 0,
-                        "children": null,
-                        "components": [
-                            {
-                                "MouseInputComponent": null
-                            },
-                            {
-                                "WidgetComponent": {
-                                    "visibility": "Visible",
-                                    "updateEnabled": true,
-                                    "dirty": false
-                                }
-                            },
-                            {
-                                "RectTransformComponent": {
-                                    "anchors": {
-                                        "Anchors": {
-                                            "left": 0.0,
-                                            "right": 0.0,
-                                            "top": 0.0,
-                                            "bottom": 0.0
-                                        }
-                                    },
-                                    "minX": 20.0,
-                                    "minY": 20.0,
-                                    "maxX": 120.0,
-                                    "maxY": 120.0,
-                                    "minAspectRatio": 0.0,
-                                    "maxAspectRatio": 0.0,
-                                    "minWidth": 0.0,
-                                    "minHeight": 0.0,
-                                    "desiredSize": {
-                                        "Vec2": {
-                                            "x": 0.0,
-                                            "y": 0.0
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "ImageComponent": null
-                            },
-                            {
-                                "ButtonComponent": null
-                            },
-                            {
-                                "RootComponent": null
-                            }
-                        ]
-                    }
-                }
-            ]
+                ]
+            }
         }
     }
 }

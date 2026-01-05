@@ -1,10 +1,12 @@
 #pragma once
 
+#include "engine/ecs/Component.h"
+
 using namespace se;
 
 namespace app
 {
-    class FirstPersonCameraComponent : public reflect::ObjectBase
+    struct FirstPersonCameraComponent : ecs::Component
     {
         SPARK_COMPONENT()
 
