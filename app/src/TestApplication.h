@@ -19,10 +19,5 @@ namespace app
         static TestApplication* GetTestApplication();
 
         void Init() override;
-
-        se::IWindow* GetSecondaryWindow() const { return m_SecondaryWindow; }
-
-    private:
-        se::IWindow* m_SecondaryWindow = nullptr;
     };
 }
