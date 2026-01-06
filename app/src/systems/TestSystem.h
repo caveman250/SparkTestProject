@@ -15,5 +15,11 @@ namespace app
         static ecs::SystemDeclaration GetSystemDeclaration();
         void OnInit(const ecs::SystemUpdateData& updateData) override;
         void OnUpdate(const ecs::SystemUpdateData& updateData) override;
+
+        SPARK_FUNCTION()
+        void Lolcats(int lol1, FirstPersonCameraComponent* lol2);
+
+        SPARK_FUNCTION()
+        void Lolcats2();
     };
 }

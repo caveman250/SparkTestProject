@@ -41,6 +41,19 @@ namespace app
                 transformComp.rot.y -= 360.f;
             }
         }
+
+        Invoke("Lolcats", { 1, (FirstPersonCameraComponent*)nullptr });
+        Invoke("Lolcats2", { });
+    }
+
+    void TestSystem::Lolcats([[maybe_unused]] int lol1, [[maybe_unused]] FirstPersonCameraComponent* lol2)
+    {
+        debug::Log::Info("lolcats");
+    }
+
+    void TestSystem::Lolcats2()
+    {
+        debug::Log::Info("lolcats2");
     }
 }
 
