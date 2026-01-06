@@ -2,13 +2,15 @@
 `git clone https://github.com/caveman250/SparkTestProject --recurse-submodules`
 
 # Required Software
-- Python
+- Python3
 - Cmake
 - OpenGL (Windows and Linux)
 - Visual Studio 2022 (Windows)
 - Xcode (Mac)
 - gcc/g++ (Linux)
 - SDL2 (Linux)
+- QT6 (For Easy Profiler GUI)
+- Qt6Core5Compat (For Easy Profiler GUI)
 
 # Building
 ## CLion
