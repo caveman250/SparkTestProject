@@ -23,12 +23,6 @@ namespace app
         const auto world = app->GetWorld();
 
         world->LoadScene("/assets/scenes/test_scene.sass");
-        // std::function<void()> cb = [entity]()
-        // {
-        //     auto transform = Application::Get()->GetWorld()->GetComponent<TransformComponent>(entity);
-        //     transform->rot.y += 90.f;
-        // };
-        // button->onReleased.Subscribe(std::move(cb));
     }
 
     void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
