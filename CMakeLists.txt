@@ -27,11 +27,10 @@ add_compile_definitions(ENGINE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/Spark/engine")
 include(ExternalTools)
 
 #this breaks the build in VS and Xcode.
-if(NOT CMAKE_CONFIGURATION_TYPES)
+
     set(REGEN_CMAKE_TARGET RegenCmake)
     add_custom_target(RegenCmake COMMAND echo Generating Project Files... & ${CMAKE_COMMAND} .
                                  WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
-endif()
 
 get_filename_component(ENGINE_ABSOLUTE_PATH Spark/engine/src ABSOLUTE)
 get_filename_component(EDITOR_ABSOLUTE_PATH Spark/editor/src ABSOLUTE)
