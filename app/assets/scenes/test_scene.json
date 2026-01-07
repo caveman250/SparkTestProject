@@ -70,6 +70,9 @@
             "ParentComponent": null
         },
         {
+            "RespondsToTestButtonComponent" : null
+        },
+        {
             "MouseInputComponent": {
                 "buttonMask": "Int32",
                 "receivesScrollEvents": "bool",
@@ -118,12 +121,24 @@
             "ButtonComponent": {
                 "hoveredImage": "Object",
                 "image": "Object",
+                "onPressed": "Object",
                 "pressedImage": "Object"
             }
         },
         {
             "AssetReference<Texture>": {
                 "m_AssetPath": "String"
+            }
+        },
+        {
+            "Signal<>": {
+                "m_RegisteredHandles": "Array"
+            }
+        },
+        {
+            "SignalHandle": {
+                "functionName": "String",
+                "systemName": "String"
             }
         }
     ],
@@ -303,7 +318,7 @@
                                         "rot": {
                                             "Vec3": {
                                                 "x": 0.0,
-                                                "y": 264.890869140625,
+                                                "y": 273.72015380859375,
                                                 "z": 0.0
                                             }
                                         },
@@ -315,6 +330,9 @@
                                             }
                                         }
                                     }
+                                },
+                                {
+                                    "RespondsToTestButtonComponent" : null
                                 }
                             ]
                         }
@@ -355,7 +373,7 @@
                                         "rot": {
                                             "Vec3": {
                                                 "x": 0.0,
-                                                "y": 265.1895751953125,
+                                                "y": 274.01885986328125,
                                                 "z": 0.0
                                             }
                                         },
@@ -439,6 +457,21 @@
                                         "hoveredImage": {
                                             "AssetReference<Texture>": {
                                                 "m_AssetPath": "/engine_assets/textures/default_button_hovered.sass"
+                                            }
+                                        },
+                                        "onPressed": {
+                                            "Signal<>": {
+                                                "m_RegisteredHandles": {
+                                                    "struct": "SignalHandle",
+                                                    "contents": [
+                                                        {
+                                                            "SignalHandle": {
+                                                                "systemName": "ButtonTestSystem",
+                                                                "functionName": "OnTestButtonPressed"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
                                             }
                                         }
                                     }

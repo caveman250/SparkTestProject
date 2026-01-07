@@ -17,12 +17,14 @@ namespace app
             .WithComponent<const MeshComponent>();
     }
 
+    ecs::Id s_Scene = ecs::s_InvalidEntity;
+
     void TestSystem::OnInit(const ecs::SystemUpdateData&)
     {
         const auto app = Application::Get();
         const auto world = app->GetWorld();
 
-        world->LoadScene("/assets/scenes/test_scene.sass");
+       s_Scene = world->LoadScene("/assets/scenes/test_scene.sass");
     }
 
     void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
@@ -41,19 +43,6 @@ namespace app
                 transformComp.rot.y -= 360.f;
             }
         }
-
-        Invoke("Lolcats", { 1, (FirstPersonCameraComponent*)nullptr });
-        Invoke("Lolcats2", { });
-    }
-
-    void TestSystem::Lolcats([[maybe_unused]] int lol1, [[maybe_unused]] FirstPersonCameraComponent* lol2)
-    {
-        debug::Log::Info("lolcats");
-    }
-
-    void TestSystem::Lolcats2()
-    {
-        debug::Log::Info("lolcats2");
     }
 }
 

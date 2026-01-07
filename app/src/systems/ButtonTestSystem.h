@@ -8,12 +8,14 @@ using namespace se::ecs::components;
 
 namespace app
 {
-    class TestSystem : public ecs::AppSystem
+    class ButtonTestSystem : public ecs::AppSystem
     {
         SPARK_SYSTEM()
     public:
         static ecs::SystemDeclaration GetSystemDeclaration();
-        void OnInit(const ecs::SystemUpdateData& updateData) override;
         void OnUpdate(const ecs::SystemUpdateData& updateData) override;
+
+        SPARK_FUNCTION()
+        void OnTestButtonPressed();
     };
 }

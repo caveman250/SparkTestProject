@@ -19,5 +19,8 @@ namespace app
         static TestApplication* GetTestApplication();
 
         void Init() override;
+
+    private:
+        void CreateInitialSingletonComponents() override;
     };
 }
