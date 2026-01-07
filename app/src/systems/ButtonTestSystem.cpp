@@ -26,9 +26,6 @@ namespace app
 
     void ButtonTestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
-        auto app = Application::Get();
-        auto dt = app->GetDeltaTime();
-
         const auto& entities = updateData.GetEntities();
         auto* transform = updateData.GetComponentArray<TransformComponent>();
         auto* buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
