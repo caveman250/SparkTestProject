@@ -5,6 +5,7 @@
 #include "../components/FirstPersonCameraComponent.h"
 #include "engine/Application.h"
 #include "engine/camera/ActiveCameraComponent.h"
+#include "engine/ecs/util/SystemUtil.h"
 #include "engine/input/InputComponent.h"
 #include "engine/input/InputUtil.h"
 #include "engine/input/MouseButton.h"
@@ -39,7 +40,8 @@ namespace app
         activeCamera->lastMouseX = input->mouseX;
         activeCamera->lastMouseY = input->mouseY;
 
-        for (size_t i = 0; i < entities.size(); ++i)
+        ecs::util::ForEachEntity(this, updateData,
+        [app, dx, dy, entities, cameras, activeCamera, input](size_t i)
         {
             const auto& entity = entities[i];
             auto& camera = cameras[i];
@@ -107,6 +109,6 @@ namespace app
 
             auto gameViewport = app->GetGameViewportSize();
             activeCamera->proj = math::Perspective(math::Radians(45.f), (float)gameViewport.x / (float)gameViewport.y,.1f, 100.f);
-        }
+        });
     }
 }

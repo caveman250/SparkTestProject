@@ -6,6 +6,7 @@
 #include "engine/Application.h"
 #include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
+#include "engine/ecs/util/SystemUtil.h"
 #include "singleton_components/ButtonTestComponent.h"
 
 using namespace se;
@@ -26,17 +27,17 @@ namespace app
 
     void ButtonTestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
-        const auto& entities = updateData.GetEntities();
         auto* transform = updateData.GetComponentArray<TransformComponent>();
         auto* buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
 
         if (buttonTestComp->buttonPressed)
         {
-            for (size_t i = 0; i < entities.size(); ++i)
+            ecs::util::ForEachEntity(this, updateData,
+            [transform](size_t i)
             {
                 auto& transformComp = transform[i];
                 transformComp.rot.y += 90.f;
-            }
+            });
         }
 
         buttonTestComp->buttonPressed = false;
