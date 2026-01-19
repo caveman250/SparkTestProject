@@ -1,6 +1,7 @@
 projects/*
 .vs/*
 app/built
+app/save
 .idea/workspace.xml
 *.generated.h
 *.generated.cpp
