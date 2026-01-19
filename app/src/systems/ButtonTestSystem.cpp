@@ -32,12 +32,11 @@ namespace app
 
         if (buttonTestComp->buttonPressed)
         {
-            ecs::util::ForEachEntity(this, updateData,
-            [transform](size_t i)
+            for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
             {
                 auto& transformComp = transform[i];
                 transformComp.rot.y += 90.f;
-            });
+            }
         }
 
         buttonTestComp->buttonPressed = false;

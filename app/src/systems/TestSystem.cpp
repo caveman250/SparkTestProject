@@ -33,8 +33,7 @@ namespace app
         auto dt = app->GetDeltaTime();
 
         auto* transform = updateData.GetComponentArray<TransformComponent>();
-        ecs::util::ForEachEntity(this, updateData,
-        [dt, transform](size_t i)
+        for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
         {
             auto& transformComp = transform[i];
             transformComp.rot.y += 10.f * dt;
@@ -42,7 +41,7 @@ namespace app
             {
                 transformComp.rot.y -= 360.f;
             }
-        });
+        }
     }
 }
 

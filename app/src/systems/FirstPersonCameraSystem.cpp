@@ -40,8 +40,7 @@ namespace app
         activeCamera->lastMouseX = input->mouseX;
         activeCamera->lastMouseY = input->mouseY;
 
-        ecs::util::ForEachEntity(this, updateData,
-        [app, dx, dy, entities, cameras, activeCamera, input](size_t i)
+        for (size_t i = 0; i < entities.size(); ++i)
         {
             const auto& entity = entities[i];
             auto& camera = cameras[i];
@@ -109,6 +108,6 @@ namespace app
 
             auto gameViewport = app->GetGameViewportSize();
             activeCamera->proj = math::Perspective(math::Radians(45.f), (float)gameViewport.x / (float)gameViewport.y,.1f, 100.f);
-        });
+        }
     }
 }
