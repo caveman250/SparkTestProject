@@ -42,10 +42,23 @@
       }
     },
     {
+      "ShaderSettingDefinition<Vec4>": {
+        "m_Value": "Object"
+      }
+    },
+    {
       "Vec3": {
         "x": "Float",
         "y": "Float",
         "z": "Float"
+      }
+    },
+    {
+      "Vec4": {
+        "x": "Float",
+        "y": "Float",
+        "z": "Float",
+        "w": "Float"
       }
     },
     {
@@ -108,7 +121,25 @@
         "ShaderSettings": {
           "m_Settings": {
             "struct": "Internal_MapItemString_Object",
-            "contents": null
+            "contents": [
+              {
+                "Internal_MapItemString_Object": {
+                  "key": "ambientStr",
+                  "value": {
+                    "ShaderSettingDefinition<Vec4>": {
+                      "m_Value": {
+                        "Vec4": {
+                          "x": 0.1,
+                          "y": 0.1,
+                          "z": 0.1,
+                          "w": 1.0
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       },

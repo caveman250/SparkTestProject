@@ -53,7 +53,8 @@
         {
             "MeshComponent": {
                 "material": "Object",
-                "model": "Object"
+                "model": "Object",
+                "renderLayer": "Int32"
             }
         },
         {
@@ -297,7 +298,8 @@
                                             "AssetReference<Material>": {
                                                 "m_AssetPath": "/assets/materials/cube_mat.sass"
                                             }
-                                        }
+                                        },
+                                        "renderLayer": 0
                                     }
                                 },
                                 {
@@ -310,7 +312,7 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": 0.0,
+                                                "x": -5.0,
                                                 "y": 0.0,
                                                 "z": 0.0
                                             }
@@ -358,7 +360,8 @@
                                             "AssetReference<Material>": {
                                                 "m_AssetPath": "/assets/materials/cube2_mat.sass"
                                             }
-                                        }
+                                        },
+                                        "renderLayer": 0
                                     }
                                 },
                                 {
