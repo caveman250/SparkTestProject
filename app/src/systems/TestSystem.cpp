@@ -21,10 +21,12 @@ namespace app
 
     void TestSystem::OnInit(const ecs::SystemUpdateData&)
     {
+#if !SPARK_EDITOR
         const auto app = Application::Get();
         const auto world = app->GetWorld();
 
        s_Scene = world->LoadScene("/assets/scenes/test_scene.sass");
+#endif
     }
 
     void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)

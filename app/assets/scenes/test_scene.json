@@ -29,11 +29,10 @@
             "RootComponent": null
         },
         {
-            "FirstPersonCameraComponent": null
-        },
-        {
-            "PointLightComponent": {
-                "color": "Object"
+            "TransformComponent": {
+                "pos": "Object",
+                "rot": "Object",
+                "scale": "Object"
             }
         },
         {
@@ -44,10 +43,11 @@
             }
         },
         {
-            "TransformComponent": {
-                "pos": "Object",
-                "rot": "Object",
-                "scale": "Object"
+            "FirstPersonCameraComponent": null
+        },
+        {
+            "PointLightComponent": {
+                "color": "Object"
             }
         },
         {
@@ -71,7 +71,7 @@
             "ParentComponent": null
         },
         {
-            "RespondsToTestButtonComponent" : null
+            "RespondsToTestButtonComponent": null
         },
         {
             "MouseInputComponent": {
@@ -82,7 +82,6 @@
         },
         {
             "WidgetComponent": {
-                "dirty": "bool",
                 "updateEnabled": "bool",
                 "visibility": "String"
             }
@@ -90,7 +89,6 @@
         {
             "RectTransformComponent": {
                 "anchors": "Object",
-                "desiredSize": "Object",
                 "maxAspectRatio": "Float",
                 "maxX": "Float",
                 "maxY": "Float",
@@ -107,12 +105,6 @@
                 "left": "Float",
                 "right": "Float",
                 "top": "Float"
-            }
-        },
-        {
-            "Vec2": {
-                "x": "Float",
-                "y": "Float"
             }
         },
         {
@@ -150,7 +142,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 152,
+                            "entity": 219,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -160,9 +152,6 @@
                             "components": [
                                 {
                                     "RootComponent": null
-                                },
-                                {
-                                    "FirstPersonCameraComponent": null
                                 },
                                 {
                                     "TransformComponent": {
@@ -176,7 +165,7 @@
                                         "rot": {
                                             "Vec3": {
                                                 "x": 0.0,
-                                                "y": 3.14,
+                                                "y": 3.140000104904175,
                                                 "z": 0.0
                                             }
                                         },
@@ -188,13 +177,16 @@
                                             }
                                         }
                                     }
+                                },
+                                {
+                                    "FirstPersonCameraComponent": null
                                 }
                             ]
                         }
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 153,
+                            "entity": 214,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -246,7 +238,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 154,
+                            "entity": 438,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -298,7 +290,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 155,
+                            "entity": 209,
                             "name": "Cube 1",
                             "flags": 0,
                             "children": {
@@ -306,7 +298,7 @@
                                 "contents": [
                                     {
                                         "uint64_t": {
-                                            "val": 156
+                                            "val": 215
                                         }
                                     }
                                 ]
@@ -337,9 +329,9 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": 0.0,
+                                                "x": -3.7082414627075195,
                                                 "y": 0.0,
-                                                "z": 0.0
+                                                "z": 2.8702526092529297
                                             }
                                         },
                                         "rot": {
@@ -359,14 +351,14 @@
                                     }
                                 },
                                 {
-                                    "RespondsToTestButtonComponent" : null
+                                    "RespondsToTestButtonComponent": null
                                 }
                             ]
                         }
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 156,
+                            "entity": 215,
                             "name": "Cube 2",
                             "flags": 0,
                             "children": {
@@ -393,9 +385,9 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": 3.0,
+                                                "x": 8.046297073364258,
                                                 "y": 0.0,
-                                                "z": 0.0
+                                                "z": -8.605274200439453
                                             }
                                         },
                                         "rot": {
@@ -419,7 +411,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 157,
+                            "entity": 217,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -437,8 +429,7 @@
                                 {
                                     "WidgetComponent": {
                                         "visibility": "Visible",
-                                        "updateEnabled": true,
-                                        "dirty": false
+                                        "updateEnabled": true
                                     }
                                 },
                                 {
@@ -458,13 +449,7 @@
                                         "minAspectRatio": 0.0,
                                         "maxAspectRatio": 0.0,
                                         "minWidth": 0.0,
-                                        "minHeight": 0.0,
-                                        "desiredSize": {
-                                            "Vec2": {
-                                                "x": 0.0,
-                                                "y": 0.0
-                                            }
-                                        }
+                                        "minHeight": 0.0
                                     }
                                 },
                                 {
