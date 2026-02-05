@@ -31,19 +31,19 @@ namespace app
 
     void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
     {
-        auto app = Application::Get();
-        auto dt = app->GetDeltaTime();
-
-        auto* transform = updateData.GetComponentArray<TransformComponent>();
-        for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
-        {
-            auto& transformComp = transform[i];
-            transformComp.rot.y += 10.f * dt;
-            if (transformComp.rot.y > 360.f)
-            {
-                transformComp.rot.y -= 360.f;
-            }
-        }
+        // auto app = Application::Get();
+        // auto dt = app->GetDeltaTime();
+        //
+        // auto* transform = updateData.GetComponentArray<TransformComponent>();
+        // for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
+        // {
+        //     auto& transformComp = transform[i];
+        //     transformComp.rot.y += 10.f * dt;
+        //     if (transformComp.rot.y > 360.f)
+        //     {
+        //         transformComp.rot.y -= 360.f;
+        //     }
+        // }
     }
 }
 

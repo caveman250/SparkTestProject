@@ -74,37 +74,16 @@
             "RespondsToTestButtonComponent": null
         },
         {
-            "ButtonComponent": {
-                "hoveredImage": "Object",
-                "image": "Object",
-                "onPressed": "Object",
-                "pressedImage": "Object"
-            }
-        },
-        {
-            "AssetReference<Texture>": {
-                "m_AssetPath": "String"
-            }
-        },
-        {
-            "Signal<>": {
-                "m_RegisteredHandles": "Array"
-            }
-        },
-        {
-            "SignalHandle": {
-                "functionName": "String",
-                "systemName": "String"
-            }
-        },
-        {
-            "ImageComponent": null
-        },
-        {
             "MouseInputComponent": {
                 "buttonMask": "Int32",
                 "receivesScrollEvents": "bool",
                 "stateMask": "Int32"
+            }
+        },
+        {
+            "WidgetComponent": {
+                "updateEnabled": "bool",
+                "visibility": "String"
             }
         },
         {
@@ -129,9 +108,32 @@
             }
         },
         {
-            "WidgetComponent": {
-                "updateEnabled": "bool",
-                "visibility": "String"
+            "ImageComponent": {
+                "texture": "Object"
+            }
+        },
+        {
+            "AssetReference<Texture>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "ButtonComponent": {
+                "hoveredImage": "Object",
+                "image": "Object",
+                "onPressed": "Object",
+                "pressedImage": "Object"
+            }
+        },
+        {
+            "Signal<>": {
+                "m_RegisteredHandles": "Array"
+            }
+        },
+        {
+            "SignalHandle": {
+                "functionName": "String",
+                "systemName": "String"
             }
         }
     ],
@@ -142,7 +144,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 127,
+                            "entity": 115,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -186,7 +188,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 128,
+                            "entity": 116,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -194,6 +196,17 @@
                                 "contents": null
                             },
                             "components": [
+                                {
+                                    "PointLightComponent": {
+                                        "color": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                },
                                 {
                                     "RootComponent": null
                                 },
@@ -221,7 +234,20 @@
                                             }
                                         }
                                     }
-                                },
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 110,
+                            "name": "Light 2",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
                                 {
                                     "PointLightComponent": {
                                         "color": {
@@ -232,20 +258,7 @@
                                             }
                                         }
                                     }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "SceneEntityData": {
-                            "entity": 122,
-                            "name": "Light 2",
-                            "flags": 0,
-                            "children": {
-                                "struct": "uint64_t",
-                                "contents": null
-                            },
-                            "components": [
+                                },
                                 {
                                     "RootComponent": null
                                 },
@@ -273,35 +286,18 @@
                                             }
                                         }
                                     }
-                                },
-                                {
-                                    "PointLightComponent": {
-                                        "color": {
-                                            "Vec3": {
-                                                "x": 1.0,
-                                                "y": 1.0,
-                                                "z": 1.0
-                                            }
-                                        }
-                                    }
                                 }
                             ]
                         }
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 125,
-                            "name": "Cube 1",
+                            "entity": 113,
+                            "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
-                                "contents": [
-                                    {
-                                        "uint64_t": {
-                                            "val": 124
-                                        }
-                                    }
-                                ]
+                                "contents": null
                             },
                             "components": [
                                 {
@@ -329,9 +325,9 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": 2.5548601150512695,
+                                                "x": 4.0,
                                                 "y": 0.0,
-                                                "z": 2.8702526092529297
+                                                "z": 0.0
                                             }
                                         },
                                         "rot": {
@@ -358,60 +354,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 124,
-                            "name": "Cube 2",
-                            "flags": 0,
-                            "children": {
-                                "struct": "uint64_t",
-                                "contents": null
-                            },
-                            "components": [
-                                {
-                                    "MeshComponent": {
-                                        "model": {
-                                            "AssetReference<Model>": {
-                                                "m_AssetPath": "/assets/models/cube.sass"
-                                            }
-                                        },
-                                        "material": {
-                                            "AssetReference<Material>": {
-                                                "m_AssetPath": "/assets/materials/cube2_mat.sass"
-                                            }
-                                        },
-                                        "renderLayer": 0
-                                    }
-                                },
-                                {
-                                    "TransformComponent": {
-                                        "pos": {
-                                            "Vec3": {
-                                                "x": 8.046297073364258,
-                                                "y": 0.0,
-                                                "z": -8.605274200439453
-                                            }
-                                        },
-                                        "rot": {
-                                            "Vec3": {
-                                                "x": 0.0,
-                                                "y": 0.0,
-                                                "z": 0.0
-                                            }
-                                        },
-                                        "scale": {
-                                            "Vec3": {
-                                                "x": 1.0,
-                                                "y": 1.0,
-                                                "z": 1.0
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "SceneEntityData": {
-                            "entity": 123,
+                            "entity": 112,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -420,7 +363,46 @@
                             },
                             "components": [
                                 {
-                                    "RootComponent": null
+                                    "MouseInputComponent": {
+                                        "buttonMask": -1,
+                                        "stateMask": 3,
+                                        "receivesScrollEvents": false
+                                    }
+                                },
+                                {
+                                    "WidgetComponent": {
+                                        "visibility": "Visible",
+                                        "updateEnabled": true
+                                    }
+                                },
+                                {
+                                    "RectTransformComponent": {
+                                        "anchors": {
+                                            "Anchors": {
+                                                "left": 0.0,
+                                                "right": 0.0,
+                                                "top": 0.0,
+                                                "bottom": 0.0
+                                            }
+                                        },
+                                        "minX": 20.0,
+                                        "minY": 20.0,
+                                        "maxX": 120.0,
+                                        "maxY": 120.0,
+                                        "minAspectRatio": 0.0,
+                                        "maxAspectRatio": 0.0,
+                                        "minWidth": 0.0,
+                                        "minHeight": 0.0
+                                    }
+                                },
+                                {
+                                    "ImageComponent": {
+                                        "texture": {
+                                            "AssetReference<Texture>": {
+                                                "m_AssetPath": ""
+                                            }
+                                        }
+                                    }
                                 },
                                 {
                                     "ButtonComponent": {
@@ -457,40 +439,7 @@
                                     }
                                 },
                                 {
-                                    "ImageComponent": null
-                                },
-                                {
-                                    "MouseInputComponent": {
-                                        "buttonMask": -1,
-                                        "stateMask": 3,
-                                        "receivesScrollEvents": false
-                                    }
-                                },
-                                {
-                                    "RectTransformComponent": {
-                                        "anchors": {
-                                            "Anchors": {
-                                                "left": 0.0,
-                                                "right": 0.0,
-                                                "top": 0.0,
-                                                "bottom": 0.0
-                                            }
-                                        },
-                                        "minX": 20.0,
-                                        "minY": 20.0,
-                                        "maxX": 120.0,
-                                        "maxY": 120.0,
-                                        "minAspectRatio": 0.0,
-                                        "maxAspectRatio": 0.0,
-                                        "minWidth": 0.0,
-                                        "minHeight": 0.0
-                                    }
-                                },
-                                {
-                                    "WidgetComponent": {
-                                        "visibility": "Visible",
-                                        "updateEnabled": true
-                                    }
+                                    "RootComponent": null
                                 }
                             ]
                         }
