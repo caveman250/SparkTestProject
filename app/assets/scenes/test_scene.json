@@ -127,7 +127,7 @@
             }
         },
         {
-            "Signal<>": {
+            "Signal<se::input::MouseButton>": {
                 "m_RegisteredHandles": "Array"
             }
         },
@@ -145,7 +145,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 115,
+                            "entity": 116,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -189,7 +189,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 116,
+                            "entity": 117,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -241,7 +241,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 110,
+                            "entity": 111,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -293,7 +293,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 113,
+                            "entity": 114,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -355,7 +355,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 112,
+                            "entity": 113,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -423,7 +423,7 @@
                                             }
                                         },
                                         "onPressed": {
-                                            "Signal<>": {
+                                            "Signal<se::input::MouseButton>": {
                                                 "m_RegisteredHandles": {
                                                     "struct": "SignalHandle",
                                                     "contents": [

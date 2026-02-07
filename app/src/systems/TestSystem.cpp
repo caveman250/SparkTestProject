@@ -29,7 +29,7 @@ namespace app
 #endif
     }
 
-    void TestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
+    void TestSystem::OnUpdate(const ecs::SystemUpdateData&)
     {
         // auto app = Application::Get();
         // auto dt = app->GetDeltaTime();
