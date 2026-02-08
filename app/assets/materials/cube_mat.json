@@ -1,179 +1,183 @@
 {
-  "structs": [
-    {
-      "Material": {
-        "m_FragShaders": "Array",
-        "m_RenderState": "Object",
-        "m_ShaderSettings": "Object",
-        "m_UniformDefaults": "Object",
-        "m_VertShaders": "Array",
-        "m_SourcePath": "String"
-      }
-    },
-    {
-      "AssetReference<Shader>": {
-        "m_AssetPath": "String"
-      }
-    },
-    {
-      "RenderState": {
-        "depthComp": "String",
-        "dstBlend": "String",
-        "lit": "bool",
-        "srcBlend": "String",
-        "stencilFunc": "String",
-        "stencilReadMask": "Uint32",
-        "stencilWriteMask": "Uint32"
-      }
-    },
-    {
-      "ShaderSettings": {
-        "m_Settings": "Array"
-      }
-    },
-    {
-      "Internal_MapItemString_Object": {
-        "key": "String",
-        "value": "Object"
-      }
-    },
-    {
-      "ShaderSettingDefinition<Vec3>": {
-        "m_Value": "Object"
-      }
-    },
-    {
-      "ShaderSettingDefinition<Vec4>": {
-        "m_Value": "Object"
-      }
-    },
-    {
-      "Vec3": {
-        "x": "Float",
-        "y": "Float",
-        "z": "Float"
-      }
-    },
-    {
-      "Vec4": {
-        "x": "Float",
-        "y": "Float",
-        "z": "Float",
-        "w": "Float"
-      }
-    },
-    {
-      "UniformStorage": {
-        "m_Storage": "Array"
-      }
-    },
-    {
-      "UniformValue<AssetReference<Texture>>": {
-        "type": "String",
-        "value": "Array",
-        "valueCount": "Int32"
-      }
-    },
-    {
-      "AssetReference<Texture>": {
-        "m_AssetPath": "String"
-      }
-    }
-  ],
-  "root": {
-    "Material": {
-      "m_VertShaders": {
-        "struct": "AssetReference<Shader>",
-        "contents": [
-          {
-            "AssetReference<Shader>": {
-              "m_AssetPath": "/engine_assets/shaders/uber_vertex.sass"
+    "structs": [
+        {
+            "Material": {
+                "m_FragShaders": "Array",
+                "m_RenderState": "Object",
+                "m_ShaderSettings": "Object",
+                "m_SourcePath": "String",
+                "m_UniformDefaults": "Object",
+                "m_VertShaders": "Array"
             }
-          }
-        ]
-      },
-      "m_FragShaders": {
-        "struct": "AssetReference<Shader>",
-        "contents": [
-          {
+        },
+        {
             "AssetReference<Shader>": {
-              "m_AssetPath": "/engine_assets/shaders/diffuse_texture.sass"
+                "m_AssetPath": "String"
             }
-          },
-          {
-            "AssetReference<Shader>": {
-              "m_AssetPath": "/engine_assets/shaders/point_light.sass"
+        },
+        {
+            "RenderState": {
+                "depthComp": "String",
+                "dstBlend": "String",
+                "lit": "bool",
+                "srcBlend": "String",
+                "stencilFunc": "String",
+                "stencilReadMask": "Uint32",
+                "stencilWriteMask": "Uint32"
             }
-          }
-        ]
-      },
-      "m_RenderState": {
-        "RenderState": {
-          "depthComp": "Less",
-          "srcBlend": "One",
-          "dstBlend": "Zero",
-          "stencilWriteMask": 0,
-          "stencilFunc": "None",
-          "stencilReadMask": 0,
-          "lit": true
+        },
+        {
+            "ShaderSettings": {
+                "m_Settings": "Array"
+            }
+        },
+        {
+            "Internal_MapItemString_Object": {
+                "key": "String",
+                "value": "Object"
+            }
+        },
+        {
+            "ShaderSettingDefinition<int32_t>": {
+                "m_Value": "Int32"
+            }
+        },
+        {
+            "ShaderSettingDefinition<Vec4>": {
+                "m_Value": "Object"
+            }
+        },
+        {
+            "Vec4": {
+                "w": "Float",
+                "x": "Float",
+                "y": "Float",
+                "z": "Float"
+            }
+        },
+        {
+            "UniformStorage": {
+                "m_Storage": "Array"
+            }
+        },
+        {
+            "UniformValue<AssetReference<Texture>>": {
+                "type": "String",
+                "value": "Array",
+                "valueCount": "Int32"
+            }
+        },
+        {
+            "AssetReference<Texture>": {
+                "m_AssetPath": "String"
+            }
         }
-      },
-      "m_ShaderSettings": {
-        "ShaderSettings": {
-          "m_Settings": {
-            "struct": "Internal_MapItemString_Object",
-            "contents": [
-              {
-                "Internal_MapItemString_Object": {
-                  "key": "ambientStr",
-                  "value": {
-                    "ShaderSettingDefinition<Vec4>": {
-                      "m_Value": {
-                        "Vec4": {
-                          "x": 0.1,
-                          "y": 0.1,
-                          "z": 0.1,
-                          "w": 1.0
+    ],
+    "root": {
+        "Material": {
+            "m_VertShaders": {
+                "struct": "AssetReference<Shader>",
+                "contents": [
+                    {
+                        "AssetReference<Shader>": {
+                            "m_AssetPath": "/engine_assets/shaders/uber_vertex.sass"
                         }
-                      }
                     }
-                  }
+                ]
+            },
+            "m_FragShaders": {
+                "struct": "AssetReference<Shader>",
+                "contents": [
+                    {
+                        "AssetReference<Shader>": {
+                            "m_AssetPath": "/engine_assets/shaders/diffuse_texture.sass"
+                        }
+                    },
+                    {
+                        "AssetReference<Shader>": {
+                            "m_AssetPath": "/engine_assets/shaders/point_light.sass"
+                        }
+                    }
+                ]
+            },
+            "m_RenderState": {
+                "RenderState": {
+                    "depthComp": "Less",
+                    "srcBlend": "One",
+                    "dstBlend": "Zero",
+                    "stencilWriteMask": 0,
+                    "stencilFunc": "None",
+                    "stencilReadMask": 0,
+                    "lit": true
                 }
-              }
-            ]
-          }
-        }
-      },
-      "m_UniformDefaults": {
-        "UniformStorage": {
-          "m_Storage": {
-            "struct": "Internal_MapItemString_Object",
-            "contents": [
-              {
-                "Internal_MapItemString_Object": {
-                  "key": "Texture",
-                  "value": {
-                    "UniformValue<AssetReference<Texture>>": {
-                      "value": {
-                        "struct": "AssetReference<Texture>",
+            },
+            "m_ShaderSettings": {
+                "ShaderSettings": {
+                    "m_Settings": {
+                        "struct": "Internal_MapItemString_Object",
                         "contents": [
-                          {
-                            "AssetReference<Texture>": {
-                              "m_AssetPath": "/assets/textures/uvmap2.sass"
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "numLights",
+                                    "value": {
+                                        "ShaderSettingDefinition<int32_t>": {
+                                            "m_Value": 2
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "ambientStr",
+                                    "value": {
+                                        "ShaderSettingDefinition<Vec4>": {
+                                            "m_Value": {
+                                                "Vec4": {
+                                                    "x": 0.10000000149011612,
+                                                    "y": 0.10000000149011612,
+                                                    "z": 0.10000000149011612,
+                                                    "w": 1.0
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
-                          }
                         ]
-                      },
-                      "type": "Sampler2DReference",
-                      "valueCount": 1
                     }
-                  }
                 }
-              }
-            ]
-          }
+            },
+            "m_UniformDefaults": {
+                "UniformStorage": {
+                    "m_Storage": {
+                        "struct": "Internal_MapItemString_Object",
+                        "contents": [
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "Texture",
+                                    "value": {
+                                        "UniformValue<AssetReference<Texture>>": {
+                                            "value": {
+                                                "struct": "AssetReference<Texture>",
+                                                "contents": [
+                                                    {
+                                                        "AssetReference<Texture>": {
+                                                            "m_AssetPath": "/assets/textures/T_NewCorridorWall01_BaseColor.sass"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "type": "Sampler2DReference",
+                                            "valueCount": 1
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "m_SourcePath": "/source_assets/materials/cube_mat.json"
         }
-      }
     }
-  }
 }

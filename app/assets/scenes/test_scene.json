@@ -136,6 +136,9 @@
                 "functionName": "String",
                 "systemName": "String"
             }
+        },
+        {
+            "FPSCounterComponent": null
         }
     ],
     "root": {
@@ -145,7 +148,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 116,
+                            "entity": 103,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -189,7 +192,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 117,
+                            "entity": 106,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -241,7 +244,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 111,
+                            "entity": 105,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -293,7 +296,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 114,
+                            "entity": 104,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -355,7 +358,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 113,
+                            "entity": 99,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -441,6 +444,65 @@
                                 },
                                 {
                                     "RootComponent": null
+                                },
+                                {
+                                    "FPSCounterComponent": null
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 102,
+                            "name": "New Entity",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Building/SM_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "material": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": "/assets/materials/cube_mat.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": -3.4116199016571045,
+                                                "y": 0.03843975067138672,
+                                                "z": -5.613921165466309
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
                                 }
                             ]
                         }
