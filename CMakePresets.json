@@ -9,7 +9,7 @@
     {
       "name": "Debug (Win64)",
       "displayName": "Debug",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/debug",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -29,7 +29,7 @@
     {
       "name": "Debug Editor (Win64)",
       "displayName": "Debug Editor",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/debug_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -49,7 +49,7 @@
     {
       "name": "Release (Win64)",
       "displayName": "Release",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/release",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -69,7 +69,7 @@
     {
       "name": "Release Editor (Win64)",
       "displayName": "Release Editor",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/release_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
@@ -89,7 +89,7 @@
     {
       "name": "Distribution (Win64)",
       "displayName": "Distribution",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution",
       "cacheVariables": {
         "USE_EDITOR": "OFF",
@@ -110,7 +110,7 @@
     {
       "name": "Distribution Editor (Win64)",
       "displayName": "Distribution Editor",
-      "generator": "Visual Studio 18 2026",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/projects/${generator}/distribution_editor",
       "cacheVariables": {
         "USE_EDITOR": "ON",
