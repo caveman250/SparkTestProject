@@ -27,10 +27,16 @@ namespace app
 
     void ButtonTestSystem::OnUpdate(const ecs::QueryResults& results)
     {
-        ecs::ForEachArcheType(results, ecs::UpdateMode::MultiThreaded, false, [](const ecs::SystemUpdateData& updateData)
+        ButtonTestComponent* buttonTestComp = nullptr;
+
+        ecs::ForEachArcheType(results, ecs::UpdateMode::MultiThreaded, false, [&buttonTestComp](const ecs::SystemUpdateData& updateData)
         {
             auto* transform = updateData.GetComponentArray<TransformComponent>();
-            auto* buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
+            if (!buttonTestComp)
+            {
+                // TODO move singleton comps to QueryResults
+                buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
+            }
 
             if (buttonTestComp->buttonPressed)
             {
@@ -40,9 +46,9 @@ namespace app
                     transformComp.rot.y += 90.f;
                 }
             }
-
-            buttonTestComp->buttonPressed = false;
         });
+
+        buttonTestComp->buttonPressed = false;
     }
 
     void ButtonTestSystem::OnTestButtonPressed()
