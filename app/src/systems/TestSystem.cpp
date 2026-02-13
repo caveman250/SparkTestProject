@@ -19,7 +19,7 @@ namespace app
 
     ecs::Id s_Scene = ecs::s_InvalidEntity;
 
-    void TestSystem::OnInit(const ecs::SystemUpdateData&)
+    void TestSystem::OnInit(const ecs::QueryResults&)
     {
 #if !SPARK_EDITOR
         const auto app = Application::Get();
@@ -29,7 +29,7 @@ namespace app
 #endif
     }
 
-    void TestSystem::OnUpdate(const ecs::SystemUpdateData&)
+    void TestSystem::OnUpdate(const ecs::QueryResults&)
     {
         // auto app = Application::Get();
         // auto dt = app->GetDeltaTime();

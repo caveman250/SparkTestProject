@@ -25,21 +25,24 @@ namespace app
             .WithSingletonComponent<ButtonTestComponent>();
     }
 
-    void ButtonTestSystem::OnUpdate(const ecs::SystemUpdateData& updateData)
+    void ButtonTestSystem::OnUpdate(const ecs::QueryResults& results)
     {
-        auto* transform = updateData.GetComponentArray<TransformComponent>();
-        auto* buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
-
-        if (buttonTestComp->buttonPressed)
+        ecs::ForEachArcheType(results, ecs::UpdateMode::MultiThreaded, false, [](const ecs::SystemUpdateData& updateData)
         {
-            for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
-            {
-                auto& transformComp = transform[i];
-                transformComp.rot.y += 90.f;
-            }
-        }
+            auto* transform = updateData.GetComponentArray<TransformComponent>();
+            auto* buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
 
-        buttonTestComp->buttonPressed = false;
+            if (buttonTestComp->buttonPressed)
+            {
+                for (size_t i = 0; i < updateData.GetEntities().size(); ++i)
+                {
+                    auto& transformComp = transform[i];
+                    transformComp.rot.y += 90.f;
+                }
+            }
+
+            buttonTestComp->buttonPressed = false;
+        });
     }
 
     void ButtonTestSystem::OnTestButtonPressed()

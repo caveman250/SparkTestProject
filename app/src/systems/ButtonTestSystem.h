@@ -13,7 +13,7 @@ namespace app
         SPARK_SYSTEM()
     public:
         static ecs::SystemDeclaration GetSystemDeclaration();
-        void OnUpdate(const ecs::SystemUpdateData& updateData) override;
+        void OnUpdate(const ecs::QueryResults&) override;
 
         SPARK_FUNCTION()
         void OnTestButtonPressed();
