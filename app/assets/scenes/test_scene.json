@@ -149,7 +149,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 112,
+                            "entity": 106,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -193,7 +193,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 107,
+                            "entity": 109,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -245,7 +245,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 547,
+                            "entity": 108,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -297,7 +297,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 549,
+                            "entity": 107,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -359,7 +359,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 550,
+                            "entity": 102,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -462,8 +462,8 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 551,
-                            "name": "New Entity",
+                            "entity": 105,
+                            "name": "sm-corriderwall03",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
@@ -529,7 +529,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 552,
+                            "entity": 104,
                             "name": "New Entity",
                             "flags": 0,
                             "children": {
