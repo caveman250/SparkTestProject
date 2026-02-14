@@ -122,6 +122,7 @@
             "ButtonComponent": {
                 "hoveredImage": "Object",
                 "image": "Object",
+                "onDoubleClick": "Object",
                 "onPressed": "Object",
                 "pressedImage": "Object"
             }
@@ -148,7 +149,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 103,
+                            "entity": 112,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -192,7 +193,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 106,
+                            "entity": 107,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -244,7 +245,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 105,
+                            "entity": 547,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -296,7 +297,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 104,
+                            "entity": 549,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -358,7 +359,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 99,
+                            "entity": 550,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -439,6 +440,14 @@
                                                     ]
                                                 }
                                             }
+                                        },
+                                        "onDoubleClick": {
+                                            "Signal<se::input::MouseButton>": {
+                                                "m_RegisteredHandles": {
+                                                    "struct": "SignalHandle",
+                                                    "contents": null
+                                                }
+                                            }
                                         }
                                     }
                                 },
@@ -453,7 +462,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 102,
+                            "entity": 551,
                             "name": "New Entity",
                             "flags": 0,
                             "children": {
@@ -461,6 +470,17 @@
                                 "contents": null
                             },
                             "components": [
+                                {
+                                    "PointLightComponent": {
+                                        "color": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        }
+                                    }
+                                },
                                 {
                                     "MeshComponent": {
                                         "model": {
@@ -486,6 +506,62 @@
                                                 "x": -3.4116199016571045,
                                                 "y": 0.03843975067138672,
                                                 "z": -5.613921165466309
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 552,
+                            "name": "New Entity",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Props/SM_AmmunitionBoxes01_Body.sass"
+                                            }
+                                        },
+                                        "material": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": "/assets/materials/cube_mat_1.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
                                             }
                                         },
                                         "rot": {
