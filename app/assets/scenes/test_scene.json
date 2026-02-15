@@ -463,7 +463,7 @@
                     {
                         "SceneEntityData": {
                             "entity": 105,
-                            "name": "sm-corriderwall03",
+                            "name": "SM_CorridorWall03",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
@@ -530,7 +530,7 @@
                     {
                         "SceneEntityData": {
                             "entity": 104,
-                            "name": "New Entity",
+                            "name": "SM_AmmunitionBoxes01_Body",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
