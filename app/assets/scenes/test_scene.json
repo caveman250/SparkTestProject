@@ -546,7 +546,7 @@
                                         },
                                         "material": {
                                             "AssetReference<Material>": {
-                                                "m_AssetPath": "/assets/materials/cube_mat_1.sass"
+                                                "m_AssetPath": "/assets/materials/cube_mat.sass"
                                             }
                                         },
                                         "renderLayer": 0
