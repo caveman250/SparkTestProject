@@ -9,3 +9,4 @@ app/temp
 *.generated.mm
 *.unity.cpp
 *.unity.mm
+/.idea/QtSettings.xml
