@@ -10,3 +10,4 @@ app/temp
 *.unity.cpp
 *.unity.mm
 /.idea/QtSettings.xml
+/.idea/SparkTestProject.iml
