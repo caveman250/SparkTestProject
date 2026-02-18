@@ -10,7 +10,6 @@
 #include "engine/input/InputComponent.h"
 #include "engine/input/InputUtil.h"
 #include "engine/input/MouseButton.h"
-#include "platform/IWindow.h"
 
 namespace app
 {
@@ -38,11 +37,11 @@ namespace app
                 return;
             }
 
-            auto app = Application::Get();
+            const auto app = Application::Get();
             SPARK_ASSERT(entities.size() == 1, "Multiple cameras not supported");
 
-            auto dx = static_cast<float>(activeCamera->lastMouseX - input->mouseX);
-            auto dy = static_cast<float>(activeCamera->lastMouseY - input->mouseY);
+            const auto dx = static_cast<float>(activeCamera->lastMouseX - input->mouseX);
+            const auto dy = static_cast<float>(activeCamera->lastMouseY - input->mouseY);
             activeCamera->lastMouseX = input->mouseX;
             activeCamera->lastMouseY = input->mouseY;
 
@@ -72,7 +71,7 @@ namespace app
 
                 if (camera.mouseDown)
                 {
-                    auto dt = app->GetDeltaTime();
+                    const auto dt = app->GetDeltaTime();
                     transform.rot = transform.rot + math::Vec3(dy * dt, dx * dt, 0.0f);
                 }
 
@@ -115,8 +114,11 @@ namespace app
                         transform.pos + forward,
                         up);
 
-                auto gameViewport = app->GetGameViewportSize();
-                activeCamera->proj = math::Perspective(math::Radians(45.f), (float)gameViewport.x / (float)gameViewport.y,.1f, 100.f);
+                const auto gameViewport = app->GetGameViewportSize();
+                activeCamera->proj = math::Perspective(math::Radians(45.f),
+                    static_cast<float>(gameViewport.x) / static_cast<float>(gameViewport.y),
+                    .1f,
+                    100.f);
             }
         });
     }

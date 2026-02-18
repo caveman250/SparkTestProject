@@ -3,9 +3,19 @@
     <option name="myName" value="Project Default" />
     <inspection_tool class="ClangTidy" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ConstantConditionsOC" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CppClassCanBeFinal" enabled="false" level="HINT" enabled_by_default="false" />
     <inspection_tool class="CppDFAUnreadVariable" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="CppDFAUnusedValue" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CppLocalVariableMayBeConst" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="INFO_ATTRIBUTES" />
+    <inspection_tool class="CppNonExplicitConvertingConstructor" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="INFO_ATTRIBUTES" />
     <inspection_tool class="CppParameterMayBeConst" enabled="true" level="WARNING" enabled_by_default="true" editorAttributes="WARNING_ATTRIBUTES" />
+    <inspection_tool class="CppParameterNamesMismatch" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="INFO_ATTRIBUTES" />
+    <inspection_tool class="CppRedundantElseKeyword" enabled="false" level="HINT" enabled_by_default="false" />
+    <inspection_tool class="CppRedundantElseKeywordInsideCompoundStatement" enabled="false" level="HINT" enabled_by_default="false" />
+    <inspection_tool class="CppRedundantParentheses" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="INFO_ATTRIBUTES" />
+    <inspection_tool class="CppTooWideScopeInitStatement" enabled="true" level="INFORMATION" enabled_by_default="true" editorAttributes="INFORMATION_ATTRIBUTES" />
+    <inspection_tool class="CppUseAuto" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="INFO_ATTRIBUTES" />
+    <inspection_tool class="CppUseFamiliarTemplateSyntaxForGenericLambdas" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="CppUseStructuredBinding" enabled="false" level="HINT" enabled_by_default="false" />
   </profile>
 </component>

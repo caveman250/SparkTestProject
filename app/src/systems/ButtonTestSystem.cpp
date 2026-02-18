@@ -6,7 +6,6 @@
 #include "engine/Application.h"
 #include "engine/ecs/components/MeshComponent.h"
 #include "engine/ecs/components/TransformComponent.h"
-#include "engine/ecs/util/SystemUtil.h"
 #include "singleton_components/ButtonTestComponent.h"
 
 using namespace se;
