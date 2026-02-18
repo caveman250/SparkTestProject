@@ -17,7 +17,7 @@ namespace app
             .WithComponent<const MeshComponent>();
     }
 
-    ecs::Id s_Scene = ecs::s_InvalidEntity;
+    ecs::Id s_Scene = ecs::InvalidEntity;
 
     void TestSystem::OnInit(const ecs::QueryResults&)
     {
