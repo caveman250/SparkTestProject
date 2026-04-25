@@ -1,0 +1,79 @@
+{
+    "structs": [
+        {
+            "MaterialInstance": {
+                "m_Material": "Object",
+                "m_SourcePath": "String",
+                "m_UniformStorage": "Object"
+            }
+        },
+        {
+            "AssetReference<Material>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "UniformStorage": {
+                "m_Storage": "Array"
+            }
+        },
+        {
+            "Internal_MapItemString_Object": {
+                "key": "String",
+                "value": "Object"
+            }
+        },
+        {
+            "UniformValue<AssetReference<Texture>>": {
+                "type": "String",
+                "value": "Array",
+                "valueCount": "Int32"
+            }
+        },
+        {
+            "AssetReference<Texture>": {
+                "m_AssetPath": "String"
+            }
+        }
+    ],
+    "root": {
+        "MaterialInstance": {
+            "m_Material": {
+                "AssetReference<Material>": {
+                    "m_AssetPath": "/assets/materials/M_LitSingleTexture.sass"
+                }
+            },
+            "m_UniformStorage": {
+                "UniformStorage": {
+                    "m_Storage": {
+                        "struct": "Internal_MapItemString_Object",
+                        "contents": [
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "Texture",
+                                    "value": {
+                                        "UniformValue<AssetReference<Texture>>": {
+                                            "value": {
+                                                "struct": "AssetReference<Texture>",
+                                                "contents": [
+                                                    {
+                                                        "AssetReference<Texture>": {
+                                                            "m_AssetPath": "/assets/textures/T_CorridorBigDoor01_BaseColor.sass"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "type": "Sampler2DReference",
+                                            "valueCount": 1
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "m_SourcePath": "/source_assets/materials/MI_CorridorBigDoor01.json"
+        }
+    }
+}
