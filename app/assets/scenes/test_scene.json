@@ -53,7 +53,8 @@
         },
         {
             "MeshComponent": {
-                "material": "Object",
+                "materialAsset": "Object",
+                "materialInstanceAsset": "Object",
                 "model": "Object",
                 "renderLayer": "Int32"
             }
@@ -65,6 +66,11 @@
         },
         {
             "AssetReference<Material>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "AssetReference<MaterialInstance>": {
                 "m_AssetPath": "String"
             }
         },
@@ -91,6 +97,8 @@
             "RectTransformComponent": {
                 "anchors": "Object",
                 "maxAspectRatio": "Float",
+                "maxHeight": "Float",
+                "maxWidth": "Float",
                 "maxX": "Float",
                 "maxY": "Float",
                 "minAspectRatio": "Float",
@@ -149,7 +157,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 106,
+                            "entity": 109,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -193,7 +201,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 109,
+                            "entity": 110,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -245,7 +253,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 108,
+                            "entity": 116,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -297,7 +305,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 107,
+                            "entity": 112,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -312,9 +320,14 @@
                                                 "m_AssetPath": "/assets/models/Building/SM_CorridorBigDoor01.sass"
                                             }
                                         },
-                                        "material": {
+                                        "materialAsset": {
                                             "AssetReference<Material>": {
-                                                "m_AssetPath": "/assets/materials/door.sass"
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorBigDoor01.sass"
                                             }
                                         },
                                         "renderLayer": 0
@@ -359,7 +372,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 102,
+                            "entity": 108,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -397,7 +410,9 @@
                                         "minAspectRatio": 0.0,
                                         "maxAspectRatio": 0.0,
                                         "minWidth": 0.0,
-                                        "minHeight": 0.0
+                                        "minHeight": 0.0,
+                                        "maxWidth": 0.0,
+                                        "maxHeight": 0.0
                                     }
                                 },
                                 {
@@ -462,7 +477,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 105,
+                            "entity": 114,
                             "name": "SM_CorridorWall03",
                             "flags": 0,
                             "children": {
@@ -488,9 +503,14 @@
                                                 "m_AssetPath": "/assets/models/Building/SM_CorridorWall03.sass"
                                             }
                                         },
-                                        "material": {
+                                        "materialAsset": {
                                             "AssetReference<Material>": {
-                                                "m_AssetPath": "/assets/materials/cube_mat.sass"
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorWall03.sass"
                                             }
                                         },
                                         "renderLayer": 0
@@ -529,7 +549,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 104,
+                            "entity": 115,
                             "name": "SM_AmmunitionBoxes01_Body",
                             "flags": 0,
                             "children": {
@@ -544,9 +564,14 @@
                                                 "m_AssetPath": "/assets/models/Props/SM_AmmunitionBoxes01_Body.sass"
                                             }
                                         },
-                                        "material": {
+                                        "materialAsset": {
                                             "AssetReference<Material>": {
-                                                "m_AssetPath": "/assets/materials/cube_mat.sass"
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_AmmunitionBoxes01_Body.sass"
                                             }
                                         },
                                         "renderLayer": 0
