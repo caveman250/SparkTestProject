@@ -157,7 +157,7 @@
                 "contents": [
                     {
                         "SceneEntityData": {
-                            "entity": 109,
+                            "entity": 0,
                             "name": "Camera",
                             "flags": 0,
                             "children": {
@@ -201,7 +201,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 110,
+                            "entity": 1,
                             "name": "Light 1",
                             "flags": 0,
                             "children": {
@@ -253,7 +253,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 116,
+                            "entity": 2,
                             "name": "Light 2",
                             "flags": 0,
                             "children": {
@@ -265,9 +265,9 @@
                                     "PointLightComponent": {
                                         "color": {
                                             "Vec3": {
-                                                "x": 1.0,
-                                                "y": 1.0,
-                                                "z": 1.0
+                                                "x": 0.20000000298023224,
+                                                "y": 0.20000000298023224,
+                                                "z": 0.20000000298023224
                                             }
                                         }
                                     }
@@ -279,9 +279,9 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": -0.0379638671875,
+                                                "x": 0.822176456451416,
                                                 "y": 4.0398077964782715,
-                                                "z": -7.346258163452148
+                                                "z": -6.124428749084473
                                             }
                                         },
                                         "rot": {
@@ -305,7 +305,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 112,
+                            "entity": 3,
                             "name": "SM_CorridorBigDoor01",
                             "flags": 0,
                             "children": {
@@ -372,7 +372,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 108,
+                            "entity": 4,
                             "name": "Button",
                             "flags": 0,
                             "children": {
@@ -477,7 +477,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 114,
+                            "entity": 5,
                             "name": "SM_CorridorWall03",
                             "flags": 0,
                             "children": {
@@ -485,17 +485,6 @@
                                 "contents": null
                             },
                             "components": [
-                                {
-                                    "PointLightComponent": {
-                                        "color": {
-                                            "Vec3": {
-                                                "x": 1.0,
-                                                "y": 0.0,
-                                                "z": 0.0
-                                            }
-                                        }
-                                    }
-                                },
                                 {
                                     "MeshComponent": {
                                         "model": {
@@ -549,7 +538,7 @@
                     },
                     {
                         "SceneEntityData": {
-                            "entity": 115,
+                            "entity": 6,
                             "name": "SM_AmmunitionBoxes01_Body",
                             "flags": 0,
                             "children": {
@@ -586,7 +575,7 @@
                                             "Vec3": {
                                                 "x": 0.0,
                                                 "y": 0.0,
-                                                "z": 0.0
+                                                "z": 1.6262092590332031
                                             }
                                         },
                                         "rot": {
