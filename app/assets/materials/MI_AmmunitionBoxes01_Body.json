@@ -25,9 +25,7 @@
         },
         {
             "UniformValue<AssetReference<Texture>>": {
-                "type": "String",
-                "value": "Array",
-                "valueCount": "Int32"
+                "value": "Array"
             }
         },
         {
@@ -62,9 +60,7 @@
                                                         }
                                                     }
                                                 ]
-                                            },
-                                            "type": "Sampler2DReference",
-                                            "valueCount": 1
+                                            }
                                         }
                                     }
                                 }
