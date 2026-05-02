@@ -33,7 +33,6 @@ namespace app
             auto* transform = updateData.GetComponentArray<TransformComponent>();
             if (!buttonTestComp)
             {
-                // TODO move singleton comps to QueryResults
                 buttonTestComp = updateData.GetSingletonComponent<ButtonTestComponent>();
             }
 
