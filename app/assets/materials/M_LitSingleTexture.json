@@ -38,6 +38,11 @@
             }
         },
         {
+            "ShaderSettingDefinition<int32_t>": {
+                "m_Value": "Int32"
+            }
+        },
+        {
             "ShaderSettingDefinition<Vec4>": {
                 "m_Value": "Object"
             }
@@ -109,6 +114,16 @@
                     "m_Settings": {
                         "struct": "Internal_MapItemString_Object",
                         "contents": [
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "numLights",
+                                    "value": {
+                                        "ShaderSettingDefinition<int32_t>": {
+                                            "m_Value": 56
+                                        }
+                                    }
+                                }
+                            },
                             {
                                 "Internal_MapItemString_Object": {
                                     "key": "ambientStr",
