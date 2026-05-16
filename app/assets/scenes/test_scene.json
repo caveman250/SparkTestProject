@@ -56,7 +56,8 @@
                 "materialAsset": "Object",
                 "materialInstanceAsset": "Object",
                 "model": "Object",
-                "renderLayer": "Int32"
+                "renderLayer": "Int32",
+                "visible": "bool"
             }
         },
         {
@@ -330,7 +331,8 @@
                                                 "m_AssetPath": "/assets/materials/MI_CorridorBigDoor01.sass"
                                             }
                                         },
-                                        "renderLayer": 0
+                                        "renderLayer": 0,
+                                        "visible": true
                                     }
                                 },
                                 {
@@ -343,7 +345,7 @@
                                     "TransformComponent": {
                                         "pos": {
                                             "Vec3": {
-                                                "x": 4.0,
+                                                "x": 4.011684417724609,
                                                 "y": 0.0,
                                                 "z": 0.0
                                             }
@@ -502,7 +504,8 @@
                                                 "m_AssetPath": "/assets/materials/MI_CorridorWall03.sass"
                                             }
                                         },
-                                        "renderLayer": 0
+                                        "renderLayer": 0,
+                                        "visible": true
                                     }
                                 },
                                 {
@@ -563,7 +566,8 @@
                                                 "m_AssetPath": "/assets/materials/MI_AmmunitionBoxes01_Body.sass"
                                             }
                                         },
-                                        "renderLayer": 0
+                                        "renderLayer": 0,
+                                        "visible": true
                                     }
                                 },
                                 {
@@ -575,7 +579,193 @@
                                             "Vec3": {
                                                 "x": 0.0,
                                                 "y": 0.0,
-                                                "z": 1.6262092590332031
+                                                "z": -5.679651260375977
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 7,
+                            "name": "SM_CorridorWall03 (Copy)",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Building/SM_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "materialAsset": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0,
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 3.468935966491699,
+                                                "y": 0.03843975067138672,
+                                                "z": -1.8006095886230469
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": -180.0,
+                                                "y": 0.0,
+                                                "z": 180.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 8,
+                            "name": "SM_CorridorWall03 (Copy) (Copy)",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Building/SM_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "materialAsset": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0,
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 3.4700000286102295,
+                                                "y": 0.03843975067138672,
+                                                "z": -4.9988274574279785
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": -180.0,
+                                                "y": 0.0,
+                                                "z": 180.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "SceneEntityData": {
+                            "entity": 9,
+                            "name": "SM_CorridorWall03 (Copy)",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Building/SM_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "materialAsset": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorWall03.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0,
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": -3.4179539680480957,
+                                                "y": 0.03843975067138672,
+                                                "z": -8.811999320983887
                                             }
                                         },
                                         "rot": {
