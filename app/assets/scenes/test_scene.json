@@ -347,7 +347,7 @@
                                             "Vec3": {
                                                 "x": 4.011684417724609,
                                                 "y": 0.0,
-                                                "z": 0.0
+                                                "z": -0.15419960021972656
                                             }
                                         },
                                         "rot": {
@@ -604,7 +604,7 @@
                     {
                         "SceneEntityData": {
                             "entity": 7,
-                            "name": "SM_CorridorWall03 (Copy)",
+                            "name": "SM_CorridorWall03",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
@@ -666,7 +666,7 @@
                     {
                         "SceneEntityData": {
                             "entity": 8,
-                            "name": "SM_CorridorWall03 (Copy) (Copy)",
+                            "name": "SM_CorridorWall03",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
@@ -728,7 +728,7 @@
                     {
                         "SceneEntityData": {
                             "entity": 9,
-                            "name": "SM_CorridorWall03 (Copy)",
+                            "name": "SM_CorridorWall03 ",
                             "flags": 0,
                             "children": {
                                 "struct": "uint64_t",
