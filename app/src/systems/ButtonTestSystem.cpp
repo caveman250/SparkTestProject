@@ -46,7 +46,10 @@ namespace app
             }
         });
 
-        buttonTestComp->buttonPressed = false;
+        if (buttonTestComp)
+        {
+            buttonTestComp->buttonPressed = false;
+        }
     }
 
     void ButtonTestSystem::OnTestButtonPressed()
