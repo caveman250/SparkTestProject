@@ -17,7 +17,9 @@
         },
         {
             "RenderState": {
+                "cullMode": "String",
                 "depthComp": "String",
+                "depthWrite": "bool",
                 "dstBlend": "String",
                 "lit": "bool",
                 "srcBlend": "String",
@@ -38,11 +40,6 @@
             }
         },
         {
-            "ShaderSettingDefinition<int32_t>": {
-                "m_Value": "Int32"
-            }
-        },
-        {
             "ShaderSettingDefinition<Vec4>": {
                 "m_Value": "Object"
             }
@@ -53,6 +50,11 @@
                 "x": "Float",
                 "y": "Float",
                 "z": "Float"
+            }
+        },
+        {
+            "ShaderSettingDefinition<int32_t>": {
+                "m_Value": "Int32"
             }
         },
         {
@@ -101,12 +103,14 @@
             "m_RenderState": {
                 "RenderState": {
                     "depthComp": "Less",
+                    "depthWrite": true,
                     "srcBlend": "One",
                     "dstBlend": "Zero",
                     "stencilWriteMask": 0,
                     "stencilFunc": "None",
                     "stencilReadMask": 0,
-                    "lit": true
+                    "lit": true,
+                    "cullMode": "Back"
                 }
             },
             "m_ShaderSettings": {
@@ -114,16 +118,6 @@
                     "m_Settings": {
                         "struct": "Internal_MapItemString_Object",
                         "contents": [
-                            {
-                                "Internal_MapItemString_Object": {
-                                    "key": "numLights",
-                                    "value": {
-                                        "ShaderSettingDefinition<int32_t>": {
-                                            "m_Value": 56
-                                        }
-                                    }
-                                }
-                            },
                             {
                                 "Internal_MapItemString_Object": {
                                     "key": "ambientStr",
@@ -137,6 +131,16 @@
                                                     "w": 1.0
                                                 }
                                             }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "Internal_MapItemString_Object": {
+                                    "key": "numLights",
+                                    "value": {
+                                        "ShaderSettingDefinition<int32_t>": {
+                                            "m_Value": 56
                                         }
                                     }
                                 }
