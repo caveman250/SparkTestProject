@@ -1,0 +1,143 @@
+{
+    "structs": [
+        {
+            "Prefab": {
+                "m_Entities": "Array",
+                "m_SourcePath": "String"
+            }
+        },
+        {
+            "PrefabEntity": {
+                "children": "Array",
+                "components": "PolymorphicArray",
+                "entity": "Uint64",
+                "flags": "Int32",
+                "name": "String"
+            }
+        },
+        {
+            "uint64_t": {
+                "val": "Uint64"
+            }
+        },
+        {
+            "Internal_ArrayItem": {
+                "offset": "Uint32",
+                "valid": "bool"
+            }
+        },
+        {
+            "MeshComponent": {
+                "materialAsset": "Object",
+                "materialInstanceAsset": "Object",
+                "model": "Object",
+                "renderLayer": "Int32",
+                "visible": "bool"
+            }
+        },
+        {
+            "AssetReference<Model>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "AssetReference<Material>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "AssetReference<MaterialInstance>": {
+                "m_AssetPath": "String"
+            }
+        },
+        {
+            "RootComponent": null
+        },
+        {
+            "TransformComponent": {
+                "pos": "Object",
+                "rot": "Object",
+                "scale": "Object"
+            }
+        },
+        {
+            "Vec3": {
+                "x": "Float",
+                "y": "Float",
+                "z": "Float"
+            }
+        }
+    ],
+    "root": {
+        "Prefab": {
+            "m_Entities": {
+                "struct": "PrefabEntity",
+                "contents": [
+                    {
+                        "PrefabEntity": {
+                            "entity": 1,
+                            "name": "Root",
+                            "flags": 0,
+                            "children": {
+                                "struct": "uint64_t",
+                                "contents": null
+                            },
+                            "components": [
+                                {
+                                    "MeshComponent": {
+                                        "model": {
+                                            "AssetReference<Model>": {
+                                                "m_AssetPath": "/assets/models/Building/SM_AboveWall.sass"
+                                            }
+                                        },
+                                        "materialAsset": {
+                                            "AssetReference<Material>": {
+                                                "m_AssetPath": ""
+                                            }
+                                        },
+                                        "materialInstanceAsset": {
+                                            "AssetReference<MaterialInstance>": {
+                                                "m_AssetPath": "/assets/materials/MI_CorridorBigDoor01.sass"
+                                            }
+                                        },
+                                        "renderLayer": 0,
+                                        "visible": true
+                                    }
+                                },
+                                {
+                                    "RootComponent": null
+                                },
+                                {
+                                    "TransformComponent": {
+                                        "pos": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "rot": {
+                                            "Vec3": {
+                                                "x": 0.0,
+                                                "y": 0.0,
+                                                "z": 0.0
+                                            }
+                                        },
+                                        "scale": {
+                                            "Vec3": {
+                                                "x": 1.0,
+                                                "y": 1.0,
+                                                "z": 1.0
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "m_SourcePath": "/source_assets/new_prefab.json"
+        }
+    }
+}
